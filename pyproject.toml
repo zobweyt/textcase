@@ -1,0 +1,73 @@
+[project]
+name = "textcase"
+version = "0.1.0"
+description = "A feature complete Python text case conversion library."
+readme = { file = "README.md", content-type = "text/markdown" }
+license = { file = "LICENSE.md" }
+requires-python = ">=3.13"
+authors = [
+    { name = "Nikita Gaziev", email = "zobweyt@gmail.com" },
+]
+maintainers = [
+    { name = "Nikita Gaziev", email = "zobweyt@gmail.com" },
+]
+keywords = [
+    "text",
+    "case",
+    "conversion",
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/zobweyt/textcase"
+Documentation = "https://github.com/zobweyt/textcase"
+Repository = "https://github.com/zobweyt/textcase"
+Issues = "https://github.com/zobweyt/textcase/issues"
+Changelog = "https://github.com/zobweyt/textcase/blob/main/CHANGELOG.md"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.11.2",
+]
+
+[tool.mypy]
+files = [
+    "tests",
+    "textcase",
+]
+strict = true
+
+[tool.ruff]
+indent-width = 4
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+]
+
+[tool.ruff.format]
+indent-style = "space"
+line-ending = "lf"
+quote-style = "double"
