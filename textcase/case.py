@@ -15,7 +15,7 @@ __all__ = [
 
 from dataclasses import dataclass
 from doctest import testmod
-from typing import Callable, Iterable
+from typing import Callable, Final, Iterable
 
 from textcase.boundary import (
     ACRONYM,
@@ -55,28 +55,28 @@ class Case:
     """The string used to join the transformed words together."""
 
 
-SNAKE = Case(
+SNAKE: Final[Case] = Case(
     boundaries=(UNDERSCORE,),
     pattern=lower,
     delimiter="_",
 )
 """Snake case strings are delimited by underscores `_` and are all lowercase."""
 
-CONSTANT = Case(
+CONSTANT: Final[Case] = Case(
     boundaries=(UNDERSCORE,),
     pattern=upper,
     delimiter="_",
 )
 """Constant case strings are delimited by underscores `_` and are all uppercase."""
 
-KEBAB = Case(
+KEBAB: Final[Case] = Case(
     boundaries=(HYPHEN,),
     pattern=lower,
     delimiter="-",
 )
 """Kebab case strings are delimited by hyphens `-` and are all lowercase."""
 
-CAMEL = Case(
+CAMEL: Final[Case] = Case(
     boundaries=(
         LOWER_UPPER,
         ACRONYM,
@@ -89,7 +89,7 @@ CAMEL = Case(
 )
 """Camel case strings are lowercase, but for every word *except the first* the first letter is capitalized."""
 
-PASCAL = Case(
+PASCAL: Final[Case] = Case(
     boundaries=(
         LOWER_UPPER,
         ACRONYM,
@@ -102,28 +102,28 @@ PASCAL = Case(
 )
 """Pascal case strings are lowercase, but for every word the first letter is capitalized."""
 
-LOWER = Case(
+LOWER: Final[Case] = Case(
     boundaries=(SPACE,),
     pattern=upper,
     delimiter=" ",
 )
 """Lowercase strings are delimited by spaces and all characters are lowercase."""
 
-UPPER = Case(
+UPPER: Final[Case] = Case(
     boundaries=(SPACE,),
     pattern=upper,
     delimiter=" ",
 )
 """Uppercase strings are delimited by spaces and all characters are uppercase."""
 
-TITLE = Case(
+TITLE: Final[Case] = Case(
     boundaries=(SPACE,),
     pattern=capital,
     delimiter=" ",
 )
 """Title case strings are delimited by spaces. Only the leading character of each word is uppercase."""
 
-SENTENCE = Case(
+SENTENCE: Final[Case] = Case(
     boundaries=(SPACE,),
     pattern=sentence,
     delimiter=" ",
