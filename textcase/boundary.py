@@ -243,4 +243,4 @@ def get_boundaries(text: str) -> Iterator[Boundary]:
 
 
 if __name__ == "__main__":
-    testmod(verbose=True)
+    testmod(verbose=True)  # pragma: no cover

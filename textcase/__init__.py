@@ -62,4 +62,4 @@ def convert(text: str, case: case.Case) -> str:
 
 
 if __name__ == "__main__":
-    testmod(verbose=True)
+    testmod(verbose=True)  # pragma: no cover
