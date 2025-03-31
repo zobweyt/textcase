@@ -156,7 +156,6 @@ Splits where digit is followed by an uppercase letter.
 >>> assert (DIGIT_UPPER,) == tuple(get_boundaries("1A"))
 """
 
-
 DEFAULT_BOUNDARIES: Final[Tuple[Boundary, ...]] = (
     UNDERSCORE,
     HYPHEN,
