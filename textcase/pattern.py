@@ -1,19 +1,19 @@
 """Text case transformation patterns.
 
 Examples:
-    >>> tuple(lower(["Hello", "World"]))
+    >>> tuple(lower(("Hello", "World")))
     ('hello', 'world')
 
-    >>> tuple(upper(["Hello", "World"]))
+    >>> tuple(upper(("Hello", "World")))
     ('HELLO', 'WORLD')
 
-    >>> tuple(capital(["hello", "world"]))
+    >>> tuple(capital(("hello", "world")))
     ('Hello', 'World')
 
-    >>> tuple(camel(["hello", "world"]))
+    >>> tuple(camel(("hello", "world")))
     ('hello', 'World')
 
-    >>> tuple(sentence(["hello", "world"]))
+    >>> tuple(sentence(("hello", "world")))
     ('Hello', 'world')
 """
 
@@ -40,7 +40,7 @@ def lower(words: Iterable[str]) -> Iterator[str]:
         Iterator[str]: An iterator of words in lowercase.
 
     Examples:
-        >>> tuple(lower(["Hello", "World"]))
+        >>> tuple(lower(("Hello", "World")))
         ('hello', 'world')
     """
     return (word.lower() for word in words)
@@ -56,7 +56,7 @@ def upper(words: Iterable[str]) -> Iterator[str]:
         Iterator[str]: An iterator of words in uppercase.
 
     Examples:
-        >>> tuple(upper(["Hello", "World"]))
+        >>> tuple(upper(("Hello", "World")))
         ('HELLO', 'WORLD')
     """
     return (word.upper() for word in words)
@@ -72,7 +72,7 @@ def capital(words: Iterable[str]) -> Iterator[str]:
         Iterator[str]: An iterator of words with the first letter capitalized.
 
     Examples:
-        >>> tuple(capital(["hello", "world"]))
+        >>> tuple(capital(("hello", "world")))
         ('Hello', 'World')
     """
     return (word.capitalize() for word in words)
@@ -88,7 +88,7 @@ def camel(words: Iterable[str]) -> Iterator[str]:
         Iterator[str]: An iterator of words in camel case format.
 
     Examples:
-        >>> tuple(camel(["hello", "world"]))
+        >>> tuple(camel(("hello", "world")))
         ('hello', 'World')
     """
     words_iter = iter(words)
@@ -106,7 +106,7 @@ def sentence(words: Iterable[str]) -> Iterator[str]:
         Iterator[str]: An iterator of words in sentence case format.
 
     Examples:
-        >>> tuple(sentence(["hello", "world"]))
+        >>> tuple(sentence(("hello", "world")))
         ('Hello', 'world')
     """
     words_iter = iter(words)
