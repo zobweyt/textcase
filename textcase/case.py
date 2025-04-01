@@ -104,7 +104,7 @@ PASCAL: Final[Case] = Case(
 
 LOWER: Final[Case] = Case(
     boundaries=(SPACE,),
-    pattern=upper,
+    pattern=lower,
     delimiter=" ",
 )
 """Lowercase strings are delimited by spaces and all characters are lowercase."""
