@@ -1,5 +1,6 @@
 import pytest
 
+from textcase import pattern
 from textcase.boundary import DEFAULT_BOUNDARIES
 from textcase.case import CAMEL, SNAKE
 from textcase.converter import CaseConverter
@@ -45,6 +46,19 @@ def test_case_converter_single_word() -> None:
 
     assert converter.to_case(SNAKE).convert("Hello") == "hello"
     assert converter.to_case(CAMEL).convert("hello") == "hello"
+
+
+def test_case_converter_complex() -> None:
+    converter = CaseConverter()
+    converter.pattern = pattern.camel
+    converter.delimiter = "_"
+
+    assert converter.convert("My Special Case") == "my_Special_Case"
+
+    converter.from_case(CAMEL)
+    converter.to_case(SNAKE)
+
+    assert converter.convert("mySpecialCase") == "my_special_case"
 
 
 if __name__ == "__main__":
