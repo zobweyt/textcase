@@ -193,7 +193,7 @@ print(is_case("Dot case var", DOT_CASE))  # False
 
 ## Case converter class
 
-Case conversion takes place in two parts. The first splits an identifier into a series of words, and the second joins the words back together. Each of these are steps are defined using the [`textcase.converter.CaseConverter.to_case`](./textcase/converter.py?plain=1#88) and [`textcase.converter.CaseConverter.to_case`](./textcase/converter.py?plain=1#101) functions respectively.
+Case conversion takes place in two parts. The first splits an identifier into a series of words, and the second joins the words back together. Each of these are steps are defined using the [`textcase.converter.CaseConverter.from_case`](./textcase/converter.py?plain=1#101) and [`textcase.converter.CaseConverter.to_case`](./textcase/converter.py?plain=1#88) functions respectively.
 
 `CaseConverter` is a class that encapsulates the boundaries used for splitting and the pattern and delimiter for mutating and joining. The convert method will apply the boundaries, pattern, and delimiter appropriately. This lets you define the parameters for case conversion upfront:
 
