@@ -26,7 +26,7 @@ test: check
 
 [group("test")]
 coverage: check
-  uv run pytest --cov=textcase --cov-report=term-missing --doctest-modules
+  uv run pytest --doctest-modules --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov
 
 [group("build")]
 build: lint check
