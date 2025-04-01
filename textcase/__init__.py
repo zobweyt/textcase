@@ -5,8 +5,8 @@
 ```python
 import textcase
 
-print(textcase.convert("2020-04-16_my_cat_cali", textcase.case.SNAKE)) # 2020_04_16_my_cat_cali
-print(textcase.is_case("2020_04_16_my_cat_cali", textcase.case.SNAKE)) # True
+print(textcase.convert("2020-04-16_my_cat_cali", textcase.case.SNAKE))  # 2020_04_16_my_cat_cali
+print(textcase.is_case("2020_04_16_my_cat_cali", textcase.case.SNAKE))  # True
 ```
 """
 
