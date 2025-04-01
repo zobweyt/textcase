@@ -22,11 +22,11 @@ format:
 
 [group("test")]
 test: check
-  uv run pytest
+  uv run pytest --doctest-modules
 
 [group("test")]
 coverage: check
-  uv run pytest --cov=textcase --cov-report=term-missing
+  uv run pytest --doctest-modules --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov
 
 [group("build")]
 build: lint check

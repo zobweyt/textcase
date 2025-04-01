@@ -1,0 +1,27 @@
+on:
+  - push
+  - pull_request
+
+name: style
+
+jobs:
+  style:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup just
+        uses: extractions/setup-just@v3
+        with:
+          version: 1.34.0
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: 0.6.4
+
+      - name: Run lint and check
+        run: |
+          uv sync
+          just lint
+          just check
