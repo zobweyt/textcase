@@ -5,7 +5,7 @@ on:
 name: coverage
 
 jobs:
-  test:
+  coverage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
