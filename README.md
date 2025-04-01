@@ -68,7 +68,7 @@ It also works non-ascii characters. However, no inferences on the language itsel
 from textcase import case, convert
 
 print(convert("GranatÄpfel", case.KEBAB))    # granat-äpfel
-print(convert("ПЕРСПЕКТИВА24", case.TITLE))  # ПЕРСПЕКТИВА24
+print(convert("ПЕРСПЕКТИВА24", case.TITLE))  # Перспектива 24
 print(convert("ὈΔΥΣΣΕΎΣ", case.LOWER))       # ὀδυσσεύς
 ```
 
