@@ -18,6 +18,8 @@ __all__ = [
     "convert",
 ]
 
+__version__ = "0.2.0"
+
 from doctest import testmod
 from typing import Iterable
 
