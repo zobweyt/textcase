@@ -161,6 +161,12 @@ Get test coverage report using [coverage](https://pypi.org/project/coverage/) an
 just coverage
 ```
 
+Start [mkdocs](https://www.mkdocs.org/) documentation:
+
+```sh
+just docs-serve
+```
+
 ### Commit Messages
 
 We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification for commit messages. This helps in maintaining a clear and consistent commit history. These messages are then used with [git-cliff](https://git-cliff.org/) to generate changelogs.
