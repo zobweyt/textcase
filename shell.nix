@@ -10,5 +10,9 @@ pkgs.mkShellNoCC {
     git-cliff
   ];
 
-  shellHook = "exec zsh";
+  shellHook = ''
+    if command -v zsh > /dev/null; then
+      exec zsh
+    fi
+  '';
 }
