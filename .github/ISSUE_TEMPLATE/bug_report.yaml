@@ -1,0 +1,62 @@
+name: "Bug report"
+
+description: "Create a report to help us improve"
+
+title: "bug: "
+
+labels:
+  - bug
+
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for reporting bugs! We appreciate your help in improving our product.
+
+  - type: checkboxes
+    id: existing
+    attributes:
+      label: Search for Existing Issues
+      description: Before submitting a new bug, please ensure you search for existing ones to prevent duplicates.
+      options:
+        - label: I've searched the [issues](https://github.com/zobweyt/textcase/issues?q=is%3Aissue+sort%3Aupdated).
+          required: true
+        - label: I've searched the [discussions](https://github.com/zobweyt/textcase/discussions).
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Provide a clear description of what the bug is.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps To Reproduce
+      description: Describe how the bug can be reproduced.
+      placeholder: |
+        1. Go to…
+        2. Open the command prompt…
+        3. See the error message…
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: Provide a clear description of what you expected to happen.
+      placeholder: I expected … but … is happening instead.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: conduct
+    attributes:
+      label: Code of Conduct
+      description: The Code of Conduct creates a safe space for everyone. We require that everyone agrees to it.
+      options:
+        - label: I agree this project's [Code of Conduct](https://github.com/zobweyt/textcase/blob/main/CODE_OF_CONDUCT.md)
+          required: true
