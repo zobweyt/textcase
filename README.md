@@ -18,6 +18,7 @@ A feature complete Python text case conversion library.
 - **100% Test Coverage**: Comprehensive tests ensure reliability and correctness.
 - **Well-Documented**: Clean documentation with usage examples for easy understanding.
 - **Performant**: Efficient implementation without the use of regular expressions.
+- **Zero Dependencies**: The library has no external dependencies, making it lightweight and easy to integrate.
 
 ## Installation
 
