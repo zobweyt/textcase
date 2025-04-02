@@ -2,7 +2,6 @@ site_name: textcase
 site_description: A feature-rich Python text case conversion library
 site_url: https://zobweyt.github.io/textcase
 
-
 theme:
   name: material
   logo: assets/favicon.white.svg
