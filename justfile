@@ -36,6 +36,10 @@ docs-serve:
 docs-build:
   uv run mkdocs build -f docs/mkdocs.yaml
 
+[group("docs")]
+docs-gh-deploy:
+  uv run mkdocs gh-deploy --force -f docs/mkdocs.yaml
+
 [group("build")]
 build: lint check
   uv build
