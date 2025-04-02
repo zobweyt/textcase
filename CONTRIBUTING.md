@@ -149,7 +149,7 @@ Lint using [mypy](https://pypi.org/project/mypy/):
 just lint
 ```
 
-Rn test suite using [pytest](https://pypi.org/project/pytest/)
+Run test suite using [pytest](https://pypi.org/project/pytest/)
 
 ```sh
 just test
