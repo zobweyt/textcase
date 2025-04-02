@@ -18,7 +18,7 @@ body:
       label: Search for Existing Issues
       description: Before requesting a new feature, please ensure you search for existing ones to prevent duplicates.
       options:
-        - label: I've searched the [issues](https://github.com/zobweyt/textcase/issues?q=is%3Aissue+sort%3Aupdated).
+        - label: I've searched the [issues](https://github.com/zobweyt/textcase/issues?q=is%3Aissue+label%3Aenhancement+sort%3Aupdated).
           required: true
         - label: I've searched the [discussions](https://github.com/zobweyt/textcase/discussions).
           required: true
