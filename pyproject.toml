@@ -12,9 +12,18 @@ maintainers = [
     { name = "Nikita Gaziev", email = "zobweyt@gmail.com" },
 ]
 keywords = [
-    "text",
+    "camel-case",
     "case",
+    "constant-case",
     "conversion",
+    "kebab-case",
+    "lower-case",
+    "pascal-case",
+    "sentence-case",
+    "snake-case",
+    "text",
+    "title-case",
+    "upper-case",
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
