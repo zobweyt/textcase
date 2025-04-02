@@ -89,7 +89,12 @@ markdown_extensions:
 
 extra:
   social:
+    - icon: fontawesome/solid/newspaper
+      link: https://github.com/zobweyt/textcase/blob/main/CHANGELOG.md
+      name: Changelog
     - icon: fontawesome/brands/python
       link: https://pypi.org/projects/textcase
+      name: PyPi
     - icon: fontawesome/brands/github
       link: https://github.com/zobweyt/textcase
+      name: GitHub repository

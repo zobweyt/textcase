@@ -48,8 +48,8 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/zobweyt/textcase"
-Documentation = "https://github.com/zobweyt/textcase"
+Homepage = "https://zobweyt.github.io/textcase"
+Documentation = "https://zobweyt.github.io/textcase"
 Repository = "https://github.com/zobweyt/textcase"
 Issues = "https://github.com/zobweyt/textcase/issues"
 Changelog = "https://github.com/zobweyt/textcase/blob/main/CHANGELOG.md"
