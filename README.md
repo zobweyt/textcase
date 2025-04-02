@@ -10,6 +10,8 @@
 
 A feature-rich Python text case conversion library.
 
+**Documentation**: https://zobweyt.github.io/textcase
+
 ## Features
 
 - **Text case conversion**: Convert strings between various text cases (e.g., snake_case, kebab-case, camelCase, etc.).
