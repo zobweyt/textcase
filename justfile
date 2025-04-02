@@ -22,11 +22,11 @@ format:
 
 [group("test")]
 test: check
-  uv run pytest --doctest-modules
+  uv run pytest --cov=textcase
 
 [group("test")]
 coverage: check
-  uv run pytest --doctest-modules --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov
+  uv run pytest --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov
 
 [group("docs")]
 docs-serve:
