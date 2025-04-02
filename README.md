@@ -12,7 +12,7 @@ A feature-rich Python text case conversion library.
 
 **Documentation**: https://zobweyt.github.io/textcase
 
-**PyPi**: https://pypi.org/projects/textcase
+**PyPi**: https://pypi.org/project/textcase
 
 ## Features
 
