@@ -54,8 +54,38 @@ repo_url: https://github.com/zobweyt/textcase
 
 copyright: Copyright © 2025 Nikita Gaziev
 
+nav:
+  - Home: index.md
+  - Learn:
+      - learn/boundaries.md
+      - learn/cases.md
+      - learn/converter.md
+  - Reference:
+      - reference/boundary.md
+      - reference/case.md
+      - reference/convert.md
+      - reference/converter.md
+      - reference/is_case.md
+      - reference/pattern.md
+
 plugins:
   - search
+  - autorefs:
+      resolve_closest: true
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: ru
+          name: Русский
+          build: true
+          nav_translations:
+            Home: Главная
+            Learn: Обучение
+            Reference: Спецификация
   - termynal:
       prompt_literal_start:
         - "$"
@@ -86,7 +116,9 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      base_path: docs
+      check_paths: true
   - pymdownx.superfences
 
 extra:

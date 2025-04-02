@@ -30,15 +30,15 @@ coverage: check
 
 [group("docs")]
 docs-serve:
-  PYTHONPATH=$(pwd) uv run mkdocs serve -f docs/mkdocs.yaml
+  uv run mkdocs serve -f mkdocs.yaml
 
 [group("docs")]
 docs-build:
-  PYTHONPATH=$(pwd) uv run mkdocs build -f docs/mkdocs.yaml
+  uv run mkdocs build -f mkdocs.yaml
 
 [group("docs")]
 docs-gh-deploy:
-  PYTHONPATH=$(pwd) uv run mkdocs gh-deploy --force -f docs/mkdocs.yaml
+  uv run mkdocs gh-deploy --force -f mkdocs.yaml
 
 [group("build")]
 build: lint check
