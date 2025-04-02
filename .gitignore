@@ -125,3 +125,6 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# mkdocs
+docs/site

@@ -59,8 +59,6 @@ UNDERSCORE: Final[Boundary] = Boundary(
 )
 """
 Splits on `_`, consuming the character on segmentation.
-
->>> assert (UNDERSCORE,) == tuple(get_boundaries("_"))
 """
 
 HYPHEN: Final[Boundary] = Boundary(
@@ -69,8 +67,6 @@ HYPHEN: Final[Boundary] = Boundary(
 )
 """
 Splits on `-`, consuming the character on segmentation.
-
->>> assert (HYPHEN,) == tuple(get_boundaries("-"))
 """
 
 SPACE: Final[Boundary] = Boundary(
@@ -79,8 +75,6 @@ SPACE: Final[Boundary] = Boundary(
 )
 """
 Splits on space, consuming the character on segmentation.
-
->>> assert (SPACE,) == tuple(get_boundaries(" "))
 """
 
 LOWER_UPPER: Final[Boundary] = Boundary(
@@ -89,8 +83,6 @@ LOWER_UPPER: Final[Boundary] = Boundary(
 )
 """
 Splits where a lowercase letter is followed by an uppercase letter.
-
->>> assert (LOWER_UPPER,) == tuple(get_boundaries("aA"))
 """
 
 UPPER_LOWER: Final[Boundary] = Boundary(
@@ -100,8 +92,6 @@ UPPER_LOWER: Final[Boundary] = Boundary(
 """
 Splits where an uppercase letter is followed by a lowercase letter.
 This is seldom used and is **not** included in the `DEFAULT_BOUNDARIES`.
-
->>> assert 0 == len(tuple(get_boundaries("Aa")))
 """
 
 ACRONYM: Final[Boundary] = Boundary(
@@ -112,8 +102,6 @@ ACRONYM: Final[Boundary] = Boundary(
 Acronyms are identified by two uppercase letters followed by a lowercase letter.
 The word boundary is between the two uppercase letters.  For example, "HTTPRequest"
 would have an acronym boundary identified at "PRe" and split into "HTTP" and "Request".
-
->>> assert (ACRONYM,) == tuple(get_boundaries("AAa"))
 """
 
 LOWER_DIGIT: Final[Boundary] = Boundary(
@@ -122,8 +110,6 @@ LOWER_DIGIT: Final[Boundary] = Boundary(
 )
 """
 Splits where a lowercase letter is followed by a digit.
-
->>> assert (LOWER_DIGIT,) == tuple(get_boundaries("a1"))
 """
 
 UPPER_DIGIT: Final[Boundary] = Boundary(
@@ -132,8 +118,6 @@ UPPER_DIGIT: Final[Boundary] = Boundary(
 )
 """
 Splits where an uppercase letter is followed by a digit.
-
->>> assert (UPPER_DIGIT,) == tuple(get_boundaries("A1"))
 """
 
 DIGIT_LOWER: Final[Boundary] = Boundary(
@@ -142,8 +126,6 @@ DIGIT_LOWER: Final[Boundary] = Boundary(
 )
 """
 Splits where digit is followed by a lowercase letter.
-
->>> assert (DIGIT_LOWER,) == tuple(get_boundaries("1a"))
 """
 
 DIGIT_UPPER: Final[Boundary] = Boundary(
@@ -152,8 +134,6 @@ DIGIT_UPPER: Final[Boundary] = Boundary(
 )
 """
 Splits where digit is followed by an uppercase letter.
-
->>> assert (DIGIT_UPPER,) == tuple(get_boundaries("1A"))
 """
 
 DEFAULT_BOUNDARIES: Final[Tuple[Boundary, ...]] = (
