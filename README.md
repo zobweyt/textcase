@@ -74,7 +74,7 @@ print(convert("myJSONParser", case.SNAKE))         # my_json_parser
 print(convert("__weird--var _name-", case.SNAKE))  # weird_var_name
 ```
 
-It also works non-ascii characters. However, no inferences on the language itself is made. For instance, the digraph ij in Dutch will not be capitalized, because it is represented as two distinct Unicode characters. However, æ would be capitalized:
+The library also supports non-ASCII characters. However, it does not infer the language of the input. For example, in Dutch, the digraph "ij" is treated as two separate Unicode characters and will not be capitalized. In contrast, the character "æ" will be capitalized as expected. This means that while the library can handle various characters, **it assumes English-language rules for casing and does not account for specific language exceptions**:
 
 ```python
 from textcase import case, convert
