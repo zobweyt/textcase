@@ -127,7 +127,7 @@ extra:
       link: https://github.com/zobweyt/textcase/blob/main/CHANGELOG.md
       name: Changelog
     - icon: fontawesome/brands/python
-      link: https://pypi.org/projects/textcase
+      link: https://pypi.org/project/textcase
       name: PyPi
     - icon: fontawesome/brands/github
       link: https://github.com/zobweyt/textcase
