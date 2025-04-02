@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-## 0.2.1 (2025-04-02)
+## Unreleased
+
+### Documentation
+
+- add CHANGELOG.md for 0.2.1 ([17b5dcb](17b5dcb775a05b425643633a5ec7584d0035728d))
+
+## [0.2.1](https://github.com/zobweyt/textcase/commits/0.2.1) (2025-04-02)
 
 [3073ae6](3073ae63db2b50f0e673af851f2bb2b6b5f34942)...[63d3d0f](63d3d0f942bc04e1e690eeaf79762b459a4931f7)
 
@@ -59,7 +65,7 @@ All notable changes to this project will be documented in this file.
 - add test special tests ([ad2a3ec](ad2a3ecd03796fc356c5d70c0236e22578b188eb))
 - add pattern tests ([e03f54e](e03f54ecdc3554c5145ef66f1cb14e46a34e5fae))
 
-## 0.2.0 (2025-04-01)
+## [0.2.0](https://github.com/zobweyt/textcase/commits/0.2.0) (2025-04-01)
 
 ### Bug Fixes
 
