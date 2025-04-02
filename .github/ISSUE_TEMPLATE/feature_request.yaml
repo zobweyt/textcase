@@ -1,0 +1,47 @@
+name: "Feature request"
+
+description: "Suggest an idea for this project"
+
+title: "feat: "
+
+labels:
+  - enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for suggesting an idea! We appreciate your help in improving our library.
+
+  - type: checkboxes
+    id: existing
+    attributes:
+      label: Search for Existing Issues
+      description: Before requesting a new feature, please ensure you search for existing ones to prevent duplicates.
+      options:
+        - label: I've searched the [issues](https://github.com/zobweyt/textcase/issues?q=is%3Aissue+sort%3Aupdated).
+          required: true
+        - label: I've searched the [discussions](https://github.com/zobweyt/textcase/discussions).
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: Provide a clear and concise description of what the problem is.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the solution you'd like
+      description: A clear and concise description of what you want to happen.
+
+  - type: checkboxes
+    id: conduct
+    attributes:
+      label: Code of Conduct
+      description: The Code of Conduct creates a safe space for everyone. We require that everyone agrees to it.
+      options:
+        - label: I agree this project's [Code of Conduct](https://github.com/zobweyt/textcase/blob/main/CODE_OF_CONDUCT.md)
+          required: true
