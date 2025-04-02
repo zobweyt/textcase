@@ -14,7 +14,7 @@ A feature-rich Python text case conversion library.
 - **Text case conversion**: Convert strings between various text cases (e.g., snake_case, kebab-case, camelCase, etc.).
 - **Extensible Design**: Easily extend the library with custom cases and boundaries.
 - **Acronym Handling**: Properly detects and formats acronyms in strings (as in `HTTPRequest`).
-- **Non-ASCII Support**: Handles non-ASCII characters seamlessly (it assumes English-language rules for casing).
+- **Non-ASCII Support**: Handles non-ASCII characters seamlessly (no inferences on the input language itself is made).
 - **100% Test Coverage**: Comprehensive tests ensure reliability and correctness.
 - **Well-Documented**: Clean documentation with usage examples for easy understanding.
 - **Performant**: Efficient implementation without the use of regular expressions.
@@ -74,7 +74,7 @@ print(convert("myJSONParser", case.SNAKE))         # my_json_parser
 print(convert("__weird--var _name-", case.SNAKE))  # weird_var_name
 ```
 
-The library also supports non-ASCII characters. However, it does not infer the language of the input. For example, in Dutch, the digraph "ij" is treated as two separate Unicode characters and will not be capitalized. In contrast, the character "æ" will be capitalized as expected. This means that while the library can handle various characters, **it assumes English-language rules for casing and does not account for specific language exceptions**:
+The library also supports non-ASCII characters. However, no inferences on the input language itself is made. For example, in Dutch, the digraph "ij" is treated as two separate Unicode characters and will not be capitalized. In contrast, the character "æ" will be capitalized as expected. Also, in English the text "I THINK I DO" will be converted to "i think i do", not "I think I do". This means that the library can handle various characters:
 
 ```python
 from textcase import case, convert
