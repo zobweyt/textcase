@@ -39,7 +39,7 @@ $ pip install textcase
 --8<-- "assets/snippets/index/convert.py"
 ```
 
-По умолчанию [`convert`](./reference/convert.md/) и [`CaseConverter.convert`](./reference/converter.md/#textcase.converter).CaseConverter.convert) будут делить слова [по заданным по умолчанию границам слов](./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES), то есть:
+По умолчанию [`convert`](./reference/convert.md/) и [`CaseConverter.convert`](./reference/converter.md/#textcase.converter) будут делить слова [по заданным по умолчанию границам слов](./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES), то есть:
 
 - подчеркивания `_`,
 - дефисы `-`,
