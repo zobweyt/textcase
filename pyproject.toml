@@ -56,10 +56,14 @@ Changelog = "https://github.com/zobweyt/textcase/blob/main/CHANGELOG.md"
 
 [dependency-groups]
 dev = [
+    "griffe-typingdoc>=0.2.8",
+    "mkdocs-material>=9.6.11",
+    "mkdocstrings[python]>=0.29.1",
     "mypy>=1.15.0",
     "pytest>=8.3.5",
     "pytest-cov>=6.0.0",
     "ruff>=0.11.2",
+    "termynal>=0.13.0",
 ]
 
 [tool.mypy]

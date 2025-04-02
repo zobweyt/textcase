@@ -28,6 +28,14 @@ test: check
 coverage: check
   uv run pytest --doctest-modules --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov
 
+[group("docs")]
+docs-serve:
+  uv run mkdocs serve -f docs/mkdocs.yaml
+
+[group("docs")]
+docs-build:
+  uv run mkdocs build -f docs/mkdocs.yaml
+
 [group("build")]
 build: lint check
   uv build

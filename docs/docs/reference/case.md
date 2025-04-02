@@ -1,0 +1,3 @@
+# textcase.case
+
+::: textcase.case
