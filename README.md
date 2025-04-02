@@ -14,7 +14,7 @@ A feature-rich Python text case conversion library.
 - **Text case conversion**: Convert strings between various text cases (e.g., snake_case, kebab-case, camelCase, etc.).
 - **Extensible Design**: Easily extend the library with custom cases and boundaries.
 - **Acronym Handling**: Properly detects and formats acronyms in strings (as in `HTTPRequest`).
-- **Non-ASCII Support**: Handles non-ASCII characters seamlessly.
+- **Non-ASCII Support**: Handles non-ASCII characters seamlessly (it assumes English-language rules for casing).
 - **100% Test Coverage**: Comprehensive tests ensure reliability and correctness.
 - **Well-Documented**: Clean documentation with usage examples for easy understanding.
 - **Performant**: Efficient implementation without the use of regular expressions.
