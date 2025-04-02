@@ -27,7 +27,7 @@ A feature-rich Python text case conversion library.
 
 ## Installation
 
-Create and activate a virtual environment and then install `textcase`:
+Create and activate a virtual environment and then install [`textcase`](https://pypi.org/projects/textcase):
 
 ```sh
 pip install textcase
@@ -35,7 +35,7 @@ pip install textcase
 
 ## Usage
 
-You can convert strings into a case using the `convert` function:
+You can convert strings into a case using the [`convert`](https://zobweyt.github.io/textcase/reference/convert/) function:
 
 ```python
 from textcase import case, convert
@@ -50,3 +50,5 @@ print(convert("ronnie james dio", case.UPPER))     # RONNIE JAMES DIO
 print(convert("ronnie-james-dio", case.TITLE))     # Ronnie James Dio
 print(convert("ronnie james dio", case.SENTENCE))  # Ronnie james dio
 ```
+
+See [documentation](https://zobweyt.github.io/textcase) for more usage examples.
