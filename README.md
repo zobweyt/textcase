@@ -7,7 +7,7 @@
 [![PyPI - Types](https://img.shields.io/pypi/types/textcase)](https://pypi.python.org/pypi/textcase)
 [![PyPI - Wheel](https://img.shields.io/pypi/wheel/textcase)](https://pypi.python.org/pypi/textcase)
 
-A feature complete Python text case conversion library.
+A feature-rich Python text case conversion library.
 
 ## Features
 
