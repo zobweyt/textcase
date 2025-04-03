@@ -29,5 +29,9 @@ jobs:
         with:
           version: 0.6.4
 
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
+        shell: bash
+
       - name: Deploy docs
         run: just docs-gh-deploy
