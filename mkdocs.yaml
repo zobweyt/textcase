@@ -55,7 +55,7 @@ theme:
     - search.suggest
     - toc.follow
   icon:
-    repo: fontawesome/brands/github
+    repo: simple/github
   language: en
 
 nav:
@@ -165,9 +165,12 @@ extra:
         data: 0
         note: Thanks for your feedback!
   social:
-    - icon: fontawesome/brands/python
+    - icon: simple/archlinux
+      link: https://aur.archlinux.org/packages/python-textcase-git
+      name: AUR
+    - icon: simple/pypi
       link: https://pypi.org/project/textcase
-      name: PyPi
-    - icon: fontawesome/brands/github
+      name: PyPI
+    - icon: simple/github
       link: https://github.com/zobweyt/textcase
-      name: GitHub repository
+      name: GitHub

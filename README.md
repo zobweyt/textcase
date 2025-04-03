@@ -38,7 +38,7 @@
 
 **Documentation**: https://zobweyt.github.io/textcase
 
-**PyPi**: https://pypi.org/project/textcase
+**PyPI**: https://pypi.org/project/textcase
 
 ## Features
 
