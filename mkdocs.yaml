@@ -35,6 +35,8 @@ theme:
         icon: material/lightbulb-outline
         name: Switch to system preference
   features:
+    - content.action.edit
+    - content.action.view
     - content.code.annotate
     - content.code.copy
     - content.footnote.tooltips
