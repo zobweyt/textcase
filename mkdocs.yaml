@@ -96,6 +96,9 @@ plugins:
         - locale: ru
           name: Русский
           build: true
+          copyright: Авторские права &copy; 2025 Никита Газиев
+          site_author: Никита Газиев
+          site_description: Многофункциональная библиотека преобразования регистра текста в Python
           nav_translations:
             Home: Главная
             Learn: Обучение
