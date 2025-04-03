@@ -35,8 +35,8 @@ Done!
 
 You can convert strings into a case using the [`convert`](./../en/reference/convert.md/) function:
 
-```python
---8<-- "assets/snippets/index/convert.py"
+```python id="convert" exec="true" source="tabbed-left" tabs="convert.py|output.txt" result="txt" 
+--8<-- "docs/assets/snippets/index/convert.py"
 ```
 
 By default, [`convert`](./../en/reference/convert.md/) and [`CaseConverter.convert`](./reference/converter.md/#textcase.converter.CaseConverter.convert) will split along a set of default word boundaries, that is
@@ -50,30 +50,30 @@ By default, [`convert`](./../en/reference/convert.md/) and [`CaseConverter.conve
 
 For more precision, you can specify boundaries to split based on the word boundaries of a particular case. For example, splitting from snake case will only use underscores as word boundaries:
 
-```python
---8<-- "assets/snippets/index/precision.py"
+```python id="precision" exec="true" source="tabbed-left" tabs="precision.py|output.txt" result="txt" hl_lines="4"
+--8<-- "docs/assets/snippets/index/precision.py"
 ```
 
 This library can detect acronyms in camel-like strings. It also ignores any leading, trailing, or duplicate delimiters:
 
-```python
---8<-- "assets/snippets/index/acronyms.py"
+```python id="acronyms" exec="true" source="tabbed-left" tabs="acronyms.py|output.txt" result="txt" 
+--8<-- "docs/assets/snippets/index/acronyms.py"
 ```
 
 The library also supports non-ASCII characters. However, no inferences on the input language itself is made. For example, in Dutch, the digraph "ij" is treated as two separate Unicode characters and will not be capitalized. In contrast, the character "æ" will be capitalized as expected. Also, in English the text "I THINK I DO" will be converted to "i think i do", not "I think I do". This means that the library can handle various characters:
 
-```python
---8<-- "assets/snippets/index/non_ascii.py"
+```python id="non_ascii" exec="true" source="tabbed-left" tabs="non_ascii.py|output.txt" result="txt" 
+--8<-- "docs/assets/snippets/index/non_ascii.py"
 ```
 
 By default, characters followed by digits and vice-versa are considered word boundaries. In addition, any special ASCII characters (besides `_` and `-`) are ignored:
 
-```python
---8<-- "assets/snippets/index/special.py"
+```python id="special" exec="true" source="tabbed-left" tabs="special.py|output.txt" result="txt"
+--8<-- "docs/assets/snippets/index/special.py"
 ```
 
 You can also test what case a string is in:
 
-```python
---8<-- "assets/snippets/index/is_case.py"
+```python id="is_case" exec="true" source="tabbed-left" tabs="is_case.py|output.txt" result="txt"
+--8<-- "docs/assets/snippets/index/is_case.py"
 ```

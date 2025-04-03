@@ -16,5 +16,5 @@ DOT_CASE = Case(
     delimiter=".",
 )
 
-print(is_case("dot.case.var", DOT_CASE))  # True
-print(is_case("Dot case var", DOT_CASE))  # False
+print(is_case("dot.case.var", DOT_CASE))
+print(is_case("Dot case var", DOT_CASE))

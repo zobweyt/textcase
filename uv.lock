@@ -304,6 +304,23 @@ wheels = [
 ]
 
 [[package]]
+name = "markdown-exec"
+version = "1.10.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pymdown-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/70/e8/dafa2b91c60f3cec6a2926851fb20b3c1fcdfd5721d6ea0b65bb6b7dab7b/markdown_exec-1.10.3.tar.gz", hash = "sha256:ddd33996526a54dcc33debc464a9d4c00c1acece092cf1843cbb1264bf6800a6", size = 81050 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/04/7e/94d6c703d9a1927339d709ca4224c35215dcd1033ee4d756fa7fa0c8bea9/markdown_exec-1.10.3-py3-none-any.whl", hash = "sha256:74bfe5a9063fafab6199847cbef28dd5071a515e8959f326cf16f2ae7a66033b", size = 34404 },
+]
+
+[package.optional-dependencies]
+ansi = [
+    { name = "pygments-ansi-color" },
+]
+
+[[package]]
 name = "markupsafe"
 version = "3.0.2"
 source = { registry = "https://pypi.org/simple" }
@@ -623,6 +640,18 @@ wheels = [
 ]
 
 [[package]]
+name = "pygments-ansi-color"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pygments" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/50/f9/7f417aaee98a74b4f757f2b72971245181fcf25d824d2e7a190345669eaf/pygments-ansi-color-0.3.0.tar.gz", hash = "sha256:7018954cf5b11d1e734383a1bafab5af613213f246109417fee3f76da26d5431", size = 7317 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e6/17/8306a0bcd8c88d7761c2e73e831b0be026cd6873ce1f12beb3b4c9a03ffa/pygments_ansi_color-0.3.0-py3-none-any.whl", hash = "sha256:7eb063feaecadad9d4d1fd3474cbfeadf3486b64f760a8f2a00fc25392180aba", size = 10242 },
+]
+
+[[package]]
 name = "pymdown-extensions"
 version = "10.14.3"
 source = { registry = "https://pypi.org/simple" }
@@ -811,6 +840,7 @@ source = { virtual = "." }
 [package.dev-dependencies]
 dev = [
     { name = "griffe-typingdoc" },
+    { name = "markdown-exec", extra = ["ansi"] },
     { name = "mkdocs-material" },
     { name = "mkdocs-static-i18n" },
     { name = "mkdocstrings", extra = ["python"] },
@@ -826,6 +856,7 @@ dev = [
 [package.metadata.requires-dev]
 dev = [
     { name = "griffe-typingdoc", specifier = ">=0.2.8" },
+    { name = "markdown-exec", extras = ["ansi"], specifier = ">=1.10.3" },
     { name = "mkdocs-material", specifier = ">=9.6.11" },
     { name = "mkdocs-static-i18n", specifier = ">=1.3.0" },
     { name = "mkdocstrings", extras = ["python"], specifier = ">=0.29.1" },

@@ -1,6 +1,8 @@
 site_name: textcase
 site_description: A feature-rich Python text case conversion library
-site_url: https://zobweyt.github.io/textcase
+site_url: https://zobweyt.github.io/textcase/
+edit_uri: blob/main/docs/
+edit_uri_template: blob/main/docs/{path}
 
 theme:
   name: material
@@ -26,10 +28,11 @@ theme:
         icon: material/lightbulb-outline
         name: Switch to system preference
   features:
+    - content.action.edit
+    - content.action.view
     - content.code.annotate
     - content.code.copy
     - content.footnote.tooltips
-    - content.tabs.link
     - content.tooltips
     - navigation.footer
     - navigation.indexes
@@ -54,6 +57,9 @@ repo_url: https://github.com/zobweyt/textcase
 
 copyright: Copyright © 2025 Nikita Gaziev
 
+watch:
+  - textcase
+
 nav:
   - Home: index.md
   - Learn:
@@ -67,9 +73,11 @@ nav:
       - reference/converter.md
       - reference/is_case.md
       - reference/pattern.md
+  - Changelog: changelog.md
 
 plugins:
   - search
+  - markdown-exec
   - autorefs:
       resolve_closest: true
   - i18n:
@@ -86,6 +94,7 @@ plugins:
             Home: Главная
             Learn: Обучение
             Reference: Спецификация
+            Changelog: Журнал изменений
   - termynal:
       prompt_literal_start:
         - "$"
@@ -111,21 +120,23 @@ plugins:
             show_symbol_type_toc: true
 
 markdown_extensions:
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.magiclink
   - pymdownx.inlinehilite
   - pymdownx.snippets:
-      base_path: docs
+      base_path: .
       check_paths: true
   - pymdownx.superfences
+  - toc:
+      permalink: "#"
 
 extra:
   social:
-    - icon: fontawesome/solid/newspaper
-      link: https://github.com/zobweyt/textcase/blob/main/CHANGELOG.md
-      name: Changelog
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/textcase
       name: PyPi

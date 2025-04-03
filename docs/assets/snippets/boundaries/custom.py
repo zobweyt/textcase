@@ -2,7 +2,7 @@ from textcase import case, convert
 from textcase.boundary import Boundary
 
 # Not quite what we want
-print(convert("coolers.revenge", case.TITLE))  # Coolers.revenge
+print(convert("coolers.revenge", case.TITLE))
 
 # Define custom boundary
 DOT = Boundary(
@@ -10,7 +10,7 @@ DOT = Boundary(
     length=1,
 )
 
-print(convert("coolers.revenge", case.TITLE, (DOT,)))  # Coolers Revenge
+print(convert("coolers.revenge", case.TITLE, (DOT,)))
 
 # Define complex custom boundary
 AT_LETTER = Boundary(
@@ -19,4 +19,4 @@ AT_LETTER = Boundary(
     length=0,
 )
 
-print(convert("name@domain", case.TITLE, (AT_LETTER,)))  # Name@ Domain
+print(convert("name@domain", case.TITLE, (AT_LETTER,)))

@@ -35,8 +35,8 @@ $ pip install textcase
 
 Вы можете преобразовать строки в регистр, используя функцию [`convert`](./reference/convert.md/):
 
-```python
---8<-- "assets/snippets/index/convert.py"
+```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
+--8<-- "docs/assets/snippets/index/convert.py"
 ```
 
 По умолчанию [`convert`](./reference/convert.md/) и [`CaseConverter.convert`](./reference/converter.md/#textcase.converter) будут делить слова [по заданным по умолчанию границам слов](./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES), то есть:
@@ -50,30 +50,30 @@ $ pip install textcase
 
 Для большей точности вы можете указать границы для разделения, основываясь на границах слов в конкретном падеже. Например, при разделении из падежа snake в качестве границ слов будут использоваться только символы подчеркивания:
 
-```python
---8<-- "assets/snippets/index/precision.py"
+```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt" hl_lines="4"
+--8<-- "docs/assets/snippets/index/precision.py"
 ```
 
 Эта библиотека может распознавать сокращения в строках, подобных camel. Она также игнорирует любые начальные, конечные или повторяющиеся разделители:
 
-```python
---8<-- "assets/snippets/index/acronyms.py"
+```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
+--8<-- "docs/assets/snippets/index/acronyms.py"
 ```
 
 Библиотека также поддерживает символы, отличные от ASCII. Однако при этом не делается никаких выводов о языке ввода. Например, в голландском языке орграф "ij" рассматривается как два отдельных символа Unicode и не пишется с заглавной буквы. В отличие от этого, символ "æ" будет написан с заглавной буквы, как и ожидалось. Кроме того, в английском языке текст "I THINK I DO" будет преобразован в "i think i do", а не в "I think I do". Это означает, что библиотека может обрабатывать различные символы:
 
-```python
---8<-- "assets/snippets/index/non_ascii.py"
+```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
+--8<-- "docs/assets/snippets/index/non_ascii.py"
 ```
 
 По умолчанию символы, за которыми следуют цифры, и наоборот, считаются границами слов. Кроме того, любые специальные символы ASCII (кроме "_" и "-") игнорируются:
 
-```python
---8<-- "assets/snippets/index/special.py"
+```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
+--8<-- "docs/assets/snippets/index/special.py"
 ```
 
 Вы также можете проверить, в каком регистре находится строка в:
 
-```python
---8<-- "assets/snippets/index/is_case.py"
+```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
+--8<-- "docs/assets/snippets/index/is_case.py"
 ```

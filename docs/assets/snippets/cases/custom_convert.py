@@ -16,4 +16,4 @@ DOT_CASE = Case(
     delimiter=".",
 )
 
-print(convert("Dot case var", DOT_CASE))  # dot.case.var
+print(convert("Dot case var", DOT_CASE))
