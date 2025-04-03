@@ -102,6 +102,13 @@ plugins:
             Learn: Обучение
             Reference: Спецификация
             Changelog: Журнал изменений
+  - git-committers:
+      repository: zobweyt/textcase
+      branch: main
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      enable_creation_date: true
+      type: timeago
   - termynal:
       prompt_literal_start:
         - "$"
