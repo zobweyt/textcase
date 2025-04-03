@@ -39,16 +39,16 @@ You can convert strings into a case using the [`convert`](./../en/reference/conv
 --8<-- "docs/assets/snippets/index/convert.py"
 ```
 
-By default, [`convert`](./../en/reference/convert.md/) and [`CaseConverter.convert`](./reference/converter.md/#textcase.converter.CaseConverter.convert) will split along a set of default word boundaries, that is
+By default, [`convert`](./../en/reference/convert.md/) and [`CaseConverter.convert`](./reference/converter.md/#textcase.converter.CaseConverter.convert) will split along a set of [default word boundaries]((./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES)), that is:
 
-- underscores `_`,
-- hyphens `-`,
-- spaces ` `,
-- changes in capitalization from lowercase to uppercase `aA`,
-- adjacent digits and letters `a1`, `1a`, `A1`, `1A`,
-- and acroynms `AAa` (as in `HTTPRequest`).
+- Underscores: `_`,
+- Hyphens: `-`,
+- Spaces: ` `,
+- Changes in capitalization from lowercase to uppercase: `aA`,
+- Adjacent digits and letters: `a1`, `1a`, `A1`, `1A`,
+- Acroynms: `AAa` (as in `HTTPRequest`).
 
-For more precision, you can specify boundaries to split based on the word boundaries of a particular case. For example, splitting from snake case will only use underscores as word boundaries:
+For more precision, you can specify boundaries to split based on the word boundaries of a particular case. For example, you can explicitly specify which boundaries will be used:
 
 ```python id="precision" exec="true" source="tabbed-left" tabs="precision.py|output.txt" result="txt" hl_lines="4"
 --8<-- "docs/assets/snippets/index/precision.py"
@@ -60,7 +60,7 @@ This library can detect acronyms in camel-like strings. It also ignores any lead
 --8<-- "docs/assets/snippets/index/acronyms.py"
 ```
 
-The library also supports non-ASCII characters. However, no inferences on the input language itself is made. For example, in Dutch, the digraph "ij" is treated as two separate Unicode characters and will not be capitalized. In contrast, the character "æ" will be capitalized as expected. Also, in English the text "I THINK I DO" will be converted to "i think i do", not "I think I do". This means that the library can handle various characters:
+The library also supports non-ASCII characters. **However, no inferences on the input language itself is made**. For example, in Dutch, the digraph "ij" is treated as two separate Unicode characters and will not be capitalized. In contrast, the character "æ" will be capitalized as expected. Also, in English the text "I THINK I DO" will be converted to "i think i do", not "I think I do". This means that the library can handle various characters:
 
 ```python id="non_ascii" exec="true" source="tabbed-left" tabs="non_ascii.py|output.txt" result="txt" 
 --8<-- "docs/assets/snippets/index/non_ascii.py"

@@ -161,7 +161,7 @@ Get test coverage report using [coverage](https://pypi.org/project/coverage/) an
 just coverage
 ```
 
-Start [mkdocs](https://www.mkdocs.org/) documentation:
+Start [MkDocs](https://www.mkdocs.org/) documentation:
 
 ```sh
 just docs-serve
@@ -170,6 +170,17 @@ just docs-serve
 ### Commit Messages
 
 We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification for commit messages. This helps in maintaining a clear and consistent commit history. These messages are then used with [git-cliff](https://git-cliff.org/) to generate changelogs.
+
+### Documentation
+
+We use the [MkDocs](https://www.mkdocs.org/) for documentation. MkDocs is a static site generator that allows us to write documentation in Markdown, making it easy to format and maintain.
+
+We support multiple documentation languages, here are our localization maintainers:
+
+- English (`en`) — [@zobweyt](https://github.com/zobweyt)
+- Russian (`ru`) — [@zobweyt](https://github.com/zobweyt)
+
+If you need assistance or have questions regarding the documentation, feel free to reach out to the maintainers listed above. They are here to help you with any writing or localization needs!
 
 ## Attribution <!-- omit in toc -->
 
