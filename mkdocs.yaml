@@ -1,7 +1,17 @@
 site_name: textcase
 site_description: A feature-rich Python text case conversion library
+site_author: Nikita Gaziev
 site_url: https://zobweyt.github.io/textcase/
+
 edit_uri: blob/main/docs/
+
+repo_name: zobweyt/textcase
+repo_url: https://github.com/zobweyt/textcase
+
+copyright: Copyright &copy; 2025 Nikita Gaziev
+
+watch:
+  - textcase
 
 theme:
   name: material
@@ -48,14 +58,6 @@ theme:
     repo: fontawesome/brands/github
   language: en
 
-repo_name: zobweyt/textcase
-repo_url: https://github.com/zobweyt/textcase
-
-copyright: Copyright © 2025 Nikita Gaziev
-
-watch:
-  - textcase
-
 nav:
   - Home: index.md
   - Learn:
@@ -73,6 +75,15 @@ nav:
 
 plugins:
   - search
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+      cache_safe: true
+      js_files:
+      css_files:
   - markdown-exec
   - autorefs:
       resolve_closest: true
