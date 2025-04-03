@@ -18,6 +18,7 @@ jobs:
           sparse-checkout: |
             docs
             includes
+            textcase
 
       - name: Configure Git Credentials
         run: |
