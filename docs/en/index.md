@@ -1,4 +1,7 @@
 <p align="center">
+  <span>&emsp;</span>
+  <span>&emsp;</span>
+  <span>&emsp;</span>
   <a href="https://pypi.python.org/pypi/textcase">
     <img src="https://raw.githubusercontent.com/zobweyt/textcase/refs/heads/main/docs/assets/favicon.svg" alt="textcase logo" width="96" height="96" />
   </a>
