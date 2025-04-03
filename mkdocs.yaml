@@ -8,6 +8,9 @@ edit_uri: blob/main/docs/
 
 copyright: Copyright &copy; 2025 Nikita Gaziev
 
+watch:
+  - textcase
+
 theme:
   name: material
   logo: assets/favicon.white.svg
