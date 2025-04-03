@@ -52,7 +52,7 @@ filter_unconventional = false
 commit_parsers = [
     { message = "^feat", group = "Features" },
     { message = "^fix", group = "Bug Fixes" },
-    { message = "^doc", group = "Documentation" },
+    { message = "^doc", group = "Documentation", skip = true },
     { message = "^perf", group = "Performance" },
     { message = "^refactor", group = "Refactor" },
     { message = "^style", group = "Styling" },
@@ -61,7 +61,7 @@ commit_parsers = [
     { message = "^chore\\(pr\\)", skip = true },
     { message = "^chore\\(pull\\)", skip = true },
     { message = "^chore\\(release\\): prepare for", skip = true },
-    { message = "^chore|^ci", group = "Miscellaneous" },
+    { message = "^chore|^ci", skip = true },
     { body = ".*security", group = "Security" },
 ]
 # Exclude commits that are not matched by any commit parser.
