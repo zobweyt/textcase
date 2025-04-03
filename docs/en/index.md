@@ -1,14 +1,40 @@
-# textcase
+<p align="center">
+  <a href="https://pypi.python.org/pypi/textcase">
+    <img src="https://raw.githubusercontent.com/zobweyt/textcase/refs/heads/main/docs/assets/favicon.svg" alt="textcase logo" width="96" height="96" />
+  </a>
+</p>
 
-[![Coveralls](https://img.shields.io/coverallsCoverage/github/zobweyt/textcase?branch=main)](https://coveralls.io/github/zobweyt/textcase)
-[![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](https://pypi.python.org/pypi/textcase)
-[![PyPI - Version](https://img.shields.io/pypi/v/textcase.svg)](https://pypi.python.org/pypi/textcase)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/textcase.svg)](https://pypi.python.org/pypi/textcase)
-[![PyPI - Types](https://img.shields.io/pypi/types/textcase)](https://pypi.python.org/pypi/textcase)
-[![PyPI - Wheel](https://img.shields.io/pypi/wheel/textcase)](https://pypi.python.org/pypi/textcase)
-[![AUR Version](https://img.shields.io/aur/version/python-textcase-git)](https://aur.archlinux.org/packages/python-textcase-git)
+<h1 align="center">
+  textcase
+</h1>
 
-A feature-rich Python text case conversion library.
+<p align="center">
+  A feature-rich Python text case conversion library.
+</p>
+
+<p align="center">
+  <a href="https://coveralls.io/github/zobweyt/textcase" target="_blank">
+    <img src="https://img.shields.io/coverallsCoverage/github/zobweyt/textcase?branch=main" alt="Coveralls"/>
+  </a>
+  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
+    <img src="https://img.shields.io/badge/dependencies-0-brightgreen" alt="Dependencies"/>
+  </a>
+  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
+    <img src="https://img.shields.io/pypi/v/textcase.svg" alt="PyPI - Version"/>
+  </a>
+  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
+    <img src="https://img.shields.io/pypi/pyversions/textcase.svg" alt="PyPI - Python Version"/>
+  </a>
+  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
+    <img src="https://img.shields.io/pypi/types/textcase" alt="PyPI - Types"/>
+  </a>
+  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
+    <img src="https://img.shields.io/pypi/wheel/textcase" alt="PyPI - Wheel"/>
+  </a>
+  <a href="https://aur.archlinux.org/packages/python-textcase-git" target="_blank">
+    <img src="https://img.shields.io/aur/version/python-textcase-git" alt="AUR Version"/>
+  </a>
+</p>
 
 ## Features
 
@@ -35,11 +61,11 @@ Done!
 
 You can convert strings into a case using the [`convert`](./../en/reference/convert.md/) function:
 
-```python id="convert" exec="true" source="tabbed-left" tabs="convert.py|output.txt" result="txt" 
+```python id="convert" exec="true" source="tabbed-left" tabs="convert.py|output.txt" result="txt"
 --8<-- "docs/assets/snippets/index/convert.py"
 ```
 
-By default, [`convert`](./../en/reference/convert.md/) and [`CaseConverter.convert`](./reference/converter.md/#textcase.converter.CaseConverter.convert) will split along a set of [default word boundaries]((./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES)), that is:
+By default, [`convert`](./../en/reference/convert.md/) and [`CaseConverter.convert`](./reference/converter.md/#textcase.converter.CaseConverter.convert) will split along a set of [default word boundaries](<(./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES)>), that is:
 
 - Underscores: `_`,
 - Hyphens: `-`,
@@ -56,13 +82,13 @@ For more precision, you can specify boundaries to split based on the word bounda
 
 This library can detect acronyms in camel-like strings. It also ignores any leading, trailing, or duplicate delimiters:
 
-```python id="acronyms" exec="true" source="tabbed-left" tabs="acronyms.py|output.txt" result="txt" 
+```python id="acronyms" exec="true" source="tabbed-left" tabs="acronyms.py|output.txt" result="txt"
 --8<-- "docs/assets/snippets/index/acronyms.py"
 ```
 
 The library also supports non-ASCII characters. **However, no inferences on the input language itself is made**. For example, in Dutch, the digraph "ij" is treated as two separate Unicode characters and will not be capitalized. In contrast, the character "æ" will be capitalized as expected. Also, in English the text "I THINK I DO" will be converted to "i think i do", not "I think I do". This means that the library can handle various characters:
 
-```python id="non_ascii" exec="true" source="tabbed-left" tabs="non_ascii.py|output.txt" result="txt" 
+```python id="non_ascii" exec="true" source="tabbed-left" tabs="non_ascii.py|output.txt" result="txt"
 --8<-- "docs/assets/snippets/index/non_ascii.py"
 ```
 

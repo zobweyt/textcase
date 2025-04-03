@@ -1,14 +1,40 @@
-# textcase
+<p align="center">
+  <a href="https://pypi.python.org/pypi/textcase">
+    <img src="https://raw.githubusercontent.com/zobweyt/textcase/refs/heads/main/docs/assets/favicon.svg" alt="textcase logo" width="96" height="96" />
+  </a>
+</p>
 
-[![Coveralls](https://img.shields.io/coverallsCoverage/github/zobweyt/textcase?branch=main)](https://coveralls.io/github/zobweyt/textcase)
-[![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](https://pypi.python.org/pypi/textcase)
-[![PyPI - Version](https://img.shields.io/pypi/v/textcase.svg)](https://pypi.python.org/pypi/textcase)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/textcase.svg)](https://pypi.python.org/pypi/textcase)
-[![PyPI - Types](https://img.shields.io/pypi/types/textcase)](https://pypi.python.org/pypi/textcase)
-[![PyPI - Wheel](https://img.shields.io/pypi/wheel/textcase)](https://pypi.python.org/pypi/textcase)
-[![AUR Version](https://img.shields.io/aur/version/python-textcase-git)](https://aur.archlinux.org/packages/python-textcase-git)
+<h1 align="center">
+  textcase
+</h1>
 
-Многофункциональная библиотека преобразования регистра текста в Python.
+<p align="center">
+  Многофункциональная библиотека преобразования регистра текста в Python.
+</p>
+
+<p align="center">
+  <a href="https://coveralls.io/github/zobweyt/textcase" target="_blank">
+    <img src="https://img.shields.io/coverallsCoverage/github/zobweyt/textcase?branch=main" alt="Coveralls"/>
+  </a>
+  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
+    <img src="https://img.shields.io/badge/dependencies-0-brightgreen" alt="Dependencies"/>
+  </a>
+  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
+    <img src="https://img.shields.io/pypi/v/textcase.svg" alt="PyPI - Version"/>
+  </a>
+  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
+    <img src="https://img.shields.io/pypi/pyversions/textcase.svg" alt="PyPI - Python Version"/>
+  </a>
+  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
+    <img src="https://img.shields.io/pypi/types/textcase" alt="PyPI - Types"/>
+  </a>
+  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
+    <img src="https://img.shields.io/pypi/wheel/textcase" alt="PyPI - Wheel"/>
+  </a>
+  <a href="https://aur.archlinux.org/packages/python-textcase-git" target="_blank">
+    <img src="https://img.shields.io/aur/version/python-textcase-git" alt="AUR Version"/>
+  </a>
+</p>
 
 ## Особенности
 
