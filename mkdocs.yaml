@@ -14,15 +14,15 @@ theme:
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep purple
-      accent: deep orange
+      primary: brown
+      accent: brown
       toggle:
         icon: material/lightbulb
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep purple
-      accent: deep orange
+      primary: brown
+      accent: brown
       toggle:
         icon: material/lightbulb-outline
         name: Switch to system preference
@@ -40,7 +40,6 @@ theme:
     - navigation.instant.progress
     - navigation.path
     - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
     - search.highlight
