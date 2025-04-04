@@ -77,18 +77,6 @@ By default, [`convert`](./reference/convert.md/) and [`CaseConverter.convert`](.
 - Adjacent digits and letters: `a1`, `1a`, `A1`, `1A`,
 - Acroynms: `AAa` (as in `HTTPRequest`).
 
-=== "users.csv"
-
-    ```csv
-    --8<-- "docs/assets/snippets/use/users.csv"
-    ```
-
-=== "pandas.py"
-
-    ```python id="pandas" exec="true" source="material-block" result="csv" hl_lines="7 10"
-    --8<-- "docs/assets/snippets/use/pandas.py"
-    ```
-
 For more precision, you can specify boundaries to split based on the word boundaries of a particular case. For example, you can explicitly specify which boundaries will be used:
 
 ```python id="precision" exec="true" source="tabbed-left" tabs="precision.py|output.txt" result="txt" hl_lines="4"
