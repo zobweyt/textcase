@@ -62,13 +62,13 @@ Done!
 
 ## Usage
 
-You can convert strings into a case using the [`convert`](./../en/reference/convert.md/) function:
+You can convert strings into a case using the [`convert`](./reference/convert.md/) function:
 
 ```python id="convert" exec="true" source="tabbed-left" tabs="convert.py|output.txt" result="txt"
 --8<-- "docs/assets/snippets/index/convert.py"
 ```
 
-By default, [`convert`](./../en/reference/convert.md/) and [`CaseConverter.convert`](./reference/converter.md/#textcase.converter.CaseConverter.convert) will split along a set of [default word boundaries](<(./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES)>), that is:
+By default, [`convert`](./reference/convert.md/) and [`CaseConverter.convert`](./reference/converter.md/#textcase.converter.CaseConverter.convert) will split along a set of [default word boundaries](./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES), that is:
 
 - Underscores: `_`,
 - Hyphens: `-`,
@@ -76,6 +76,18 @@ By default, [`convert`](./../en/reference/convert.md/) and [`CaseConverter.conve
 - Changes in capitalization from lowercase to uppercase: `aA`,
 - Adjacent digits and letters: `a1`, `1a`, `A1`, `1A`,
 - Acroynms: `AAa` (as in `HTTPRequest`).
+
+=== "users.csv"
+
+    ```csv
+    --8<-- "docs/assets/snippets/use/users.csv"
+    ```
+
+=== "pandas.py"
+
+    ```python id="pandas" exec="true" source="material-block" result="csv" hl_lines="7 10"
+    --8<-- "docs/assets/snippets/use/pandas.py"
+    ```
 
 For more precision, you can specify boundaries to split based on the word boundaries of a particular case. For example, you can explicitly specify which boundaries will be used:
 
