@@ -81,7 +81,7 @@ plugins:
       minify_js: true
       minify_css: true
       htmlmin_opts:
-          remove_comments: true
+        remove_comments: true
       cache_safe: true
       js_files:
       css_files:
@@ -107,9 +107,11 @@ plugins:
             Reference: Спецификация
             Changelog: Журнал изменений
   - git-committers:
+      enabled: !ENV [CI, false]
       repository: zobweyt/textcase
       branch: main
   - git-revision-date-localized:
+      enabled: !ENV [CI, false]
       enable_creation_date: true
       type: timeago
   - termynal:
@@ -160,14 +162,14 @@ extra:
     feedback:
       title: Was this page helpful?
       ratings:
-      - icon: material/emoticon-happy-outline
-        name: This page was helpful
-        data: 1
-        note: Thanks for your feedback!
-      - icon: material/emoticon-sad-outline
-        name: This page could be improved
-        data: 0
-        note: Thanks for your feedback!
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: Thanks for your feedback!
   social:
     - icon: simple/archlinux
       link: https://aur.archlinux.org/packages/python-textcase-git
