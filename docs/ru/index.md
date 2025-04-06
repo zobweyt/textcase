@@ -25,6 +25,9 @@
   <a href="https://pypi.python.org/pypi/textcase" target="_blank">
     <img src="https://img.shields.io/pypi/v/textcase.svg" alt="PyPI - Version"/>
   </a>
+  <a href="https://pypistats.org/packages/textcase" target="_blank">
+    <img src="https://img.shields.io/pypi/dm/textcase" alt="PyPI - Downloads"/>
+  </a>
   <a href="https://pypi.python.org/pypi/textcase" target="_blank">
     <img src="https://img.shields.io/pypi/pyversions/textcase.svg" alt="PyPI - Python Version"/>
   </a>
