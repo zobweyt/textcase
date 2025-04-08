@@ -78,7 +78,7 @@ By default, [`convert`](./reference/convert.md/) and [`CaseConverter.convert`](.
 - Spaces: ` `,
 - Changes in capitalization from lowercase to uppercase: `aA`,
 - Adjacent digits and letters: `a1`, `1a`, `A1`, `1A`,
-- Acroynms: `AAa` (as in `HTTPRequest`).
+- Acronyms: `AAa` (as in `HTTPRequest`).
 
 For more precision, you can specify boundaries to split based on the word boundaries of a particular case. For example, you can explicitly specify which boundaries will be used:
 

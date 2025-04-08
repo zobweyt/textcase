@@ -26,7 +26,7 @@ from typing import Callable, Final, Iterable, Iterator, Tuple
 class Boundary:
     """Represents a condition for splitting an identifier into words.
 
-    Some boundaries, `HYPHEN`, `UNDERSCORE`, and `SPACE`, consume the character theysplit on,
+    Some boundaries, `HYPHEN`, `UNDERSCORE`, and `SPACE`, consume the character they split on,
     whereas the other boundaries do not.
 
     ## Example:
@@ -155,7 +155,7 @@ Default boundaries used for splitting strings into words:
 * spaces ` `
 * changes in capitalization from lowercase to uppercase `aA`
 * adjacent digits and letters `a1`, `1a`, `A1`, `1A`
-* acroynms `AAa` (as in `HTTPRequest`)
+* acronyms `AAa` (as in `HTTPRequest`)
 """
 
 
