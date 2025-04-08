@@ -82,6 +82,7 @@ default-groups = ["dev", "docs"]
 
 [tool.mypy]
 files = [
+    "docs",
     "tests",
     "textcase",
 ]
