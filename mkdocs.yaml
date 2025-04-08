@@ -18,21 +18,21 @@ theme:
   palette:
     - media: (prefers-color-scheme)
       toggle:
-        icon: material/lightbulb-auto
+        icon: material/brightness-auto
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: brown
       accent: brown
       toggle:
-        icon: material/lightbulb
+        icon: material/white-balance-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: brown
       accent: brown
       toggle:
-        icon: material/lightbulb-outline
+        icon: material/weather-night
         name: Switch to system preference
   features:
     - content.action.edit
