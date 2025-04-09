@@ -23,14 +23,14 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: brown
-      accent: brown
+      accent: deep orange
       toggle:
         icon: material/white-balance-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: brown
-      accent: brown
+      accent: deep orange
       toggle:
         icon: material/weather-night
         name: Switch to system preference
