@@ -5,6 +5,7 @@ site_url: https://zobweyt.github.io/textcase/
 repo_name: zobweyt/textcase
 repo_url: https://github.com/zobweyt/textcase
 edit_uri: blob/main/docs/
+exclude_docs: .*
 
 copyright: Copyright &copy; 2025 Nikita Gaziev
 
@@ -57,7 +58,7 @@ theme:
   icon:
     repo: simple/github
   language: en
-  custom_dir: docs/templates
+  custom_dir: docs/.overrides
 
 nav:
   - Home: index.md

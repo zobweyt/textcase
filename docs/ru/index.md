@@ -73,7 +73,7 @@ $ pip install textcase
 Вы можете преобразовать строки в регистр, используя функцию [`convert`](./reference/convert.md/):
 
 ```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
---8<-- "docs/assets/snippets/index/convert.py"
+--8<-- "docs/.snippets/index/convert.py"
 ```
 
 По умолчанию [`convert`](./reference/convert.md/) и [`CaseConverter.convert`](./reference/converter.md/#textcase.converter) будут делить слова [по заданным по умолчанию границам слов](./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES), то есть:
@@ -88,29 +88,29 @@ $ pip install textcase
 Для большей точности вы можете указать границы для разделения, основываясь на границах слов для конкретного случая. Например, вы можете явно указать какие границы будут использоваться:
 
 ```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt" hl_lines="4"
---8<-- "docs/assets/snippets/index/precision.py"
+--8<-- "docs/.snippets/index/precision.py"
 ```
 
 Эта библиотека может распознавать аббревиатуры и сокращения в строках, подобные тем, что используются в регистре camel. Она также игнорирует любые начальные, конечные или повторяющиеся разделители:
 
 ```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
---8<-- "docs/assets/snippets/index/acronyms.py"
+--8<-- "docs/.snippets/index/acronyms.py"
 ```
 
 Библиотека также поддерживает символы, отличные от ASCII. **Однако при этом не делается никаких выводов о языке ввода**. Например, в голландском языке орграф "ij" рассматривается как два отдельных символа Unicode и не пишется с заглавной буквы. В отличие от этого, символ "æ" будет написан с заглавной буквы, как и ожидалось. Кроме того, в английском языке текст "I THINK I DO" будет преобразован в "i think i do", а не в "I think I do". Это означает, что библиотека может обрабатывать различные символы:
 
 ```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
---8<-- "docs/assets/snippets/index/non_ascii.py"
+--8<-- "docs/.snippets/index/non_ascii.py"
 ```
 
 По умолчанию символы, за которыми следуют цифры, и наоборот, считаются границами слов. Кроме того, любые специальные символы ASCII (кроме `_` и `-`) игнорируются:
 
 ```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
---8<-- "docs/assets/snippets/index/special.py"
+--8<-- "docs/.snippets/index/special.py"
 ```
 
 Вы также можете проверить, в каком регистре находится строка:
 
 ```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
---8<-- "docs/assets/snippets/index/is_case.py"
+--8<-- "docs/.snippets/index/is_case.py"
 ```
