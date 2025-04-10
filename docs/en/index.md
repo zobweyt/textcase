@@ -70,13 +70,13 @@ Done!
 
 ## Usage
 
-You can convert strings into a case using the [`convert`](./reference/textcase.md/#textcase.convert) function:
+You can convert strings into a case using the [`convert`][textcase.convert] function:
 
 ```python id="convert" exec="true" source="tabbed-left" tabs="convert.py|output.txt" result="txt"
 --8<-- "docs/.snippets/index/convert.py"
 ```
 
-By default, [`convert`](./reference/textcase.md/#textcase.convert) and [`CaseConverter.convert`](./reference/converter.md/#textcase.converter.CaseConverter.convert) will split along a set of [default word boundaries](./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES), that is:
+By default, [`convert`][textcase.convert] and [`CaseConverter.convert`][textcase.converter.CaseConverter.convert] will split along a set of [default word boundaries][textcase.boundary.DEFAULT_BOUNDARIES], that is:
 
 - Underscores: `_`,
 - Hyphens: `-`,

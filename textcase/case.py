@@ -40,7 +40,7 @@ class Case:
     """Represents a text case format for transformation.
 
     Each case format defines how to split and transform text into a specific
-    case style. The `Case` class includes boundaries for splitting words,
+    case style. The [`Case`][textcase.case.Case] class includes boundaries for splitting words,
     a transformation pattern, and a delimiter for joining the words.
 
     **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)

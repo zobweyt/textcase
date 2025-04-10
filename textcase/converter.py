@@ -109,7 +109,7 @@ class CaseConverter:
         **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 
         Args:
-            case: The case format to convert the text to, which should be an instance of `Case`.
+            case: The case format to convert the text to.
 
         Returns:
             The current instance of CaseConverter for method chaining.
@@ -124,7 +124,7 @@ class CaseConverter:
         **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 
         Args:
-            case: The case format to derive boundaries from, which should be an instance of `Case`.
+            case: The case format to derive boundaries from.
 
         Returns:
             The current instance of CaseConverter for method chaining.

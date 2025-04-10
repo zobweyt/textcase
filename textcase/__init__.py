@@ -37,7 +37,7 @@ def is_case(text: str, case: case.Case) -> bool:
 
     Args:
         text: The input string to be checked.
-        case: The case format to check against, which should be an instance of `case.Case`.
+        case: The case format to check against.
 
     Returns:
         `True` if the text matches the specified case format, `False` otherwise.
@@ -59,7 +59,7 @@ def convert(text: str, case: case.Case, boundaries: Iterable[boundary.Boundary] 
 
     Args:
         text: The input string to be converted.
-        case: The case format to convert the text to, which should be an instance of `case.Case`.
+        case: The case format to convert the text to.
         boundaries: A collection of Boundary instances that define the split conditions.
 
     Returns:

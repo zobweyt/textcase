@@ -29,8 +29,8 @@ from typing import Callable, Final, Iterable, Iterator, Tuple
 class Boundary:
     """Represents a condition for splitting an identifier into words.
 
-    Some boundaries, `HYPHEN`, `UNDERSCORE`, and `SPACE`, consume the character they split on,
-    whereas the other boundaries do not.
+    Some boundaries, [`HYPHEN`][textcase.boundary.HYPHEN], [`UNDERSCORE`][textcase.boundary.UNDERSCORE],
+    and [`SPACE`][textcase.boundary.SPACE], consume the character they split on, whereas the other boundaries do not.
 
     **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 
@@ -106,7 +106,7 @@ UPPER_LOWER: Final[Boundary] = Boundary(
 )
 """Splits where an uppercase letter is followed by a lowercase letter.
 
-This is seldom used and is **not** included in the `DEFAULT_BOUNDARIES`.
+This is seldom used and is **not** included in the [`DEFAULT_BOUNDARIES`][textcase.boundary.DEFAULT_BOUNDARIES].
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
@@ -227,7 +227,7 @@ def get_boundaries(text: str) -> Iterator[Boundary]:
 
     This function checks the provided `text` against the default boundaries and returns
     those that are present. It evaluates each boundary condition and yields the boundaries
-    that can split the text `into` multiple parts or that do not match the entire `text`.
+    that can split the `text` into multiple parts or that do not match the entire `text`.
 
     **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 
@@ -235,7 +235,7 @@ def get_boundaries(text: str) -> Iterator[Boundary]:
         text: The input string to be analyzed for boundaries.
 
     Yields:
-        An iterator over `Boundary` instances that are identified within the given `text`.
+        An iterator over [`Boundary`][textcase.boundary.Boundary] instances that are identified within the given `text`.
 
     Examples:
         >>> assert (HYPHEN, SPACE, LOWER_UPPER, UPPER_DIGIT, DIGIT_LOWER) == tuple(get_boundaries("aA8a -"))
