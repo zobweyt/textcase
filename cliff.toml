@@ -1,3 +1,7 @@
+[remote.github]
+owner = "zobweyt"
+repo = "textcase"
+
 [changelog]
 header = """
 # Changelog
@@ -6,22 +10,36 @@ All notable changes to this project will be documented in this file.
 """
 
 body = """
+{%- set remote_url = "https://github.com/" ~ remote.github.owner ~ "/" ~ remote.github.repo -%}
+{%- set new_contributors = github.contributors | filter(attribute="is_first_time", value=true) -%}
+
 {% if version %}
-    {% if previous.version and version %}\
-        ## [{{ version }}](https://github.com/zobweyt/textcase/compare/{{ previous.version }}...{{ version }}) ({{ timestamp | date(format="%Y-%m-%d") }})
-    {% else %}\
-        ## [{{ version }}](https://github.com/zobweyt/textcase/commits/{{ version }}) ({{ timestamp | date(format="%Y-%m-%d") }})
-    {% endif %}\
-{% else %}\
+    {% if previous.version -%}
+        ## [{{ version }}]({{ remote_url }}/compare/{{ previous.version }}...{{ version }}) ({{ timestamp | date(format="%Y-%m-%d") }})
+    {% else -%}
+        ## [{{ version }}]({{ remote_url }}/commits/{{ version }}) ({{ timestamp | date(format="%Y-%m-%d") }})
+    {% endif -%}
+{% else -%}
     ## Unreleased
-{% endif %}\
+{% endif -%}
+
+{% if message %}
+    {{ message }}
+{% endif -%}
 
 {% for group, commits in commits | group_by(attribute="group") %}
     ### {{ group | upper_first }} <!-- omit in toc -->
     {% for commit in commits %}
-        - {{ commit.message | split(pat="\n") | first | trim }} ([`{{ commit.id | truncate(length=7, end="") }}`](https://github.com/zobweyt/textcase/commit/{{ commit.id }}))\
+        - {{ commit.message | split(pat="\n") | first | trim }} ([`{{ commit.id | truncate(length=7, end="") }}`]({{ remote_url }}/commit/{{ commit.id }}))\
     {% endfor %}
-{% endfor %}
+{% endfor -%}
+
+{% if new_contributors %}
+    #### New Contributors <!-- omit in toc -->
+    {% for contributor in new_contributors %}
+        - [@{{ contributor.username }}](https://github.com/{{ contributor.username }}) made their first contribution{% if contributor.pr_number %} in [#{{ contributor.pr_number }}]({{ remote_url }}/pull/{{ contributor.pr_number }}){% endif %}\
+    {% endfor %}
+{% endif -%}
 """
 
 [git]

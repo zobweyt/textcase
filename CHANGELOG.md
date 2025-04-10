@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [0.2.1](https://github.com/zobweyt/textcase/compare/0.2.0...0.2.1) (2025-04-02)
 
+Expands test coverage with new tests for edge cases and conversions.
+
 ### Testing <!-- omit in toc -->
 
 - add boundary custom tests ([`5602ed0`](https://github.com/zobweyt/textcase/commit/5602ed019ebfae8ea5df6fe17f2593bac4e99e9e))
@@ -18,6 +20,8 @@ All notable changes to this project will be documented in this file.
 - add pattern tests ([`e03f54e`](https://github.com/zobweyt/textcase/commit/e03f54ecdc3554c5145ef66f1cb14e46a34e5fae))
 
 ## [0.2.0](https://github.com/zobweyt/textcase/compare/0.1.0...0.2.0) (2025-04-01)
+
+Adds initial functionality for text case conversion, with extensibility possible.
 
 ### Bug Fixes <!-- omit in toc -->
 
@@ -46,6 +50,12 @@ All notable changes to this project will be documented in this file.
 
 ## [0.1.0](https://github.com/zobweyt/textcase/commits/0.1.0) (2025-03-31)
 
+Initial release.
+
 ### Features <!-- omit in toc -->
 
 - init ([`22ec6ca`](https://github.com/zobweyt/textcase/commit/22ec6ca462445c19b8de9a3e378905d4be7ca94a))
+
+#### New Contributors <!-- omit in toc -->
+
+- [@zobweyt](https://github.com/zobweyt) made their first contribution
