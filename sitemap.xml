@@ -50,13 +50,6 @@
         <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/reference/case/"/>
     </url>
     <url>
-        <loc>https://zobweyt.github.io/textcase/reference/convert/</loc>
-        <lastmod>2025-04-10</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/reference/convert/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/reference/convert/"/>
-    </url>
-    <url>
         <loc>https://zobweyt.github.io/textcase/reference/converter/</loc>
         <lastmod>2025-04-10</lastmod>
         <changefreq>daily</changefreq>
@@ -64,18 +57,18 @@
         <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/reference/converter/"/>
     </url>
     <url>
-        <loc>https://zobweyt.github.io/textcase/reference/is_case/</loc>
-        <lastmod>2025-04-10</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/reference/is_case/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/reference/is_case/"/>
-    </url>
-    <url>
         <loc>https://zobweyt.github.io/textcase/reference/pattern/</loc>
         <lastmod>2025-04-10</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/reference/pattern/"/>
         <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/reference/pattern/"/>
+    </url>
+    <url>
+        <loc>https://zobweyt.github.io/textcase/reference/textcase/</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/reference/textcase/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/reference/textcase/"/>
     </url>
     <url>
         <loc>https://zobweyt.github.io/textcase/ru/</loc>
@@ -127,13 +120,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/reference/case/"/>
     </url>
     <url>
-        <loc>https://zobweyt.github.io/textcase/ru/reference/convert/</loc>
-        <lastmod>2025-04-10</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/reference/convert/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/reference/convert/"/>
-    </url>
-    <url>
         <loc>https://zobweyt.github.io/textcase/ru/reference/converter/</loc>
         <lastmod>2025-04-10</lastmod>
         <changefreq>daily</changefreq>
@@ -141,17 +127,17 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/reference/converter/"/>
     </url>
     <url>
-        <loc>https://zobweyt.github.io/textcase/ru/reference/is_case/</loc>
-        <lastmod>2025-04-10</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/reference/is_case/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/reference/is_case/"/>
-    </url>
-    <url>
         <loc>https://zobweyt.github.io/textcase/ru/reference/pattern/</loc>
         <lastmod>2025-04-10</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/reference/pattern/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/reference/pattern/"/>
+    </url>
+    <url>
+        <loc>https://zobweyt.github.io/textcase/ru/reference/textcase/</loc>
+        <lastmod>2025-04-10</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/reference/textcase/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/reference/textcase/"/>
     </url>
 </urlset>
