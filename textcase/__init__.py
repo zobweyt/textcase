@@ -68,9 +68,6 @@ def convert(text: str, case: case.Case, boundaries: Iterable[boundary.Boundary] 
     Examples:
         >>> convert("2020-04-16_my_cat_cali", case.SNAKE)
         '2020_04_16_my_cat_cali'
-        
-        >>> is_case("2020_04_16_my_cat_cali", case.SNAKE)
-        True
     """
     return case.delimiter.join(case.pattern(boundary.split(text, boundaries)))
 
