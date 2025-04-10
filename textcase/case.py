@@ -1,4 +1,7 @@
-"""Case definitions for text transformation."""
+"""Case definitions for text transformation.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
 
 __all__ = [
     "Case",
@@ -40,19 +43,30 @@ class Case:
     case style. The `Case` class includes boundaries for splitting words,
     a transformation pattern, and a delimiter for joining the words.
 
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+
     Examples:
-    >>> Case(boundaries=(SPACE,), pattern=capital, delimiter=" ").delimiter
-    ' '
+        >>> Case(boundaries=(SPACE,), pattern=capital, delimiter=" ").delimiter
+        ' '
     """
 
     boundaries: Iterable[Boundary]
-    """The boundaries used to split the text into words."""
+    """The boundaries used to split the text into words.
+
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+    """
 
     pattern: Callable[[Iterable[str]], Iterable[str]] = lambda words: words
-    """A callable that defines how to transform the split words into the desired case format."""
+    """A callable that defines how to transform the split words into the desired case format.
+
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+    """
 
     delimiter: str = ""
-    """The string used to join the transformed words together."""
+    """The string used to join the transformed words together.
+    
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+    """
 
 
 SNAKE: Final[Case] = Case(
@@ -60,21 +74,30 @@ SNAKE: Final[Case] = Case(
     pattern=lower,
     delimiter="_",
 )
-"""Snake case strings are delimited by underscores `_` and are all lowercase."""
+"""Snake case strings are delimited by underscores `_` and are all lowercase.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
 
 CONSTANT: Final[Case] = Case(
     boundaries=(UNDERSCORE,),
     pattern=upper,
     delimiter="_",
 )
-"""Constant case strings are delimited by underscores `_` and are all uppercase."""
+"""Constant case strings are delimited by underscores `_` and are all uppercase.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
 
 KEBAB: Final[Case] = Case(
     boundaries=(HYPHEN,),
     pattern=lower,
     delimiter="-",
 )
-"""Kebab case strings are delimited by hyphens `-` and are all lowercase."""
+"""Kebab case strings are delimited by hyphens `-` and are all lowercase.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
 
 CAMEL: Final[Case] = Case(
     boundaries=(
@@ -87,7 +110,10 @@ CAMEL: Final[Case] = Case(
     ),
     pattern=camel,
 )
-"""Camel case strings are lowercase, but for every word *except the first* the first letter is capitalized."""
+"""Camel case strings are lowercase, but for every word *except the first* the first letter is capitalized.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
 
 PASCAL: Final[Case] = Case(
     boundaries=(
@@ -100,35 +126,50 @@ PASCAL: Final[Case] = Case(
     ),
     pattern=capital,
 )
-"""Pascal case strings are lowercase, but for every word the first letter is capitalized."""
+"""Pascal case strings are lowercase, but for every word the first letter is capitalized.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
 
 LOWER: Final[Case] = Case(
     boundaries=(SPACE,),
     pattern=lower,
     delimiter=" ",
 )
-"""Lowercase strings are delimited by spaces and all characters are lowercase."""
+"""Lowercase strings are delimited by spaces and all characters are lowercase.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
 
 UPPER: Final[Case] = Case(
     boundaries=(SPACE,),
     pattern=upper,
     delimiter=" ",
 )
-"""Uppercase strings are delimited by spaces and all characters are uppercase."""
+"""Uppercase strings are delimited by spaces and all characters are uppercase.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
 
 TITLE: Final[Case] = Case(
     boundaries=(SPACE,),
     pattern=capital,
     delimiter=" ",
 )
-"""Title case strings are delimited by spaces. Only the leading character of each word is uppercase."""
+"""Title case strings are delimited by spaces. Only the leading character of each word is uppercase.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
 
 SENTENCE: Final[Case] = Case(
     boundaries=(SPACE,),
     pattern=sentence,
     delimiter=" ",
 )
-"""Sentence case strings are delimited by spaces. Only the leading character of the first word is uppercase."""
+"""Sentence case strings are delimited by spaces. Only the leading character of the first word is uppercase.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
 
 
 if __name__ == "__main__":

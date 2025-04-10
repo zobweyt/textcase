@@ -1,4 +1,7 @@
-"""Conditions for splitting an identifier into words."""
+"""Conditions for splitting an identifier into words.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
 
 __all__ = [
     "Boundary",
@@ -29,111 +32,131 @@ class Boundary:
     Some boundaries, `HYPHEN`, `UNDERSCORE`, and `SPACE`, consume the character they split on,
     whereas the other boundaries do not.
 
-    ## Example:
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 
-    You can also create custom boundaries:
+    Examples:
+        ```python
+        from textcase.boundary import Boundary
 
-    ```python
-    from textcase.boundary import Boundary
-
-    UNDERSCORE = Boundary(
-        satisfies=lambda text: text.startswith("_"),
-        length=1,
-    )
-    ```
+        UNDERSCORE = Boundary(
+            satisfies=lambda text: text.startswith("_"),
+            length=1,
+        )
+        ```
     """
 
     satisfies: Callable[[str], bool]
-    """A function that determines if this boundary is present at the start of the string."""
+    """A function that determines if this boundary is present at the start of the string.
+    
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+    """
 
     start: int = 0
-    """Where the beginning of the boundary is."""
+    """Where the beginning of the boundary is.
+    
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+    """
 
     length: int = 0
-    """The length of the boundary. This is the number of graphemes that are removed when splitting."""
+    """The length of the boundary. This is the number of graphemes that are removed when splitting.
+    
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+    """
 
 
 UNDERSCORE: Final[Boundary] = Boundary(
     satisfies=lambda text: text.startswith("_"),
     length=1,
 )
-"""
-Splits on `_`, consuming the character on segmentation.
+"""Splits on `_`, consuming the character on segmentation.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
 HYPHEN: Final[Boundary] = Boundary(
     satisfies=lambda text: text.startswith("-"),
     length=1,
 )
-"""
-Splits on `-`, consuming the character on segmentation.
+"""Splits on `-`, consuming the character on segmentation.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
 SPACE: Final[Boundary] = Boundary(
     satisfies=lambda text: text.startswith(" "),
     length=1,
 )
-"""
-Splits on space, consuming the character on segmentation.
+"""Splits on space, consuming the character on segmentation.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
 LOWER_UPPER: Final[Boundary] = Boundary(
     satisfies=lambda text: len(text) > 1 and text[0].islower() and text[1].isupper(),
     start=1,
 )
-"""
-Splits where a lowercase letter is followed by an uppercase letter.
+"""Splits where a lowercase letter is followed by an uppercase letter.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
 UPPER_LOWER: Final[Boundary] = Boundary(
     satisfies=lambda text: len(text) > 1 and text[0].isupper() and text[1].islower(),
     start=1,
 )
-"""
-Splits where an uppercase letter is followed by a lowercase letter.
+"""Splits where an uppercase letter is followed by a lowercase letter.
+
 This is seldom used and is **not** included in the `DEFAULT_BOUNDARIES`.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
 ACRONYM: Final[Boundary] = Boundary(
     satisfies=lambda text: len(text) > 2 and text[0].isupper() and text[1].isupper() and text[2].islower(),
     start=1,
 )
-"""
-Acronyms are identified by two uppercase letters followed by a lowercase letter.
+"""Acronyms are identified by two uppercase letters followed by a lowercase letter.
+
 The word boundary is between the two uppercase letters.  For example, "HTTPRequest"
 would have an acronym boundary identified at "PRe" and split into "HTTP" and "Request".
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
 LOWER_DIGIT: Final[Boundary] = Boundary(
     satisfies=lambda text: len(text) > 1 and text[0].islower() and text[1].isdigit(),
     start=1,
 )
-"""
-Splits where a lowercase letter is followed by a digit.
+"""Splits where a lowercase letter is followed by a digit.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
 UPPER_DIGIT: Final[Boundary] = Boundary(
     satisfies=lambda text: len(text) > 1 and text[0].isupper() and text[1].isdigit(),
     start=1,
 )
-"""
-Splits where an uppercase letter is followed by a digit.
+"""Splits where an uppercase letter is followed by a digit.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
 DIGIT_LOWER: Final[Boundary] = Boundary(
     satisfies=lambda text: len(text) > 1 and text[0].isdigit() and text[1].islower(),
     start=1,
 )
-"""
-Splits where digit is followed by a lowercase letter.
+"""Splits where digit is followed by a lowercase letter.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
 DIGIT_UPPER: Final[Boundary] = Boundary(
     satisfies=lambda text: len(text) > 1 and text[0].isdigit() and text[1].isupper(),
     start=1,
 )
-"""
-Splits where digit is followed by an uppercase letter.
+"""Splits where digit is followed by an uppercase letter.
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
 DEFAULT_BOUNDARIES: Final[Tuple[Boundary, ...]] = (
@@ -147,15 +170,16 @@ DEFAULT_BOUNDARIES: Final[Tuple[Boundary, ...]] = (
     DIGIT_UPPER,
     ACRONYM,
 )
-"""
-Default boundaries used for splitting strings into words:
+"""Default boundaries used for splitting strings into words.
 
-* underscores `_`
-* hyphens `-`
-* spaces ` `
-* changes in capitalization from lowercase to uppercase `aA`
-* adjacent digits and letters `a1`, `1a`, `A1`, `1A`
-* acronyms `AAa` (as in `HTTPRequest`)
+* Underscores: `_`,
+* Hyphens: `-`,
+* Spaces: ` `,
+* Changes in capitalization from lowercase to uppercase: `aA`,
+* Adjacent digits and letters: `a1`, `1a`, `A1`, `1A`,
+* Acronyms: `AAa` (as in `HTTPRequest`).
+
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
 
@@ -166,12 +190,14 @@ def split(text: str, boundaries: Iterable[Boundary] = DEFAULT_BOUNDARIES) -> Ite
     specified boundary conditions. It yields each word found in the text, excluding
     empty strings.
 
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+
     Args:
-        text (str): The input string to be split into words.
-        boundaries (Iterable[Boundary], optional): A collection of Boundary instances that define the split conditions.
+        text: The input string to be split into words.
+        boundaries: A collection of Boundary instances that define the split conditions.
 
     Yields:
-        Iterator[str]: An iterator over the words extracted from the input text.
+        An iterator over the words extracted from the input text.
 
     Examples:
         >>> assert ("one", "two", "three.four") == tuple(split("one_two-three.four", (UNDERSCORE, HYPHEN)))
@@ -203,11 +229,13 @@ def get_boundaries(text: str) -> Iterator[Boundary]:
     those that are present. It evaluates each boundary condition and yields the boundaries
     that can split the text `into` multiple parts or that do not match the entire `text`.
 
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+
     Args:
-        text (str): The input string to be analyzed for boundaries.
+        text: The input string to be analyzed for boundaries.
 
     Yields:
-        Iterator[Boundary]: An iterator over `Boundary` instances that are identified within the given `text`.
+        An iterator over `Boundary` instances that are identified within the given `text`.
 
     Examples:
         >>> assert (HYPHEN, SPACE, LOWER_UPPER, UPPER_DIGIT, DIGIT_LOWER) == tuple(get_boundaries("aA8a -"))

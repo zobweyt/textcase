@@ -1,5 +1,7 @@
 """Text case transformation patterns.
 
+**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+
 Examples:
     >>> tuple(lower(("Hello", "World")))
     ('hello', 'world')
@@ -33,11 +35,13 @@ from typing import Iterable, Iterator
 def lower(words: Iterable[str]) -> Iterator[str]:
     """Convert all words to lowercase.
 
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+
     Args:
-        words (Iterable[str]): An iterable of words to convert.
+        words: An iterable of words to convert.
 
     Yields:
-        Iterator[str]: An iterator of words in lowercase.
+        An iterator of words in lowercase.
 
     Examples:
         >>> tuple(lower(("Hello", "World")))
@@ -49,11 +53,13 @@ def lower(words: Iterable[str]) -> Iterator[str]:
 def upper(words: Iterable[str]) -> Iterator[str]:
     """Convert all words to uppercase.
 
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+
     Args:
-        words (Iterable[str]): An iterable of words to convert.
+        words: An iterable of words to convert.
 
     Yields:
-        Iterator[str]: An iterator of words in uppercase.
+        An iterator of words in uppercase.
 
     Examples:
         >>> tuple(upper(("Hello", "World")))
@@ -65,11 +71,13 @@ def upper(words: Iterable[str]) -> Iterator[str]:
 def capital(words: Iterable[str]) -> Iterator[str]:
     """Capitalize the first letter of each word and make the rest lowercase.
 
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+
     Args:
-        words (Iterable[str]): An iterable of words to convert.
+        words: An iterable of words to convert.
 
     Yields:
-        Iterator[str]: An iterator of words with the first letter capitalized.
+        An iterator of words with the first letter capitalized.
 
     Examples:
         >>> tuple(capital(("hello", "world")))
@@ -81,11 +89,13 @@ def capital(words: Iterable[str]) -> Iterator[str]:
 def camel(words: Iterable[str]) -> Iterator[str]:
     """Convert the first word to lowercase and capitalize the remaining words.
 
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+
     Args:
-        words (Iterable[str]): An iterable of words to convert.
+        words: An iterable of words to convert.
 
     Yields:
-        Iterator[str]: An iterator of words in camel case format.
+        An iterator of words in camel case format.
 
     Examples:
         >>> tuple(camel(("hello", "world")))
@@ -99,11 +109,13 @@ def camel(words: Iterable[str]) -> Iterator[str]:
 def sentence(words: Iterable[str]) -> Iterator[str]:
     """Capitalize the first word and make the remaining words lowercase.
 
+    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+
     Args:
-        words (Iterable[str]): An iterable of words to convert.
+        words: An iterable of words to convert.
 
     Yields:
-        Iterator[str]: An iterator of words in sentence case format.
+        An iterator of words in sentence case format.
 
     Examples:
         >>> tuple(sentence(("hello", "world")))
