@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 Expands test coverage with new tests for edge cases and conversions.
 
-### Testing <!-- omit in toc -->
+### <!-- 4 -->Testing <!-- omit in toc -->
 
 - add boundary custom tests ([`5602ed0`](https://github.com/zobweyt/textcase/commit/5602ed019ebfae8ea5df6fe17f2593bac4e99e9e))
 - add case custom tests ([`b26a3c1`](https://github.com/zobweyt/textcase/commit/b26a3c1020f046b0c57399ddb03b1b3953d44dcc))
@@ -23,12 +23,12 @@ Expands test coverage with new tests for edge cases and conversions.
 
 Adds initial functionality for text case conversion, with extensibility possible.
 
-### Bug Fixes <!-- omit in toc -->
+### <!-- 0 -->Bug Fixes <!-- omit in toc -->
 
 - use final for case constants ([`5228e8d`](https://github.com/zobweyt/textcase/commit/5228e8dda4bb4a503791b1206adc54c2664d39c2))
 - use lower instead of upper for LOWER case ([`cce6ed7`](https://github.com/zobweyt/textcase/commit/cce6ed7371976e762ddf3adfe7d176635910df7f))
 
-### Features <!-- omit in toc -->
+### <!-- 1 -->Features <!-- omit in toc -->
 
 - add text case transformation patterns ([`b003fac`](https://github.com/zobweyt/textcase/commit/b003fac291a21dae0ca19688cb0fa2ea23aceb7b))
 - add conditions for splitting an identifier into words ([`fb76228`](https://github.com/zobweyt/textcase/commit/fb762289d34080cf9bd380c66330598a428dcc9d))
@@ -38,7 +38,7 @@ Adds initial functionality for text case conversion, with extensibility possible
 - add boundaries to convert function ([`0b9ea8a`](https://github.com/zobweyt/textcase/commit/0b9ea8ab20fe2f4419a13f18d68d8a9464e53da3))
 - add initial functionality (#1) ([`3073ae6`](https://github.com/zobweyt/textcase/commit/3073ae63db2b50f0e673af851f2bb2b6b5f34942))
 
-### Testing <!-- omit in toc -->
+### <!-- 4 -->Testing <!-- omit in toc -->
 
 - include doctests in pytest ([`699c5a6`](https://github.com/zobweyt/textcase/commit/699c5a6e21fcab62a22cff50c6790458727039a1))
 - ignore testmod ([`04f6862`](https://github.com/zobweyt/textcase/commit/04f68629afaecc402347a70f92edb4e82f1ffa4d))
@@ -52,7 +52,7 @@ Adds initial functionality for text case conversion, with extensibility possible
 
 Initial release.
 
-### Features <!-- omit in toc -->
+### <!-- 1 -->Features <!-- omit in toc -->
 
 - init ([`22ec6ca`](https://github.com/zobweyt/textcase/commit/22ec6ca462445c19b8de9a3e378905d4be7ca94a))
 
