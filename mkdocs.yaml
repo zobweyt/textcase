@@ -67,11 +67,10 @@ nav:
       - learn/cases.md
       - learn/converter.md
   - Reference:
+      - reference/textcase.md
       - reference/boundary.md
       - reference/case.md
-      - reference/convert.md
       - reference/converter.md
-      - reference/is_case.md
       - reference/pattern.md
   - Changelog: changelog.md
 

@@ -2,7 +2,7 @@
 
 ## Boundary Specificity
 
-It can be difficult to determine how to split a string into words. That is why the [`convert`](../reference/convert.md/) uses a set of [default word boundaries](../reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES), but sometimes that isn’t enough to meet a specific use case.
+It can be difficult to determine how to split a string into words. That is why the [`convert`](../reference/textcase.md/#textcase.convert) uses a set of [default word boundaries](../reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES), but sometimes that isn’t enough to meet a specific use case.
 
 Say a string has the word `2D`, such as `scale2D`. No exclusive usage of [`convert`](../reference/converter.md/#textcase.converter.CaseConverter.convert) will be enough to solve the problem. In this case we can further specify which boundaries to split the string on. This library provides some [templates for achieving this specificity](../reference/boundary.md/#textcase.boundary). We can specify what boundaries we want to split on using instances of the [`Boundary`](../reference/boundary.md/#textcase.boundary.Boundary) class:
 

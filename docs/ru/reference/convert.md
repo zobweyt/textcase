@@ -1,3 +1,0 @@
-# textcase.convert()
-
-::: textcase.convert

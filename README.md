@@ -64,7 +64,7 @@ pip install textcase
 
 ## Usage
 
-You can convert strings into a case using the [`convert`](https://zobweyt.github.io/textcase/reference/convert/) function:
+You can convert strings into a case using the [`convert`](https://zobweyt.github.io/textcase/reference/textcase/#textcase.convert) function:
 
 ```python
 from textcase import case, convert

@@ -70,13 +70,13 @@ $ pip install textcase
 
 ## Использование
 
-Вы можете преобразовать строки в регистр, используя функцию [`convert`](./reference/convert.md/):
+Вы можете преобразовать строки в регистр, используя функцию [`convert`](./reference/textcase.md/#textcase.convert):
 
 ```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
 --8<-- "docs/.snippets/index/convert.py"
 ```
 
-По умолчанию [`convert`](./reference/convert.md/) и [`CaseConverter.convert`](./reference/converter.md/#textcase.converter) будут делить слова [по заданным по умолчанию границам слов](./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES), то есть:
+По умолчанию [`convert`](./reference/textcase.md/#textcase.convert) и [`CaseConverter.convert`](./reference/converter.md/#textcase.converter) будут делить слова [по заданным по умолчанию границам слов](./reference/boundary.md/#textcase.boundary.DEFAULT_BOUNDARIES), то есть:
 
 - Подчёркивания: `_`,
 - Дефисы: `-`,
