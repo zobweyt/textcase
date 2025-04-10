@@ -125,6 +125,7 @@ plugins:
           options:
             extensions:
               - griffe_typingdoc
+            line_length: 120
             show_root_heading: true
             show_if_no_docstring: true
             inherited_members: true
