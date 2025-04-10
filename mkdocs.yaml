@@ -57,6 +57,7 @@ theme:
   icon:
     repo: simple/github
   language: en
+  custom_dir: docs/templates
 
 nav:
   - Home: index.md
