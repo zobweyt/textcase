@@ -45,11 +45,11 @@ body = """
 [git]
 commit_parsers = [
     { message = "^doc|^style|^chore|^ci", skip = true },
-    { message = "^feat", group = "Features" },
-    { message = "^fix", group = "Bug Fixes" },
-    { message = "^perf", group = "Performance" },
-    { message = "^refactor", group = "Refactoring" },
-    { message = "^test", group = "Testing" },
+    { message = "^fix", group = "<!-- 0 -->Bug Fixes" },
+    { message = "^feat", group = "<!-- 1 -->Features" },
+    { message = "^perf", group = "<!-- 2 -->Performance" },
+    { message = "^refactor", group = "<!-- 3 -->Refactoring" },
+    { message = "^test", group = "<!-- 4 -->Testing" },
 ]
 conventional_commits = true
 filter_commits = false
