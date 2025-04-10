@@ -56,6 +56,6 @@ Initial release.
 
 - init ([`22ec6ca`](https://github.com/zobweyt/textcase/commit/22ec6ca462445c19b8de9a3e378905d4be7ca94a))
 
-#### New Contributors <!-- omit in toc -->
+### New Contributors <!-- omit in toc -->
 
 - [@zobweyt](https://github.com/zobweyt) made their first contribution

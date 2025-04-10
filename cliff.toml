@@ -35,7 +35,7 @@ body = """
 {% endfor -%}
 
 {% if new_contributors %}
-    #### New Contributors <!-- omit in toc -->
+    ### New Contributors <!-- omit in toc -->
     {% for contributor in new_contributors %}
         - [@{{ contributor.username }}](https://github.com/{{ contributor.username }}) made their first contribution{% if contributor.pr_number %} in [#{{ contributor.pr_number }}]({{ remote_url }}/pull/{{ contributor.pr_number }}){% endif %}\
     {% endfor %}
