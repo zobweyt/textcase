@@ -22,7 +22,7 @@ format:
 
 [group("test")]
 test: check
-  uv run pytest --cov=textcase
+  uv run pytest
 
 [group("test")]
 coverage: check
