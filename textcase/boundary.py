@@ -65,7 +65,7 @@ class Boundary:
 
 
 UNDERSCORE: Final[Boundary] = Boundary(
-    satisfies=lambda text: text.startswith("_"),
+    satisfies=lambda text: text[:1] == "_",
     length=1,
 )
 """Splits on `_`, consuming the character on segmentation.
@@ -74,7 +74,7 @@ UNDERSCORE: Final[Boundary] = Boundary(
 """
 
 HYPHEN: Final[Boundary] = Boundary(
-    satisfies=lambda text: text.startswith("-"),
+    satisfies=lambda text: text[:1] == "-",
     length=1,
 )
 """Splits on `-`, consuming the character on segmentation.
@@ -83,7 +83,7 @@ HYPHEN: Final[Boundary] = Boundary(
 """
 
 SPACE: Final[Boundary] = Boundary(
-    satisfies=lambda text: text.startswith(" "),
+    satisfies=lambda text: text[:1] == " ",
     length=1,
 )
 """Splits on space, consuming the character on segmentation.
@@ -92,7 +92,7 @@ SPACE: Final[Boundary] = Boundary(
 """
 
 LOWER_UPPER: Final[Boundary] = Boundary(
-    satisfies=lambda text: len(text) > 1 and text[0].islower() and text[1].isupper(),
+    satisfies=lambda text: text[0:1].islower() and text[1:2].isupper(),
     start=1,
 )
 """Splits where a lowercase letter is followed by an uppercase letter.
@@ -101,7 +101,7 @@ LOWER_UPPER: Final[Boundary] = Boundary(
 """
 
 UPPER_LOWER: Final[Boundary] = Boundary(
-    satisfies=lambda text: len(text) > 1 and text[0].isupper() and text[1].islower(),
+    satisfies=lambda text: text[0:1].isupper() and text[1:2].islower(),
     start=1,
 )
 """Splits where an uppercase letter is followed by a lowercase letter.
@@ -112,7 +112,7 @@ This is seldom used and is **not** included in the [`DEFAULT_BOUNDARIES`][textca
 """
 
 ACRONYM: Final[Boundary] = Boundary(
-    satisfies=lambda text: len(text) > 2 and text[0].isupper() and text[1].isupper() and text[2].islower(),
+    satisfies=lambda text: text[0:2].isupper() and text[2:3].islower(),
     start=1,
 )
 """Acronyms are identified by two uppercase letters followed by a lowercase letter.
@@ -124,7 +124,7 @@ would have an acronym boundary identified at "PRe" and split into "HTTP" and "Re
 """
 
 LOWER_DIGIT: Final[Boundary] = Boundary(
-    satisfies=lambda text: len(text) > 1 and text[0].islower() and text[1].isdigit(),
+    satisfies=lambda text: text[0:1].islower() and text[1:2].isdigit(),
     start=1,
 )
 """Splits where a lowercase letter is followed by a digit.
@@ -133,7 +133,7 @@ LOWER_DIGIT: Final[Boundary] = Boundary(
 """
 
 UPPER_DIGIT: Final[Boundary] = Boundary(
-    satisfies=lambda text: len(text) > 1 and text[0].isupper() and text[1].isdigit(),
+    satisfies=lambda text: text[0:1].isupper() and text[1:2].isdigit(),
     start=1,
 )
 """Splits where an uppercase letter is followed by a digit.
@@ -142,7 +142,7 @@ UPPER_DIGIT: Final[Boundary] = Boundary(
 """
 
 DIGIT_LOWER: Final[Boundary] = Boundary(
-    satisfies=lambda text: len(text) > 1 and text[0].isdigit() and text[1].islower(),
+    satisfies=lambda text: text[0:1].isdigit() and text[1:2].islower(),
     start=1,
 )
 """Splits where digit is followed by a lowercase letter.
@@ -151,7 +151,7 @@ DIGIT_LOWER: Final[Boundary] = Boundary(
 """
 
 DIGIT_UPPER: Final[Boundary] = Boundary(
-    satisfies=lambda text: len(text) > 1 and text[0].isdigit() and text[1].isupper(),
+    satisfies=lambda text: text[0:1].isdigit() and text[1:2].isupper(),
     start=1,
 )
 """Splits where digit is followed by an uppercase letter.
@@ -243,7 +243,7 @@ def get_boundaries(text: str) -> Iterator[Boundary]:
     """
 
     for boundary in DEFAULT_BOUNDARIES:
-        parts = tuple(split(text, [boundary]))
+        parts = tuple(split(text, (boundary,)))
 
         if len(parts) > 1 or len(parts) == 0 or parts[0] != text:
             yield boundary
