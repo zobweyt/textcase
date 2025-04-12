@@ -11,10 +11,10 @@ pkgs.mkShellNoCC {
   ];
 
   shellHook = ''
+    just init
+
     if command -v zsh > /dev/null; then
       exec zsh
     fi
-
-    just init
   '';
 }
