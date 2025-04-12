@@ -19,7 +19,7 @@ body = """
     {% else -%}
         ## [{{ version }}]({{ remote_url }}/commits/{{ version }}) ({{ timestamp | date(format="%Y-%m-%d") }})
     {% endif -%}
-{% else -%}
+{% else %}
     ## Unreleased
 {% endif -%}
 
