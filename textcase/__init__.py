@@ -5,7 +5,7 @@
 Examples:
     >>> convert("2020-04-16_my_cat_cali", case.SNAKE)
     '2020_04_16_my_cat_cali'
-    
+
     >>> is_case("2020_04_16_my_cat_cali", case.SNAKE)
     True
 """
