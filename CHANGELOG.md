@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+### <!-- 2 -->Performance <!-- omit in toc -->
+
+- optimize boundary conditions ([`27cbbb2`](https://github.com/zobweyt/textcase/commit/27cbbb2643ba957f4318f150a109e728610dee73))
+
 ## [0.2.1](https://github.com/zobweyt/textcase/compare/0.2.0...0.2.1) (2025-04-02)
 
 Expands test coverage with new tests for edge cases and conversions.
