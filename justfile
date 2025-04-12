@@ -85,4 +85,4 @@ publish: style test build
 [confirm("Do you really want to clean build artifacts and cache directories (y/N)?")]
 clean:
   find . -type d -name __pycache__ -exec rm -rf {} +
-  rm -rf .mypy_cache .pytest_cache .ruff_cache .coverage dist site coverage.lcov
+  rm -rf .cache .mypy_cache .pytest_cache .ruff_cache .coverage dist site coverage.lcov
