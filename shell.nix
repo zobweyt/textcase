@@ -14,5 +14,7 @@ pkgs.mkShellNoCC {
     if command -v zsh > /dev/null; then
       exec zsh
     fi
+
+    just init
   '';
 }

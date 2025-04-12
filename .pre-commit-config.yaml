@@ -1,0 +1,13 @@
+repos:
+  - repo: local
+    hooks:
+      - id: style
+        name: style
+        entry: just style
+        language: system
+        pass_filenames: false
+      - id: test
+        name: test
+        entry: just test
+        language: system
+        pass_filenames: false

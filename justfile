@@ -15,6 +15,11 @@ alias p := publish
 default:
   @just --list --unsorted
 
+[doc("Initialize development environment")]
+init:
+  uv sync --dev
+  uv run pre-commit install
+
 [doc("Run style recipes on source files")]
 [group("style")]
 style: lint check format
@@ -27,7 +32,7 @@ lint:
 [doc("Run Ruff on source files")]
 [group("style")]
 check:
-  uv run ruff check
+  uv run ruff check --fix
 
 [doc("Run Ruff formatter on source files")]
 [group("style")]
