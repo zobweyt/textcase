@@ -11,7 +11,7 @@ pkgs.mkShellNoCC {
   ];
 
   shellHook = ''
-    just init
+    just init > /dev/null 2>&1
 
     if command -v zsh > /dev/null; then
       exec zsh
