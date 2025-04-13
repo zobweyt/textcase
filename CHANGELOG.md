@@ -10,6 +10,18 @@ Acronym identification fixes.
 
 - update ACRONYM to correctly identify acronym boundaries ([`dd604b0`](https://github.com/zobweyt/textcase/commit/dd604b0725329ae71be2212e694087216d57d388))
 
+### <!-- 1 -->Features <!-- omit in toc -->
+
+- add `Boundary.from_delimiter` ([`079dc33`](https://github.com/zobweyt/textcase/commit/079dc330a1c2dc131a1347da5f210bf558bf2cbb))
+
+### <!-- 3 -->Refactoring <!-- omit in toc -->
+
+- update `UNDERSCORE`, `HYPEN`, and `SPACE` to use `Boundary.from_delimiter` ([`42e65f5`](https://github.com/zobweyt/textcase/commit/42e65f5b96c2ebc07b458c5f5e274dacb1733648))
+
+### <!-- 4 -->Testing <!-- omit in toc -->
+
+- update custom boundary tests to use `Boundary.from_delimiter` ([`705296f`](https://github.com/zobweyt/textcase/commit/705296fcdc322fc18e3d24534b775cf0a7e79da2))
+
 ## [0.2.2](https://github.com/zobweyt/textcase/compare/0.2.1...0.2.2) (2025-04-12)
 
 Performance and documentation enhancements.

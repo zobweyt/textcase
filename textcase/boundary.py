@@ -63,29 +63,48 @@ class Boundary:
     **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
     """
 
+    @staticmethod
+    def from_delimiter(delimiter: str) -> "Boundary":
+        """Create a new [`Boundary`][textcase.boundary.Boundary] instance from a delimiter string.
 
-UNDERSCORE: Final[Boundary] = Boundary(
-    satisfies=lambda text: text[:1] == "_",
-    length=1,
-)
+        This is a helper method that can be used to create simple boundaries such as
+        [`UNDERSCORE`][textcase.boundary.UNDERSCORE], [`HYPHEN`][textcase.boundary.HYPHEN],
+        or [`SPACE`][textcase.boundary.SPACE].
+
+        **Unreleased.**
+
+        Args:
+            delimiter: A string to be used as the delimiter for creating the boundary.
+
+        Returns:
+            A new [`Boundary`][textcase.boundary.Boundary] instance, configured to match the provided delimiter.
+
+        Examples:
+            >>> Boundary.from_delimiter("_").start
+            0
+
+            >>> Boundary.from_delimiter("_").length
+            1
+        """
+        return Boundary(
+            satisfies=lambda text: text[:1] == delimiter,
+            length=len(delimiter),
+        )
+
+
+UNDERSCORE: Final[Boundary] = Boundary.from_delimiter("_")
 """Splits on `_`, consuming the character on segmentation.
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
-HYPHEN: Final[Boundary] = Boundary(
-    satisfies=lambda text: text[:1] == "-",
-    length=1,
-)
+HYPHEN: Final[Boundary] = Boundary.from_delimiter("-")
 """Splits on `-`, consuming the character on segmentation.
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
-SPACE: Final[Boundary] = Boundary(
-    satisfies=lambda text: text[:1] == " ",
-    length=1,
-)
+SPACE: Final[Boundary] = Boundary.from_delimiter(" ")
 """Splits on space, consuming the character on segmentation.
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)

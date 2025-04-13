@@ -14,7 +14,7 @@ Say a string has the word `2D`, such as `scale2D`. No exclusive usage of [`conve
 
 This library provides [a number of constants for boundaries associated with common cases][textcase.boundary]. But you can create your own boundary to split on other criteria:
 
-```python exec="true" source="tabbed-left" tabs="custom.py|output.txt" result="txt" hl_lines="8-11 16-20"
+```python exec="true" source="tabbed-left" tabs="custom.py|output.txt" result="txt" hl_lines="8 11-15"
 --8<-- "docs/.snippets/boundaries/custom.py"
 ```
 
