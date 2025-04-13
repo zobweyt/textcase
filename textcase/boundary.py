@@ -63,6 +63,30 @@ class Boundary:
     **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
     """
 
+    @staticmethod
+    def from_delimiter(delimiter: str) -> "Boundary":
+        """Create a new [`Boundary`][textcase.boundary.Boundary] instance from a delimiter string.
+
+        **Unreleased.**
+
+        Args:
+            delimiter: A string to be used as the delimiter for creating the boundary.
+
+        Returns:
+            A new [`Boundary`][textcase.boundary.Boundary] instance, configured to match the provided delimiter.
+
+        Examples:
+            >>> Boundary.from_delimiter("_").start
+            0
+
+            >>> Boundary.from_delimiter("_").length
+            1
+        """
+        return Boundary(
+            satisfies=lambda text: text[:1] == delimiter,
+            length=len(delimiter),
+        )
+
 
 UNDERSCORE: Final[Boundary] = Boundary(
     satisfies=lambda text: text[:1] == "_",
