@@ -18,7 +18,7 @@ __all__ = [
     "convert",
 ]
 
-__version__ = "0.2.2"
+__version__ = "0.2.3"
 
 from doctest import testmod
 from typing import Iterable

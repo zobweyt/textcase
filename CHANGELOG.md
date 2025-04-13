@@ -2,7 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## [0.2.3](https://github.com/zobweyt/textcase/compare/0.2.2...0.2.3) (2025-04-13)
+
+Acronym identification fixes.
 
 ### <!-- 0 -->Bug Fixes <!-- omit in toc -->
 
