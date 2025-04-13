@@ -86,10 +86,7 @@ class Boundary:
             >>> Boundary.from_delimiter("_").length
             1
         """
-        return Boundary(
-            satisfies=lambda text: text[:1] == delimiter,
-            length=len(delimiter),
-        )
+        return Boundary(satisfies=lambda text: text[:1] == delimiter, length=len(delimiter))
 
 
 UNDERSCORE: Final[Boundary] = Boundary.from_delimiter("_")
