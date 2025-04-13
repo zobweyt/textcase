@@ -25,6 +25,7 @@ from textcase.boundary import (
     DIGIT_LOWER,
     DIGIT_UPPER,
     HYPHEN,
+    INTERPUNCT,
     LOWER_DIGIT,
     LOWER_UPPER,
     SPACE,
@@ -97,6 +98,16 @@ KEBAB: Final[Case] = Case(
 """Kebab case strings are delimited by hyphens `-` and are all lowercase.
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
+
+MIDDOT: Final[Case] = Case(
+    boundaries=(INTERPUNCT,),
+    pattern=lower,
+    delimiter="·",
+)
+"""Middot case strings are delimited by interpuncts `·` and are all lowercase.
+
+**Unreleased.**
 """
 
 CAMEL: Final[Case] = Case(
