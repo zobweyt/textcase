@@ -112,12 +112,12 @@ This is seldom used and is **not** included in the [`DEFAULT_BOUNDARIES`][textca
 """
 
 ACRONYM: Final[Boundary] = Boundary(
-    satisfies=lambda text: text[0:2].isupper() and text[2:3].islower(),
+    satisfies=lambda text: text[0:2].isalpha() and text[0:2].isupper() and text[2:3].islower(),
     start=1,
 )
 """Acronyms are identified by two uppercase letters followed by a lowercase letter.
 
-The word boundary is between the two uppercase letters.  For example, "HTTPRequest"
+The word boundary is between the two uppercase letters. For example, "HTTPRequest"
 would have an acronym boundary identified at "PRe" and split into "HTTP" and "Request".
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
