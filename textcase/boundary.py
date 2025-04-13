@@ -72,7 +72,7 @@ class Boundary:
         [`UNDERSCORE`][textcase.boundary.UNDERSCORE], [`HYPHEN`][textcase.boundary.HYPHEN],
         [`SPACE`][textcase.boundary.SPACE], or [`INTERPUNCT`][textcase.boundary.INTERPUNCT].
 
-        **Unreleased.**
+        **Added in version:** [`0.3.0`](https://zobweyt.github.io/textcase/changelog/#030-2025-04-13)
 
         Args:
             delimiter: A string to be used as the delimiter for creating the boundary.
@@ -114,7 +114,7 @@ SPACE: Final[Boundary] = Boundary.from_delimiter(" ")
 INTERPUNCT: Final[Boundary] = Boundary.from_delimiter("·")
 """Splits on `·`, consuming the character on segmentation.
 
-**Unreleased**.
+**Added in version:** [`0.3.0`](https://zobweyt.github.io/textcase/changelog/#030-2025-04-13)
 """
 
 LOWER_UPPER: Final[Boundary] = Boundary(

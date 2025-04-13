@@ -2,11 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## [0.3.0](https://github.com/zobweyt/textcase/compare/0.2.3...0.3.0) (2025-04-13)
+
+Simplification of custom `Boundary` creation from a delimiter, and addition of the new `MIDDOT` case.
 
 ### <!-- 1 -->Features <!-- omit in toc -->
 
 - add `Boundary.from_delimiter` (#10) ([`ff46f04`](https://github.com/zobweyt/textcase/commit/ff46f04051347fca94d3f2dde191c881d8b024bf))
+- add `INTERPUNCT` boundary and `MIDDOT` case (#11) ([`8cf450b`](https://github.com/zobweyt/textcase/commit/8cf450b140a032684d36069710404c76809ab052))
 
 ## [0.2.3](https://github.com/zobweyt/textcase/compare/0.2.2...0.2.3) (2025-04-13)
 

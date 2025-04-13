@@ -108,7 +108,7 @@ MIDDOT: Final[Case] = Case(
 )
 """Middot case strings are delimited by interpuncts `·` and are all lowercase.
 
-**Unreleased.**
+**Added in version:** [`0.3.0`](https://zobweyt.github.io/textcase/changelog/#030-2025-04-13)
 """
 
 CAMEL: Final[Case] = Case(
