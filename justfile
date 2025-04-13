@@ -42,12 +42,12 @@ format:
 [doc("Run test suite using pytest")]
 [group("test")]
 test:
-  uv run pytest
+  uv run pytest --doctest-modules
 
 [doc("Generate test coverage report")]
 [group("test")]
 coverage:
-  uv run pytest --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov
+  uv run pytest --doctest-modules --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov
 
 [unix]
 [doc("Serve documentation locally in watch mode")]
