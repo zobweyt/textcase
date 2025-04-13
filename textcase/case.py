@@ -8,6 +8,7 @@ __all__ = [
     "SNAKE",
     "CONSTANT",
     "KEBAB",
+    "MIDDOT",
     "CAMEL",
     "PASCAL",
     "LOWER",
