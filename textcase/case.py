@@ -18,7 +18,6 @@ __all__ = [
 ]
 
 from dataclasses import dataclass
-from doctest import testmod
 from typing import Callable, Final, Iterable
 
 from textcase.boundary import (
@@ -182,7 +181,3 @@ SENTENCE: Final[Case] = Case(
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
-
-
-if __name__ == "__main__":
-    testmod(verbose=True)  # pragma: no cover

@@ -1,5 +1,3 @@
-import pytest
-
 from textcase import pattern
 from textcase.boundary import DEFAULT_BOUNDARIES
 from textcase.case import CAMEL, SNAKE
@@ -59,7 +57,3 @@ def test_case_converter_complex() -> None:
     converter.to_case(SNAKE)
 
     assert converter.convert("mySpecialCase") == "my_special_case"
-
-
-if __name__ == "__main__":
-    pytest.main()

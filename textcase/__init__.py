@@ -20,7 +20,6 @@ __all__ = [
 
 __version__ = "0.3.1"
 
-from doctest import testmod
 from typing import Iterable
 
 from textcase import boundary, case
@@ -70,7 +69,3 @@ def convert(text: str, case: case.Case, boundaries: Iterable[boundary.Boundary] 
         '2020_04_16_my_cat_cali'
     """
     return case.delimiter.join(case.pattern(boundary.split(text, boundaries)))
-
-
-if __name__ == "__main__":
-    testmod(verbose=True)  # pragma: no cover

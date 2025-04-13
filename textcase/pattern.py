@@ -27,7 +27,6 @@ __all__ = [
     "sentence",
 ]
 
-from doctest import testmod
 from itertools import chain
 from typing import Iterable, Iterator
 
@@ -124,7 +123,3 @@ def sentence(words: Iterable[str]) -> Iterator[str]:
     words_iter = iter(words)
     first_word = next(words_iter, "").capitalize()
     return chain((first_word,), (word.lower() for word in words_iter))
-
-
-if __name__ == "__main__":
-    testmod(verbose=True)  # pragma: no cover

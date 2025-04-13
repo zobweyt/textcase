@@ -22,7 +22,6 @@ __all__ = [
 ]
 
 from dataclasses import dataclass
-from doctest import testmod
 from typing import Callable, Final, Iterable, Iterator, Tuple
 
 
@@ -273,7 +272,3 @@ def get_boundaries(text: str) -> Iterator[Boundary]:
 
         if len(parts) > 1 or len(parts) == 0 or parts[0] != text:
             yield boundary
-
-
-if __name__ == "__main__":
-    testmod(verbose=True)  # pragma: no cover

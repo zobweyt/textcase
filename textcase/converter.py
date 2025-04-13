@@ -18,7 +18,6 @@ __all__ = [
     "CaseConverter",
 ]
 
-from doctest import testmod
 from typing import Callable, Iterable, List
 
 from textcase.boundary import DEFAULT_BOUNDARIES, Boundary, split
@@ -131,7 +130,3 @@ class CaseConverter:
         """
         self.boundaries = list(case.boundaries)
         return self
-
-
-if __name__ == "__main__":
-    testmod(verbose=True)  # pragma: no cover
