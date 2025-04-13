@@ -111,7 +111,7 @@ SPACE: Final[Boundary] = Boundary.from_delimiter(" ")
 """
 
 INTERPUNCT: Final[Boundary] = Boundary.from_delimiter("·")
-"""Splits on `-`, consuming the character on segmentation.
+"""Splits on `·`, consuming the character on segmentation.
 
 **Unreleased**.
 """
