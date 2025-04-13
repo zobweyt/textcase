@@ -67,6 +67,10 @@ class Boundary:
     def from_delimiter(delimiter: str) -> "Boundary":
         """Create a new [`Boundary`][textcase.boundary.Boundary] instance from a delimiter string.
 
+        This is a helper method that can be used to create simple boundaries such as
+        [`UNDERSCORE`][textcase.boundary.UNDERSCORE], [`HYPHEN`][textcase.boundary.HYPHEN],
+        or [`SPACE`][textcase.boundary.SPACE].
+
         **Unreleased.**
 
         Args:
