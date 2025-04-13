@@ -105,9 +105,15 @@ HYPHEN: Final[Boundary] = Boundary.from_delimiter("-")
 """
 
 SPACE: Final[Boundary] = Boundary.from_delimiter(" ")
-"""Splits on space, consuming the character on segmentation.
+"""Splits on ` `, consuming the character on segmentation.
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
+
+INTERPUNCT: Final[Boundary] = Boundary.from_delimiter("·")
+"""Splits on `-`, consuming the character on segmentation.
+
+**Unreleased**.
 """
 
 LOWER_UPPER: Final[Boundary] = Boundary(
