@@ -13,6 +13,10 @@ def test_space() -> None:
     assert (boundary.SPACE,) == tuple(boundary.get_boundaries(" "))
 
 
+def test_interpunct() -> None:
+    assert 0 == len(tuple(boundary.get_boundaries("·")))
+
+
 def test_lower_upper() -> None:
     assert (boundary.LOWER_UPPER,) == tuple(boundary.get_boundaries("aA"))
 
