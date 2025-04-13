@@ -88,28 +88,19 @@ class Boundary:
         )
 
 
-UNDERSCORE: Final[Boundary] = Boundary(
-    satisfies=lambda text: text[:1] == "_",
-    length=1,
-)
+UNDERSCORE: Final[Boundary] = Boundary.from_delimiter("_")
 """Splits on `_`, consuming the character on segmentation.
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
-HYPHEN: Final[Boundary] = Boundary(
-    satisfies=lambda text: text[:1] == "-",
-    length=1,
-)
+HYPHEN: Final[Boundary] = Boundary.from_delimiter("-")
 """Splits on `-`, consuming the character on segmentation.
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
 """
 
-SPACE: Final[Boundary] = Boundary(
-    satisfies=lambda text: text[:1] == " ",
-    length=1,
-)
+SPACE: Final[Boundary] = Boundary.from_delimiter(" ")
 """Splits on space, consuming the character on segmentation.
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
