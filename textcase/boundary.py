@@ -70,7 +70,7 @@ class Boundary:
 
         This is a helper method that can be used to create simple boundaries such as
         [`UNDERSCORE`][textcase.boundary.UNDERSCORE], [`HYPHEN`][textcase.boundary.HYPHEN],
-        or [`SPACE`][textcase.boundary.SPACE].
+        [`SPACE`][textcase.boundary.SPACE], or [`INTERPUNCT`][textcase.boundary.INTERPUNCT].
 
         **Unreleased.**
 
