@@ -8,6 +8,7 @@ __all__ = [
     "UNDERSCORE",
     "HYPHEN",
     "SPACE",
+    "INTERPUNCT",
     "LOWER_UPPER",
     "UPPER_LOWER",
     "ACRONYM",
