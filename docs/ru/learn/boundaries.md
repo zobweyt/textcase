@@ -14,7 +14,7 @@
 
 Эта библиотека предоставляет [ряд констант для границ][textcase.boundary], связанных с общими случаями. Но вы можете создать свою собственную границу для разбиения по другим критериям:
 
-```python exec="true" source="tabbed-left" tabs="custom.py|output.txt" result="txt" hl_lines="8-11 16-20"
+```python exec="true" source="tabbed-left" tabs="custom.py|output.txt" result="txt" hl_lines="8 11-15"
 --8<-- "docs/.snippets/boundaries/custom.py"
 ```
 
