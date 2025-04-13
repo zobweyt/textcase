@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.1](https://github.com/zobweyt/textcase/compare/0.3.0...0.3.1) (2025-04-13)
+
+Adds `py.typed` file.
+
+### <!-- 0 -->Bug Fixes <!-- omit in toc -->
+
+- add `py.typed` file ([`a2611af`](https://github.com/zobweyt/textcase/commit/a2611af1300d3f0aa22a0e41f31ede261e55d2bd))
+
 ## [0.3.0](https://github.com/zobweyt/textcase/compare/0.2.3...0.3.0) (2025-04-13)
 
 Simplification of custom `Boundary` creation from a delimiter, and addition of the new `MIDDOT` case.
