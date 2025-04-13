@@ -27,7 +27,6 @@ __all__ = [
     "sentence",
 ]
 
-from itertools import chain
 from typing import Iterable, Iterator
 
 
@@ -100,9 +99,7 @@ def camel(words: Iterable[str]) -> Iterator[str]:
         >>> tuple(camel(("hello", "world")))
         ('hello', 'World')
     """
-    words_iter = iter(words)
-    first_word = next(words_iter, "").lower()
-    return chain((first_word,), (word.capitalize() for word in words_iter))
+    return (word.lower() if i == 0 else word.capitalize() for i, word in enumerate(words))
 
 
 def sentence(words: Iterable[str]) -> Iterator[str]:
@@ -120,6 +117,4 @@ def sentence(words: Iterable[str]) -> Iterator[str]:
         >>> tuple(sentence(("hello", "world")))
         ('Hello', 'world')
     """
-    words_iter = iter(words)
-    first_word = next(words_iter, "").capitalize()
-    return chain((first_word,), (word.lower() for word in words_iter))
+    return (word.capitalize() if i == 0 else word.lower() for i, word in enumerate(words))
