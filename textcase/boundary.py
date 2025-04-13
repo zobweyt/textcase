@@ -8,6 +8,7 @@ __all__ = [
     "UNDERSCORE",
     "HYPHEN",
     "SPACE",
+    "INTERPUNCT",
     "LOWER_UPPER",
     "UPPER_LOWER",
     "ACRONYM",
@@ -69,7 +70,7 @@ class Boundary:
 
         This is a helper method that can be used to create simple boundaries such as
         [`UNDERSCORE`][textcase.boundary.UNDERSCORE], [`HYPHEN`][textcase.boundary.HYPHEN],
-        or [`SPACE`][textcase.boundary.SPACE].
+        [`SPACE`][textcase.boundary.SPACE], or [`INTERPUNCT`][textcase.boundary.INTERPUNCT].
 
         **Unreleased.**
 
@@ -105,9 +106,15 @@ HYPHEN: Final[Boundary] = Boundary.from_delimiter("-")
 """
 
 SPACE: Final[Boundary] = Boundary.from_delimiter(" ")
-"""Splits on space, consuming the character on segmentation.
+"""Splits on ` `, consuming the character on segmentation.
 
 **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+"""
+
+INTERPUNCT: Final[Boundary] = Boundary.from_delimiter("·")
+"""Splits on `·`, consuming the character on segmentation.
+
+**Unreleased**.
 """
 
 LOWER_UPPER: Final[Boundary] = Boundary(

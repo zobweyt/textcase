@@ -13,6 +13,10 @@ def test_kebab() -> None:
     assert convert("RONNIE_JAMES_DIO", case.KEBAB) == "ronnie-james-dio"
 
 
+def test_middot() -> None:
+    assert convert("ronnie james dio", case.MIDDOT) == "ronnie·james·dio"
+
+
 def test_camel() -> None:
     assert convert("RONNIE-JAMES-DIO", case.CAMEL) == "ronnieJamesDio"
 

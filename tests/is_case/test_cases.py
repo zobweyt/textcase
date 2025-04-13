@@ -16,6 +16,11 @@ def test_kebab() -> None:
     assert is_case("RONNIE_JAMES_DIO", case.KEBAB) is False
 
 
+def test_middot() -> None:
+    assert is_case("ronnie·james·dio", case.MIDDOT) is True
+    assert is_case("RONNIE_JAMES_DIO", case.MIDDOT) is False
+
+
 def test_camel() -> None:
     assert is_case("ronnieJamesDio", case.CAMEL) is True
     assert is_case("RONNIE-JAMES-DIO", case.CAMEL) is False
