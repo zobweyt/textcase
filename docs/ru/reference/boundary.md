@@ -1,3 +1,0 @@
-# textcase.boundary
-
-::: textcase.boundary

@@ -68,7 +68,6 @@ dev = [
 docs = [
     "cairosvg>=2.7.1",
     "griffe-typingdoc>=0.2.8",
-    "markdown-exec[ansi]>=1.10.3",
     "mkdocs-git-committers-plugin-2>=2.5.0",
     "mkdocs-git-revision-date-localized-plugin>=1.4.5",
     "mkdocs-material>=9.6.11",

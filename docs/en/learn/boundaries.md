@@ -1,21 +1,49 @@
 # Boundaries
 
-## Boundary Specificity
+Boundaries define where a string is divided into words.
+They allow you to control how a string is split during conversions between different naming conventions.
 
-It can be difficult to determine how to split a string into words. That is why the [`convert`][textcase.convert] uses a set of [default word boundaries][textcase.boundary.DEFAULT_BOUNDARIES], but sometimes that isn’t enough to meet a specific use case.
+Consider an abstract example where the `#!py "_"` character is used as the boundary:
 
-Say a string has the word `2D`, such as `scale2D`. No exclusive usage of [`convert`][textcase.converter.CaseConverter.convert] will be enough to solve the problem. In this case we can further specify which boundaries to split the string on. This library provides some [templates for achieving this specificity][textcase.boundary]. We can specify what boundaries we want to split on using instances of the [`Boundary`][textcase.boundary.Boundary] class:
+Imagine the string: `#!py "A_B_C"`
 
-```python exec="true" source="tabbed-left" tabs="specificity.py|output.txt" result="txt" hl_lines="7"
+Using `#!py "_"` as a boundary, the string is divided into distinct segments: `#!py ["A", "B", "C"]`
+
+## Specificity of Boundaries
+
+It can be difficult to determine how to split a string into words.
+
+Let's say the string contains the word `#!py "2D"`, for example `#!py "scale2D"`,
+and we want to translate it to [`snake`][textcase.snake] case.
+How do we decide what `boundaries` to use to split this string into words?
+Should it be `#!py "scale_2_d"`, `#!py "scale_2d"` or just `#!py "scale2d"`?
+
+By default, the [conversion method][textcase.Case.__call__] uses some predefined `boundaries`,
+but sometimes the predefined boundaries are not enough to meet a specific use case, so you can _explicitly_ set
+which ones to use by providing instances of the [Boundary][textcase.Boundary] class.
+
+```py title="boundaries/specificity.py" linenums="1" hl_lines="5-6"
 --8<-- "docs/.snippets/boundaries/specificity.py"
 ```
 
-## Custom Boundaries
+You can see a complete list of all built-in boundaries in the [API Reference][textcase].
 
-This library provides [a number of constants for boundaries associated with common cases][textcase.boundary]. But you can create your own boundary to split on other criteria:
+## Creating Custom Boundaries
 
-```python exec="true" source="tabbed-left" tabs="custom.py|output.txt" result="txt" hl_lines="8 11-15"
---8<-- "docs/.snippets/boundaries/custom.py"
+This library provides a number of constants for boundaries associated with common cases.
+But if you need to handle more specific cases, you can easily create custom boundaries and use
+them as well as built-in ones:
+
+```py title="boundaries/custom_boundary.py" linenums="1" hl_lines="5-6"
+--8<-- "docs/.snippets/boundaries/custom_boundary.py"
 ```
 
-To learn more about building a custom boundary from scratch, take a look at the [textcase.boundary.Boundary][] class.
+1. :cry: That is quite **not** what we want.
+   Since the library does not handle boundary with a dot (`#!py "."`) by [default][textcase.Case.__call__],
+   we need to create it _manually_ using the [`Boundary`][textcase.Boundary] class.
+2. :smile: To achieve our goal we need to create a _custom_ boundary
+   using the [`Boundary.from_delimiter`][textcase.Boundary.from_delimiter] method.
+3. :smile: Now we can _explicitly_ set our _custom_ boundary to the [`boundaries`][textcase.Case.__call__]
+   argument and it [will be used when splitting text][textcase.Case.__call__]!
+
+To learn more about building a custom boundary from scratch, take a look at the [`Boundary`][textcase.Boundary] class.

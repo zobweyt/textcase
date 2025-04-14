@@ -25,9 +25,6 @@ hide:
     <img src="https://img.shields.io/coverallsCoverage/github/zobweyt/textcase?branch=main" alt="Coveralls"/>
   </a>
   <a href="https://pypi.python.org/pypi/textcase" target="_blank">
-    <img src="https://img.shields.io/badge/dependencies-0-brightgreen" alt="Dependencies"/>
-  </a>
-  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
     <img src="https://img.shields.io/pypi/v/textcase.svg" alt="PyPI - Version"/>
   </a>
   <a href="https://pypistats.org/packages/textcase" target="_blank">
@@ -36,27 +33,17 @@ hide:
   <a href="https://pypi.python.org/pypi/textcase" target="_blank">
     <img src="https://img.shields.io/pypi/pyversions/textcase.svg" alt="PyPI - Python Version"/>
   </a>
-  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
-    <img src="https://img.shields.io/pypi/types/textcase" alt="PyPI - Types"/>
-  </a>
-  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
-    <img src="https://img.shields.io/pypi/wheel/textcase" alt="PyPI - Wheel"/>
-  </a>
-  <a href="https://aur.archlinux.org/packages/python-textcase-git" target="_blank">
-    <img src="https://img.shields.io/aur/version/python-textcase-git" alt="AUR Version"/>
-  </a>
 </p>
 
 ## Особенности
 
-- **Преобразование регистров текста**: преобразование строк между различными текстовыми регистрами (например, snake_case, kebab-case, camelCase и т.д.).
-- **Масштабируемый дизайн**: легко расширяйте библиотеку с помощью кастомных регистров и границ.
-- **Обработка сокращений**: корректно распознаёт и форматирует сокращения в строках (как в `HTTPRequest`).
-- **Поддержка не-ASCII**: легко обрабатывает символы, отличные от ASCII (не делается никаких выводов о языке ввода).
-- **100%-ный охват тестированием**: всесторонние тесты гарантируют надёжность и корректность.
-- **Хорошая документация**: чистая документация с примерами использования для удобства понимания.
-- **Высокая производительность**: эффективная реализация без использования регулярных выражений.
-- **Нет зависимостей**: библиотека не имеет внешних зависимостей, что делает её лёгкой и понятной для интеграции.
+- **Преобразование регистра текста**: [преобразуйте](#использование) строки между различными регистрами текста (например, [snake_case][textcase.snake], [kebab-case][textcase.kebab], [camelCase][textcase.camel] и т.д.).
+- **Расширяемая**: расширяйте библиотеку с помощью кастомных [границ слов](./learn/boundaries.md) и [регистров текста](./learn/cases.md).
+- **Точная**: находит любую [границу слова](#точность) в строках, включая [аббревиатуры и сокращения][textcase.ACRONYM] (как в `#!py "HTTPRequest"`).
+- **Поддержка не-ASCII**: обрабатывает [не-ASCII символы](#non-ascii-characters) без проблем (не делается никаких выводов о самом языке ввода).
+- **Маленькая, производительная и без зависимостей**: эффективная библиотека без регулярных выражений, которая остаётся легкой и не имеет внешних зависимостей.
+- **100% <abbr title="Объём кода, который автоматически тестируется">покрытие тестами</abbr>**: каждая строка кода тщательно протестирована на надёжность.
+- **100% <abbr title="Аннотации типов Python, с этим ваш редактор и внешние инструменты могут предоставить вам лучшую поддержку">типизированная</abbr> кодовая база**: полные аннотации типов для лучшего опыта разработки.
 
 ## Установка
 
@@ -70,47 +57,66 @@ $ pip install textcase
 
 ## Использование
 
-Вы можете преобразовать строки в регистр, используя функцию [`convert`][textcase.convert]:
+Конвертируйте строки в текстовые регистры:
 
-```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
---8<-- "docs/.snippets/index/convert.py"
+```py title="cases.py" linenums="1"
+--8<-- "docs/.snippets/cases.py"
 ```
 
-По умолчанию [`convert`][textcase.convert] и [`CaseConverter.convert`][textcase.converter] будут делить слова [по заданным по умолчанию границам слов][textcase.boundary.DEFAULT_BOUNDARIES], то есть:
+Вы также можете проверить в каком регистре находится строка:
 
-- Подчёркивания: `_`,
-- Дефисы: `-`,
-- Пробелы: ` `,
-- Изменение заглавных букв со строчных на прописны: `aA`,
-- Соседние цифры и буквы: `a1`, `1a`, `A1`, `1A`,
-- Аббревиатуры и сокращения: `AAa` (как в `HTTPRequest`).
-
-Для большей точности вы можете указать границы для разделения, основываясь на границах слов для конкретного случая. Например, вы можете явно указать какие границы будут использоваться:
-
-```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt" hl_lines="4"
---8<-- "docs/.snippets/index/precision.py"
+```py title="match.py" linenums="1" hl_lines="3-5"
+--8<-- "docs/.snippets/match.py"
 ```
 
-Эта библиотека может распознавать аббревиатуры и сокращения в строках, подобные тем, что используются в регистре camel. Она также игнорирует любые начальные, конечные или повторяющиеся разделители:
+### Границы
 
-```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
---8<-- "docs/.snippets/index/acronyms.py"
+По умолчанию библиотека разделяет слова по заданным по умолчанию границам слов, а именно:
+
+- Подчёркивания: `#!py "_"`,
+- Дефисы: `#!py "-"`,
+- Пробелы: `#!py " "`,
+- Интерпункты: `#!py "·"`,
+- Изменение регистра с нижнего на верхний: `#!py "aA"`,
+- Соседние цифры и буквы: `#!py "a1"`, `#!py "1a"`, `#!py "A1"`, `#!py "1A"`,
+- Аббревиатуры и сокращения: `#!py "AAa"` (как в `#!py "HTTPRequest"`).
+
+Вы можете узнать больше о границах [тут](./learn/boundaries.md).
+
+### Точность
+
+Для большей точности вы можете указать границы для разделения на основе границ слов конкретного случая.
+Например, вы можете явно указать, какие границы будут использоваться:
+
+```py title="precision.py" linenums="1" hl_lines="4"
+--8<-- "docs/.snippets/precision.py"
 ```
 
-Библиотека также поддерживает символы, отличные от ASCII. **Однако при этом не делается никаких выводов о языке ввода**. Например, в голландском языке орграф "ij" рассматривается как два отдельных символа Unicode и не пишется с заглавной буквы. В отличие от этого, символ "æ" будет написан с заглавной буквы, как и ожидалось. Кроме того, в английском языке текст "I THINK I DO" будет преобразован в "i think i do", а не в "I think I do". Это означает, что библиотека может обрабатывать различные символы:
+This library can detect acronyms in camel-like strings. It also ignores any leading, trailing, or duplicate delimiters:
 
-```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
---8<-- "docs/.snippets/index/non_ascii.py"
+```py title="acronyms.py" linenums="1" hl_lines="3-5"
+--8<-- "docs/.snippets/acronyms.py"
 ```
 
-По умолчанию символы, за которыми следуют цифры, и наоборот, считаются границами слов. Кроме того, любые специальные символы ASCII (кроме `_` и `-`) игнорируются:
+### Не-ASCII Символы
 
-```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
---8<-- "docs/.snippets/index/special.py"
+Библиотека также поддерживает символы, не входящие в ASCII. **Однако никаких выводов о самом языке ввода не делается**.
+Например, в голландском языке диграф `#!py "ij"` обрабатывается как два отдельных символа Unicode и не будет написан заглавными буквами.
+Напротив, символ `#!py "æ`" будет написан заглавными буквами, как и ожидалось.
+Кроме того, в английском языке текст `#!py "I THINK I DO"` будет преобразован в `#!py "i think i do"`, а не `#!py "I think I do"`.
+Это означает, что библиотека может обрабатывать различные символы:
+
+```py title="non_ascii.py" linenums="1" hl_lines="3-5"
+--8<-- "docs/.snippets/non_ascii.py"
 ```
 
-Вы также можете проверить, в каком регистре находится строка:
+### Пунктуация
 
-```python exec="true" source="tabbed-left" tabs="main.py|output.txt" result="txt"
---8<-- "docs/.snippets/index/is_case.py"
+По умолчанию символы, за которыми следуют цифры и наоборот, считаются границами слов.
+Кроме того, символы [пунктуация][string.punctuation] удаляются
+(исключая текущий регистр [`delimiter`][textcase.Case.delimiter]), а другие специальные символы игнорируются.
+Вы можете управлять этим поведением с помощью аргумента `strip_punctuation`:
+
+```py title="punctuation.py" linenums="1" hl_lines="7-8"
+--8<-- "docs/.snippets/punctuation.py"
 ```

@@ -1,3 +1,0 @@
-# textcase.pattern
-
-::: textcase.pattern

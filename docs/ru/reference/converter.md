@@ -1,3 +1,0 @@
-# textcase.converter
-
-::: textcase.converter

@@ -14,8 +14,11 @@ watch:
 
 theme:
   name: material
+  icon:
+    repo: simple/github
   logo: assets/favicon.white.svg
   favicon: assets/favicon.svg
+  language: en
   palette:
     - media: (prefers-color-scheme)
       toggle:
@@ -55,9 +58,6 @@ theme:
     - search.share
     - search.suggest
     - toc.follow
-  icon:
-    repo: simple/github
-  language: en
   custom_dir: docs/.overrides
 
 nav:
@@ -65,28 +65,12 @@ nav:
   - Learn:
       - learn/boundaries.md
       - learn/cases.md
-      - learn/converter.md
-  - Reference:
-      - reference/textcase.md
-      - reference/boundary.md
-      - reference/case.md
-      - reference/converter.md
-      - reference/pattern.md
+  - Reference: reference.md
   - Changelog: changelog.md
 
 plugins:
   - search
   - social
-  - minify:
-      minify_html: true
-      minify_js: true
-      minify_css: true
-      htmlmin_opts:
-        remove_comments: true
-      cache_safe: true
-      js_files:
-      css_files:
-  - markdown-exec
   - autorefs:
       resolve_closest: true
   - i18n:
@@ -107,6 +91,35 @@ plugins:
             Learn: Обучение
             Reference: Спецификация
             Changelog: Журнал изменений
+  - termynal:
+      prompt_literal_start:
+        - "$"
+        - ">"
+  - mkdocstrings:
+      handlers:
+        python:
+          inventories:
+            - https://docs.python.org/3/objects.inv
+          options:
+            extensions:
+              - griffe_typingdoc
+            filters:
+              - "!^__all__"
+            annotations_path: source
+            docstring_section_style: spacy
+            inherited_members: true
+            line_length: 120
+            members_order: source
+            merge_init_into_class: true
+            modernize_annotations: true
+            separate_signature: true
+            show_if_no_docstring: true
+            show_root_heading: true
+            show_signature_annotations: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+            unwrap_annotated: true
   - git-committers:
       enabled: !ENV [CI, false]
       repository: zobweyt/textcase
@@ -115,46 +128,47 @@ plugins:
       enabled: !ENV [CI, false]
       enable_creation_date: true
       type: timeago
-  - termynal:
-      prompt_literal_start:
-        - "$"
-        - ">"
-  - mkdocstrings:
-      handlers:
-        python:
-          options:
-            extensions:
-              - griffe_typingdoc
-            line_length: 120
-            show_root_heading: true
-            show_if_no_docstring: true
-            inherited_members: true
-            members_order: source
-            separate_signature: true
-            unwrap_annotated: true
-            filters:
-              - "!^_"
-            merge_init_into_class: true
-            docstring_section_style: spacy
-            signature_crossrefs: true
-            show_symbol_type_heading: true
-            show_symbol_type_toc: true
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      cache_safe: true
+      js_files:
+      css_files:
 
 markdown_extensions:
+  - toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      permalink: "#"
+  - abbr
+  - attr_list
+  - admonition
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  - pymdownx.magiclink
   - pymdownx.inlinehilite
   - pymdownx.snippets:
       base_path: .
       check_paths: true
   - pymdownx.superfences
-  - toc:
-      permalink: "#"
 
 extra:
   generator: false

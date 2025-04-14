@@ -17,9 +17,6 @@
     <img src="https://img.shields.io/coverallsCoverage/github/zobweyt/textcase?branch=main" alt="Coveralls"/>
   </a>
   <a href="https://pypi.python.org/pypi/textcase" target="_blank">
-    <img src="https://img.shields.io/badge/dependencies-0-brightgreen" alt="Dependencies"/>
-  </a>
-  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
     <img src="https://img.shields.io/pypi/v/textcase.svg" alt="PyPI - Version"/>
   </a>
   <a href="https://pypistats.org/packages/textcase" target="_blank">
@@ -27,15 +24,6 @@
   </a>
   <a href="https://pypi.python.org/pypi/textcase" target="_blank">
     <img src="https://img.shields.io/pypi/pyversions/textcase.svg" alt="PyPI - Python Version"/>
-  </a>
-  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
-    <img src="https://img.shields.io/pypi/types/textcase" alt="PyPI - Types"/>
-  </a>
-  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
-    <img src="https://img.shields.io/pypi/wheel/textcase" alt="PyPI - Wheel"/>
-  </a>
-  <a href="https://aur.archlinux.org/packages/python-textcase-git" target="_blank">
-    <img src="https://img.shields.io/aur/version/python-textcase-git" alt="AUR Version"/>
   </a>
 </p>
 
@@ -45,14 +33,13 @@
 
 ## Features
 
-- **Text case conversion**: Convert strings between various text cases (e.g., snake_case, kebab-case, camelCase, etc.).
-- **Extensible Design**: Easily extend the library with custom cases and boundaries.
-- **Acronym Handling**: Properly detects and formats acronyms in strings (as in `HTTPRequest`).
-- **Non-ASCII Support**: Handles non-ASCII characters seamlessly (no inferences on the input language itself is made).
-- **100% Test Coverage**: Comprehensive tests ensure reliability and correctness.
-- **Well-Documented**: Clean documentation with usage examples for easy understanding.
-- **Performant**: Efficient implementation without the use of regular expressions.
-- **Zero Dependencies**: The library has no external dependencies, making it lightweight and easy to integrate.
+- **Text case conversion**: [convert](https://zobweyt.github.io/textcase/#usage) strings between various text cases (e.g., [snake_case](https://zobweyt.github.io/textcase/reference/#textcase.snake), [kebab-case](https://zobweyt.github.io/textcase/reference/#textcase.kebab), [camelCase](https://zobweyt.github.io/textcase/reference/#textcase.camel), etc.).
+- **Extensible**: extend the library with custom word [boundaries](./learn/boundaries.md) and [cases](./learn/cases.md).
+- **Accurate**: finds any word [boundaries](https://zobweyt.github.io/textcase/#precision) in strings including [acronyms](https://zobweyt.github.io/textcase/reference/#textcase.ACRONYM) (as in `"HTTPRequest"`).
+- **Non-ASCII Support**: handles [non-ASCII characters](https://zobweyt.github.io/textcase/#non-ascii-characters) seamlessly (no inferences on the input language itself is made).
+- **Tiny, Performant & Zero Dependencies**: a regex-free, efficient library that stays lightweight with no external dependencies.
+- **100% <abbr title="The amount of code that is automatically tested">test coverage</abbr>**: every line of code is rigorously tested for reliability.
+- **100% <abbr title="Python type annotations, with this your editor and external tools can give you better support">type annotated</abbr> codebase**: full type annotations for best developer experience.
 
 ## Installation
 
@@ -67,18 +54,18 @@ pip install textcase
 You can convert strings into a case using the [`convert`](https://zobweyt.github.io/textcase/reference/textcase/#textcase.convert) function:
 
 ```python
-from textcase import case, convert
+import textcase
 
-print(convert("ronnie james dio", case.SNAKE))     # ronnie_james_dio
-print(convert("Ronnie_James_dio", case.CONSTANT))  # RONNIE_JAMES_DIO
-print(convert("RONNIE_JAMES_DIO", case.KEBAB))     # ronnie-james-dio
-print(convert("ronnie james dio", case.MIDDOT))    # ronnie·james·dio
-print(convert("RONNIE-JAMES-DIO", case.CAMEL))     # ronnieJamesDio
-print(convert("ronnie-james-dio", case.PASCAL))    # RonnieJamesDio
-print(convert("RONNIE JAMES DIO", case.LOWER))     # ronnie james dio
-print(convert("ronnie james dio", case.UPPER))     # RONNIE JAMES DIO
-print(convert("ronnie-james-dio", case.TITLE))     # Ronnie James Dio
-print(convert("ronnie james dio", case.SENTENCE))  # Ronnie james dio
+textcase.snake("Hello, world!")  # hello_world
+textcase.constant("Hello, world!")  # HELLO_WORLD
+textcase.kebab("Hello, world!")  # hello-world
+textcase.middot("Hello, world!")  # hello·world
+textcase.camel("Hello, world!")  # helloWorld
+textcase.pascal("Hello, world!")  # HelloWorld
+textcase.lower("Hello, world!")  # hello world
+textcase.upper("Hello, world!")  # HELLO WORLD
+textcase.title("Hello, world!")  # Hello World
+textcase.sentence("Hello, world!")  # Hello world
 ```
 
 See [documentation](https://zobweyt.github.io/textcase) for more usage examples.
