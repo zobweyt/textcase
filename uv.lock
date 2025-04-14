@@ -1178,7 +1178,7 @@ wheels = [
 
 [[package]]
 name = "textcase"
-version = "0.3.1"
+version = "0.4.0"
 source = { virtual = "." }
 
 [package.dev-dependencies]

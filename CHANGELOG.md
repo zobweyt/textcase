@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0](https://github.com/zobweyt/textcase/compare/0.3.1...0.4.0) (2025-04-14)
+
+Rewrite.
+
+### <!-- 1 -->Features <!-- omit in toc -->
+
+- rewrite ([`4816c0e`](https://github.com/zobweyt/textcase/commit/4816c0e4edfef6f7255439fed1dec15eb5763d99))
+
+### <!-- 2 -->Performance <!-- omit in toc -->
+
+- optimize `pattern.camel` and `pattern.sentence` ([`a5d1731`](https://github.com/zobweyt/textcase/commit/a5d17310fd749a5dac943be51a4dc385506d2c31))
+
 ## [0.3.1](https://github.com/zobweyt/textcase/compare/0.3.0...0.3.1) (2025-04-13)
 
 Adds `py.typed` file.

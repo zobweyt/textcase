@@ -205,7 +205,7 @@ class Case:
         This function compares the input text with its converted version based on the specified
         case format. It returns `True` if the text is already in the desired case format, and `False` otherwise.
 
-        **Unreleased.**
+        **Added in version:** [`0.4.0`](https://zobweyt.github.io/textcase/changelog/#040-2025-04-14)
 
         Args:
             text: The input string to be checked.
@@ -237,7 +237,7 @@ class Case:
     ) -> str:
         """Convert the given text to the specified case format.
 
-        **Unreleased.**
+        **Added in version:** [`0.4.0`](https://zobweyt.github.io/textcase/changelog/#040-2025-04-14)
 
         Args:
             text: The input string to be converted.
