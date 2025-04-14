@@ -438,6 +438,12 @@ Examples:
 
     >>> snake("Hello, world!")
     'hello_world'
+
+    >>> snake.match("hello_world")
+    True
+
+    >>> snake.match("Hello, world!")
+    False
 """
 
 constant = Case(
@@ -450,6 +456,12 @@ Examples:
 
     >>> constant("Hello, world!")
     'HELLO_WORLD'
+
+    >>> constant.match("HELLO_WORLD")
+    True
+
+    >>> constant.match("Hello, world!")
+    False
 """
 
 kebab = Case(
@@ -462,6 +474,12 @@ Examples:
 
     >>> kebab("Hello, world!")
     'hello-world'
+
+    >>> kebab.match("hello-world")
+    True
+
+    >>> kebab.match("Hello, world!")
+    False
 """
 
 middot = Case(
@@ -474,6 +492,12 @@ Examples:
 
     >>> middot("Hello, world!")
     'hello·world'
+
+    >>> middot.match("hello·world")
+    True
+
+    >>> middot.match("Hello, world!")
+    False
 """
 
 camel = Case(
@@ -485,6 +509,12 @@ Examples:
 
     >>> camel("Hello, world!")
     'helloWorld'
+
+    >>> camel.match("helloWorld")
+    True
+
+    >>> camel.match("Hello, world!")
+    False
 """
 
 pascal = Case(
@@ -496,6 +526,12 @@ Examples:
 
     >>> pascal("Hello, world!")
     'HelloWorld'
+
+    >>> pascal.match("HelloWorld")
+    True
+
+    >>> pascal.match("Hello, world!")
+    False
 """
 
 lower = Case(
@@ -508,6 +544,12 @@ Examples:
 
     >>> lower("Hello, world!")
     'hello world'
+
+    >>> lower.match("hello world")
+    True
+
+    >>> lower.match("Hello, world!")
+    False
 """
 
 upper = Case(
@@ -520,6 +562,12 @@ Examples:
 
     >>> upper("Hello, world!")
     'HELLO WORLD'
+
+    >>> upper.match("HELLO WORLD")
+    True
+
+    >>> upper.match("Hello, world!")
+    False
 """
 
 title = Case(
@@ -534,6 +582,12 @@ Examples:
 
     >>> title("Hello, world!")
     'Hello World'
+    
+    >>> title.match("Hello World")
+    True
+
+    >>> title.match("Hello, world!")
+    False
 """
 
 sentence = Case(
@@ -546,4 +600,10 @@ Examples:
 
     >>> sentence("Hello, world!")
     'Hello world'
+
+    >>> sentence.match("Hello world")
+    True
+
+    >>> sentence.match("Hello, world!")
+    False
 """
