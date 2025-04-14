@@ -1,7 +1,4 @@
-"""Text case conversion.
-
-**Added in version:** [`0.1.0`](https://zobweyt.github.io/textcase/changelog/#010-2025-03-31)
-"""
+"""Text case conversion."""
 
 __all__ = [
     "ACRONYM",
@@ -38,38 +35,40 @@ from typing import Callable, Iterable
 class Boundary:
     """Represents a condition for splitting an identifier into words.
 
-    Some boundaries, [`HYPHEN`][textcase.HYPHEN], [`UNDERSCORE`][textcase.UNDERSCORE], [`SPACE`][textcase.SPACE],
-    and [`INTERPUNCT`][textcase.INTERPUNCT] consume the character they split on, whereas the other boundaries do not.
+    Some boundaries, `HYPHEN`, `UNDERSCORE`, `SPACE`, and `INTERPUNCT` consume
+    the character they split on, whereas the other boundaries do not.
 
-    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+    Examples:
+
+        >>> DOT = Boundary(match=lambda text: text[:1] == ".", length=1)
+
+        >>> DOT.match(".brown")
+        True
+
+        >>> DOT.match("_brown")
+        False
+
+        >>> DOT.start
+        0
+
+        >>> DOT.length
+        1
     """
 
     match: Callable[[str], bool]
-    """A function that determines if this boundary is present in the string.
-    
-    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
-    """
+    """A function that determines if this boundary is present in the string."""
 
     start: int = 0
-    """Where the beginning of the boundary is.
-    
-    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
-    """
+    """Where the beginning of the boundary is."""
 
     length: int = 0
-    """The length of the boundary. This is the number of graphemes that are removed when splitting.
-    
-    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
-    """
+    """The length of the boundary. This is the number of graphemes that are removed when splitting."""
 
     @staticmethod
     def from_delimiter(delimiter: str) -> "Boundary":
         """Create a new boundary instance from a delimiter string.
 
-        This helper method provides an easy way to create basic boundaries like [`UNDERSCORE`][textcase.UNDERSCORE],
-        [`HYPHEN`][textcase.HYPHEN], [`SPACE`][textcase.SPACE], and [`INTERPUNCT`][textcase.INTERPUNCT].
-
-        **Added in version:** [`0.3.0`](https://zobweyt.github.io/textcase/changelog/#030-2025-04-13)
+        This method makes it easier to create basic boundaries like `UNDERSCORE`, `HYPHEN`, `SPACE`, and `INTERPUNCT`.
 
         Args:
             delimiter: A string to be used as the delimiter for creating the boundary.
@@ -78,109 +77,272 @@ class Boundary:
             A new boundary instance, configured to match the provided delimiter.
 
         Examples:
-            >>> Boundary.from_delimiter("_").start
+
+            >>> DOT = Boundary.from_delimiter(".")
+
+            >>> DOT.match(".brown")
+            True
+
+            >>> DOT.match("_brown")
+            False
+
+            >>> DOT.start
             0
 
-            >>> Boundary.from_delimiter("_").length
+            >>> DOT.length
             1
         """
         return Boundary(match=lambda text: text[:1] == delimiter, length=len(delimiter))
 
 
 UNDERSCORE = Boundary.from_delimiter("_")
-"""Splits on `#!py "_"`, consuming the character on segmentation.
+"""Splits on underscore, consuming the character on segmentation.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> UNDERSCORE.match("_")
+    True
+
+    >>> UNDERSCORE.match("_brown")
+    True
+
+    >>> UNDERSCORE.match(".brown")
+    False
+
+    >>> UNDERSCORE.start
+    0
+
+    >>> UNDERSCORE.length
+    1
 """
 
 HYPHEN = Boundary.from_delimiter("-")
-"""Splits on `#!py "-"`, consuming the character on segmentation.
+"""Splits on hyphen, consuming the character on segmentation.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> HYPHEN.match("-")
+    True
+
+    >>> HYPHEN.match("-brown")
+    True
+
+    >>> HYPHEN.match(".brown")
+    False
+
+    >>> HYPHEN.start
+    0
+
+    >>> HYPHEN.length
+    1
 """
 
 SPACE = Boundary.from_delimiter(" ")
-"""Splits on `#!py " "`, consuming the character on segmentation.
+"""Splits on space, consuming the character on segmentation.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> SPACE.match(" ")
+    True
+
+    >>> SPACE.match(" brown")
+    True
+
+    >>> SPACE.match(".brown")
+    False
+
+    >>> SPACE.start
+    0
+
+    >>> SPACE.length
+    1
 """
 
 INTERPUNCT = Boundary.from_delimiter("·")
-"""Splits on `#!py "·"`, consuming the character on segmentation.
+"""Splits on interpunct, consuming the character on segmentation.
 
-**Added in version:** [`0.3.0`](https://zobweyt.github.io/textcase/changelog/#030-2025-04-13)
+Examples:
+
+    >>> INTERPUNCT.match("·")
+    True
+
+    >>> INTERPUNCT.match("·brown")
+    True
+
+    >>> INTERPUNCT.match(".brown")
+    False
+
+    >>> INTERPUNCT.start
+    0
+
+    >>> INTERPUNCT.length
+    1
 """
 
 LOWER_UPPER = Boundary(match=lambda s: s[:1].islower() and s[1:2].isupper(), start=1)
-"""Splits where a lowercase letter is followed by an uppercase letter `#!py "aA"`.
+"""Splits where a lowercase letter is followed by an uppercase letter.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+This is seldom used, and is not included in the default boundaries.
+
+Examples:
+
+    >>> LOWER_UPPER.match("aA")
+    True
+
+    >>> LOWER_UPPER.match("Aa")
+    False
+
+    >>> LOWER_UPPER.start
+    1
+
+    >>> LOWER_UPPER.length
+    0
 """
 
 UPPER_LOWER = Boundary(match=lambda s: s[:1].isupper() and s[1:2].islower(), start=1)
-"""Splits where an uppercase letter is followed by a lowercase letter `#!py "Aa"`.
+"""Splits where an uppercase letter is followed by a lowercase letter.
 
-This is seldom used and is **not** included in the default boundaries.
+Examples:
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+    >>> UPPER_LOWER.match("Aa")
+    True
+
+    >>> UPPER_LOWER.match("aA")
+    False
+
+    >>> UPPER_LOWER.start
+    1
+
+    >>> UPPER_LOWER.length
+    0
 """
 
 ACRONYM = Boundary(match=lambda s: s[:1].isupper() and s[1:2].isupper() and s[2:3].islower(), start=1)
 """Acronyms are identified by two uppercase letters followed by a lowercase letter.
 
-The word boundary is between the two uppercase letters. For example, `#!py "HTTPRequest"`
-would have an acronym boundary identified at `#!py "PRe"` and split into `#!py "HTTP"` and `#!py "Request"`.
+The word boundary is between the two uppercase letters. For example, "HTTPRequest"
+would have an acronym boundary identified at "PRe" and split into "HTTP" and "Request".
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> ACRONYM.match("AAa")
+    True
+
+    >>> ACRONYM.match("1Aa")
+    False
+
+    >>> ACRONYM.match("AAA")
+    False
+
+    >>> ACRONYM.start
+    1
+
+    >>> ACRONYM.length
+    0
 """
 
 LOWER_DIGIT = Boundary(match=lambda s: s[:1].islower() and s[1:2].isdigit(), start=1)
-"""Splits where a lowercase letter is followed by a digit `#!py "a1"`.
+"""Splits where a lowercase letter is followed by a digit.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> LOWER_DIGIT.match("a1")
+    True
+
+    >>> LOWER_DIGIT.match("1a")
+    False
+
+    >>> LOWER_DIGIT.start
+    1
+
+    >>> LOWER_DIGIT.length
+    0
 """
 
 UPPER_DIGIT = Boundary(match=lambda s: s[:1].isupper() and s[1:2].isdigit(), start=1)
-"""Splits where an uppercase letter is followed by a digit `#!py "A1"`.
+"""Splits where an uppercase letter is followed by a digit.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> UPPER_DIGIT.match("A1")
+    True
+
+    >>> UPPER_DIGIT.match("1A")
+    False
+
+    >>> UPPER_DIGIT.start
+    1
+
+    >>> UPPER_DIGIT.length
+    0
 """
 
 DIGIT_LOWER = Boundary(match=lambda s: s[:1].isdigit() and s[1:2].islower(), start=1)
-"""Splits where digit is followed by a lowercase letter `#!py "1a"`.
+"""Splits where digit is followed by a lowercase letter.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> DIGIT_LOWER.match("1a")
+    True
+
+    >>> DIGIT_LOWER.match("1A")
+    False
+
+    >>> DIGIT_LOWER.start
+    1
+
+    >>> DIGIT_LOWER.length
+    0
 """
 
 DIGIT_UPPER = Boundary(match=lambda s: s[:1].isdigit() and s[1:2].isupper(), start=1)
-"""Splits where digit is followed by an uppercase letter `#!py "1A"`.
+"""Splits where digit is followed by an uppercase letter.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> DIGIT_UPPER.match("1A")
+    True
+
+    >>> DIGIT_UPPER.match("1a")
+    False
+
+    >>> DIGIT_UPPER.start
+    1
+
+    >>> DIGIT_UPPER.length
+    0
 """
 
 
 @dataclass(frozen=True)
 class Case:
-    """Represents a text case format for transformation.
+    """Represents a text case style.
 
-    Each case format defines how to split and transform text into a specific
-    case style. The [`Case`][textcase.Case] class includes boundaries for splitting words,
-    a transformation pattern, and a delimiter for joining the words.
+    Each case instance defines how to split and transform text into a specific case style.
 
-    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+    Examples:
+
+        >>> dot = Case(delimiter=".", transform=lambda words: map(str.lower, words))
+
+        >>> dot("Dot case var")
+        'dot.case.var'
+
+        >>> dot.match("dot.case.var")
+        True
+
+        >>> dot.match("Dot case var")
+        False
+
+        >>> dot.delimiter
+        '.'
+
     """
 
     delimiter: str = ""
-    """The string used to join the transformed words together.
-    
-    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
-    """
+    """The string used to join the transformed words together."""
 
     transform: Callable[[Iterable[str]], Iterable[str]] = lambda words: words
-    """A callable that defines how to transform the split words into the desired case format.
-
-    **Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
-    """
+    """A callable that defines how to transform the split words into the desired case format."""
 
     def match(
         self,
@@ -200,20 +362,17 @@ class Case:
         ),
         strip_punctuation: bool = True,
     ) -> bool:
-        """Check if the given text matches the specified case format.
+        """Check if the given string matches the specified text case style.
 
-        This function compares the input text with its converted version based on the specified
-        case format. It returns `True` if the text is already in the desired case format, and `False` otherwise.
-
-        **Added in version:** [`0.4.0`](https://zobweyt.github.io/textcase/changelog/#040-2025-04-14)
+        This method compares the input string with its converted version.
 
         Args:
             text: The input string to be checked.
-            boundaries: A collection of boundary instances that define the split conditions.
-            strip_punctuation: Whether to remove punctuation during processing.
+            boundaries: The boundaries that define how to split the given string.
+            strip_punctuation: Whether to remove punctuation during conversion.
 
         Returns:
-            `True` if the text matches the specified case format, `False` otherwise.
+            `True` if the given string matches the specified text case style, and `False` otherwise.
         """
         return self(text, boundaries=boundaries, strip_punctuation=strip_punctuation) == text
 
@@ -235,14 +394,12 @@ class Case:
         ),
         strip_punctuation: bool = True,
     ) -> str:
-        """Convert the given text to the specified case format.
-
-        **Added in version:** [`0.4.0`](https://zobweyt.github.io/textcase/changelog/#040-2025-04-14)
+        """Convert the given string to the specified case format.
 
         Args:
             text: The input string to be converted.
-            boundaries: A collection of boundary instances that define the split conditions.
-            strip_punctuation: Whether to remove punctuation during processing.
+            boundaries: The boundaries that define how to split the given string.
+            strip_punctuation: Whether to remove punctuation during conversion.
 
         Returns:
             The input string converted to the specified case format.
@@ -275,36 +432,48 @@ snake = Case(
     delimiter="_",
     transform=lambda words: map(str.lower, words),
 )
-"""Snake case strings are delimited by underscores `_` and are all lowercase.
+"""Snake case strings are delimited by underscores and are all lowercase.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> snake("Hello, world!")
+    'hello_world'
 """
 
 constant = Case(
     delimiter="_",
     transform=lambda words: map(str.upper, words),
 )
-"""Constant case strings are delimited by underscores `_` and are all uppercase.
+"""Constant case strings are delimited by underscores and are all uppercase.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> constant("Hello, world!")
+    'HELLO_WORLD'
 """
 
 kebab = Case(
     delimiter="-",
     transform=lambda words: map(str.lower, words),
 )
-"""Kebab case strings are delimited by hyphens `-` and are all lowercase.
+"""Kebab case strings are delimited by hyphens and are all lowercase.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> kebab("Hello, world!")
+    'hello-world'
 """
 
 middot = Case(
     delimiter="·",
     transform=lambda words: map(str.lower, words),
 )
-"""Middot case strings are delimited by interpuncts `·` and are all lowercase.
+"""Middot case strings are delimited by interpuncts and are all lowercase.
 
-**Added in version:** [`0.3.0`](https://zobweyt.github.io/textcase/changelog/#030-2025-04-13)
+Examples:
+
+    >>> middot("Hello, world!")
+    'hello·world'
 """
 
 camel = Case(
@@ -312,7 +481,10 @@ camel = Case(
 )
 """Camel case strings are lowercase, but for every word *except the first* the first letter is capitalized.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> camel("Hello, world!")
+    'helloWorld'
 """
 
 pascal = Case(
@@ -320,7 +492,10 @@ pascal = Case(
 )
 """Pascal case strings are lowercase, but for every word the first letter is capitalized.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> pascal("Hello, world!")
+    'HelloWorld'
 """
 
 lower = Case(
@@ -329,7 +504,10 @@ lower = Case(
 )
 """Lowercase strings are delimited by spaces and all characters are lowercase.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> lower("Hello, world!")
+    'hello world'
 """
 
 upper = Case(
@@ -338,7 +516,10 @@ upper = Case(
 )
 """Uppercase strings are delimited by spaces and all characters are uppercase.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> upper("Hello, world!")
+    'HELLO WORLD'
 """
 
 title = Case(
@@ -347,7 +528,12 @@ title = Case(
 )
 """Title case strings are delimited by spaces. Only the leading character of each word is uppercase.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+No inferences are made about language, so words like "as", "to", and "for" will still be capitalized.
+
+Examples:
+
+    >>> title("Hello, world!")
+    'Hello World'
 """
 
 sentence = Case(
@@ -356,5 +542,8 @@ sentence = Case(
 )
 """Sentence case strings are delimited by spaces. Only the leading character of the first word is uppercase.
 
-**Added in version:** [`0.2.0`](https://zobweyt.github.io/textcase/changelog/#020-2025-04-01)
+Examples:
+
+    >>> sentence("Hello, world!")
+    'Hello world'
 """

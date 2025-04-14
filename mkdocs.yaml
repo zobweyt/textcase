@@ -162,6 +162,8 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.highlight:
       anchor_linenums: true
+      guess_lang: true
+      default_lang: python
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
