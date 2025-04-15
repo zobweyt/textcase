@@ -20,7 +20,7 @@ Should it be `#!py "scale_2_d"`, `#!py "scale_2d"` or just `#!py "scale2d"`?
 
 By default, the [conversion method][textcase.Case.__call__] uses some predefined `boundaries`,
 but sometimes the predefined boundaries are not enough to meet a specific use case, so you can _explicitly_ set
-which ones to use by providing instances of the [Boundary][textcase.Boundary] class.
+which ones to use by providing instances of the [`Boundary`][textcase.Boundary] class.
 
 ```py title="boundaries/specificity.py" linenums="1" hl_lines="5-6"
 --8<-- "docs/.snippets/boundaries/specificity.py"

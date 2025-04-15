@@ -102,7 +102,7 @@ This library can detect acronyms in camel-like strings. It also ignores any lead
 
 The library also supports non-ASCII characters. **However, no inferences on the input language itself is made**.
 For example, in Dutch, the digraph `#!py "ij"` is treated as two separate Unicode characters and will not be capitalized.
-In contrast, the character `#!py "æ`" will be capitalized as expected.
+In contrast, the character `#!py "æ"` will be capitalized as expected.
 Also, in English the text `#!py "I THINK I DO"` will be converted to `#!py "i think i do"`, not `#!py "I think I do"`.
 This means that the library can handle various characters:
 

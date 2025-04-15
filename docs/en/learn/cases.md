@@ -40,11 +40,11 @@ that allows you to define a custom case that behaves like a built-in one:
 --8<-- "docs/.snippets/cases/custom_case.py"
 ```
 
-1. :smile: Since `dot` is an instance of [Case][textcase.Case], it already converts text to the dot case—just
+1. :smile: Since `dot` is an instance of [`Case`][textcase.Case], it already converts text to the dot case—just
    [call][textcase.Case.__call__] it like a function! :tada:
 2. :smile: With `dot`, you don't need to write a custom function to test for the case;
    just use its [`match`][textcase.Case.match] method! :tada:
-3. :smile: Again, leveraging `dot`'s [match][textcase.Case.match] method, you can easily verify
+3. :smile: Again, leveraging `dot`'s [`match`][textcase.Case.match] method, you can easily verify
    if a string is in the dot case without any extra code! :tada:
 
 To learn more about building a custom case from scratch, take a look at the [`Case`][textcase.Case] class.
