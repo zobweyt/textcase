@@ -112,9 +112,14 @@ quote-style = "double"
 [tool.hatch.build.targets.sdist]
 ignore-vcs = true
 include = [
-    "/src",
+    "src",
 ]
 exclude = [
-    "/docs",
-    "/tests",
+    "docs",
+    "tests",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/textcase",
 ]
