@@ -49,24 +49,21 @@ test:
 coverage:
   uv run pytest --doctest-modules --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov
 
-[unix]
 [doc("Serve documentation locally in watch mode")]
 [group("docs")]
 docs-serve:
-  PYTHONPATH=$(pwd) uv run mkdocs serve -f mkdocs.yaml
+  uv run mkdocs serve -f mkdocs.yaml
 
-[unix]
 [doc("Build documentation static files locally")]
 [group("docs")]
 docs-build:
-  PYTHONPATH=$(pwd) uv run mkdocs build -f mkdocs.yaml
+  uv run mkdocs build -f mkdocs.yaml
 
-[unix]
 [doc("Deploy documentation to GitHub Pages")]
 [group("docs")]
 [private]
 docs-gh-deploy:
-  PYTHONPATH=$(pwd) uv run mkdocs gh-deploy --force -f mkdocs.yaml
+  uv run mkdocs gh-deploy --force -f mkdocs.yaml
 
 [doc("Build package into source distributions and wheels")]
 [group("build")]

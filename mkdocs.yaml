@@ -10,8 +10,8 @@ exclude_docs: .*
 copyright: Copyright &copy; 2025 Nikita Gaziev
 
 watch:
-  - src
-  - tests
+  - ./src
+  - ./tests
 
 theme:
   name: material
