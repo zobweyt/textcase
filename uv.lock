@@ -1179,7 +1179,7 @@ wheels = [
 [[package]]
 name = "textcase"
 version = "0.4.0"
-source = { virtual = "." }
+source = { editable = "." }
 
 [package.dev-dependencies]
 dev = [

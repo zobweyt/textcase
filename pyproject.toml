@@ -2,8 +2,8 @@
 name = "textcase"
 version = "0.4.0"
 description = "A feature-rich Python text case conversion library."
-readme = { file = "README.md", content-type = "text/markdown" }
-license = { file = "LICENSE.md" }
+readme = "README.md"
+license = "MIT"
 requires-python = ">=3.9"
 authors = [
     { name = "Nikita Gaziev", email = "zobweyt@gmail.com" },
@@ -57,6 +57,10 @@ Repository = "https://github.com/zobweyt/textcase"
 Issues = "https://github.com/zobweyt/textcase/issues"
 Changelog = "https://github.com/zobweyt/textcase/blob/main/CHANGELOG.md"
 
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [dependency-groups]
 dev = [
     "mypy>=1.15.0",
@@ -84,8 +88,8 @@ default-groups = ["dev", "docs"]
 [tool.mypy]
 files = [
     "docs/.snippets",
+    "src",
     "tests",
-    "textcase",
 ]
 strict = true
 
@@ -104,3 +108,18 @@ select = [
 indent-style = "space"
 line-ending = "lf"
 quote-style = "double"
+
+[tool.hatch.build.targets.sdist]
+ignore-vcs = true
+include = [
+    "/src",
+]
+exclude = [
+    "/docs",
+    "/tests",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/textcase",
+]
