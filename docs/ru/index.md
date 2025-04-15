@@ -92,7 +92,8 @@ $ pip install textcase
 --8<-- "docs/.snippets/precision.py"
 ```
 
-This library can detect acronyms in camel-like strings. It also ignores any leading, trailing, or duplicate delimiters:
+Эта библиотека может обнаруживать аббревиатуры и сокращения в строках типа camel.
+Она также игнорирует любые начальные, конечные или дублирующие разделители:
 
 ```py title="acronyms.py" linenums="1" hl_lines="3-5"
 --8<-- "docs/.snippets/acronyms.py"
