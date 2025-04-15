@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.1](https://github.com/zobweyt/textcase/compare/0.4.0...0.4.1) (2025-04-15)
+
+Performance and documentation enhancements.
+
+### <!-- 2 -->Performance <!-- omit in toc -->
+
+- optimize build ([`a79cb84`](https://github.com/zobweyt/textcase/commit/a79cb84082d1b3d7ba717fe7059c7ca3fa713f4b))
+
 ## [0.4.0](https://github.com/zobweyt/textcase/compare/0.3.1...0.4.0) (2025-04-14)
 
 Rewrite.
