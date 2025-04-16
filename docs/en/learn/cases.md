@@ -7,7 +7,7 @@ This declarative syntax allows flexibly describe text cases while maintaining al
 
 You can see a complete list of all built-in cases in the [API Reference][textcase].
 
-??? note "How the case conversion works?"
+??? question "How the case conversion works?"
 
     The case conversion happens in three steps:
 
