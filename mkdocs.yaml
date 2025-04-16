@@ -137,6 +137,7 @@ plugins:
       cache_safe: true
       js_files:
       css_files:
+        - assets/stylesheets/textcase.css
 
 markdown_extensions:
   - toc:
@@ -147,6 +148,7 @@ markdown_extensions:
   - abbr
   - attr_list
   - admonition
+  - md_in_html
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
@@ -198,3 +200,6 @@ extra:
     - icon: simple/github
       link: https://github.com/zobweyt/textcase
       name: GitHub
+
+extra_css:
+  - assets/stylesheets/textcase.css

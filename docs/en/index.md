@@ -37,13 +37,17 @@ hide:
 
 ## Features
 
-- **Text case conversion**: [convert](#usage) strings between various text cases (e.g., [snake_case][textcase.snake], [kebab-case][textcase.kebab], [camelCase][textcase.camel], etc.).
-- **Extensible**: extend the library with custom word [boundaries](./learn/boundaries.md) and [cases](./learn/cases.md).
-- **Accurate**: finds any word [boundaries](#precision) in strings including [acronyms][textcase.ACRONYM] (as in `#!py "HTTPRequest"`).
-- **Non-ASCII Support**: handles [non-ASCII characters](#non-ascii-characters) seamlessly (no inferences on the input language itself is made).
-- **Tiny, Performant & Zero Dependencies**: a regex-free, efficient library that stays lightweight with no external dependencies.
-- **100% <abbr title="The amount of code that is automatically tested">test coverage</abbr>**: every line of code is rigorously tested for reliability.
-- **100% <abbr title="Python type annotations, with this your editor and external tools can give you better support">type annotated</abbr> codebase**: full type annotations for best developer experience.
+<div class="md-emoji-list" markdown>
+
+- :fire: <span>**Text case conversion**: [convert](#usage) strings between various text cases (e.g., [snake_case][textcase.snake], [kebab-case][textcase.kebab], [camelCase][textcase.camel], etc.).</span>
+- :fire: <span>**Extensible**: extend the library with custom word [boundaries](./learn/boundaries.md) and [cases](./learn/cases.md).</span>
+- :fire: <span>**Accurate**: finds any word [boundaries](#precision) in strings including [acronyms][textcase.ACRONYM] (as in `#!py "HTTPRequest"`).</span>
+- :fire: <span>**Non-ASCII Support**: handles [non-ASCII characters](#non-ascii-characters) seamlessly (no inferences on the input language itself is made).</span>
+- :fire: <span>**Tiny, Performant & Zero Dependencies**: a regex-free, efficient library that stays lightweight with no external dependencies.</span>
+- :fire: <span>**100% <abbr title="The amount of code that is automatically tested">test coverage</abbr>**: every line of code is rigorously tested for reliability.</span>
+- :fire: <span>**100% <abbr title="Python type annotations, with this your editor and external tools can give you better support">type annotated</abbr> codebase**: full type annotations for best developer experience.</span>
+
+</div>
 
 ## Installation
 
