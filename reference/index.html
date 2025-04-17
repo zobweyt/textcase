@@ -474,62 +474,78 @@
 <span class=s1>&#39;.&#39;</span>
 </code></pre></div> <div class="doc doc-children"> <div class="doc doc-object doc-attribute"> <h4 id=textcase.Case.delimiter class="doc doc-heading"> <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code> <span class="doc doc-object-name doc-attribute-name">delimiter</span> <span class="doc doc-labels"> <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small> <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small> </span> <a href=#textcase.Case.delimiter class=headerlink title="Permanent link">#</a></h4> <div class="language-python doc-signature highlight"><pre><span></span><code><span id=__span-0-1><a id=__codelineno-0-1 name=__codelineno-0-1 href=#__codelineno-0-1></a><span class=n>delimiter</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/stdtypes.html#str>str</a></span> <span class=o>=</span> <span class=s1>&#39;&#39;</span>
 </span></code></pre></div> <div class="doc doc-contents "> <p>The string used to join the transformed words together.</p> </div> </div> <div class="doc doc-object doc-attribute"> <h4 id=textcase.Case.transform class="doc doc-heading"> <code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code> <span class="doc doc-object-name doc-attribute-name">transform</span> <span class="doc doc-labels"> <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small> <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small> </span> <a href=#textcase.Case.transform class=headerlink title="Permanent link">#</a></h4> <div class="language-python doc-signature highlight"><pre><span></span><code><span id=__span-0-1><a id=__codelineno-0-1 name=__codelineno-0-1 href=#__codelineno-0-1></a><span class=n>transform</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" title="<code>typing.Callable</code>" href=https://docs.python.org/3/library/typing.html#typing.Callable>Callable</a></span><span class=p>[[</span><span class=n><a class="autorefs autorefs-external" title="<code>typing.Iterable</code>" href=https://docs.python.org/3/library/typing.html#typing.Iterable>Iterable</a></span><span class=p>[</span><span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/stdtypes.html#str>str</a></span><span class=p>]],</span> <span class=n><a class="autorefs autorefs-external" title="<code>typing.Iterable</code>" href=https://docs.python.org/3/library/typing.html#typing.Iterable>Iterable</a></span><span class=p>[</span><span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/stdtypes.html#str>str</a></span><span class=p>]]</span> <span class=o>=</span> <span class=k>lambda</span> <span class=n>words</span><span class=p>:</span> <span class=n><span title=words>words</span></span>
-</span></code></pre></div> <div class="doc doc-contents "> <p>A callable that defines how to transform the split words into the desired case format.</p> </div> </div> <div class="doc doc-object doc-function"> <h4 id=textcase.Case.match class="doc doc-heading"> <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code> <span class="doc doc-object-name doc-function-name">match</span> <a href=#textcase.Case.match class=headerlink title="Permanent link">#</a></h4> <div class="language-python doc-signature highlight"><pre><span></span><code><span id=__span-0-1><a id=__codelineno-0-1 name=__codelineno-0-1 href=#__codelineno-0-1></a><span class=k>match</span><span class=p>(</span><span class=nf>text</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/stdtypes.html#str>str</a></span><span class=p>,</span> <span class=o>*</span><span class=p>,</span> <span class=n>boundaries</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" title="<code>typing.Iterable</code>" href=https://docs.python.org/3/library/typing.html#typing.Iterable>Iterable</a></span><span class=p>[</span><span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Boundary</span>
+</span></code></pre></div> <div class="doc doc-contents "> <p>A callable that defines how to transform the split words into the desired case format.</p> </div> </div> <div class="doc doc-object doc-function"> <h4 id=textcase.Case.match class="doc doc-heading"> <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code> <span class="doc doc-object-name doc-function-name">match</span> <a href=#textcase.Case.match class=headerlink title="Permanent link">#</a></h4> <div class="language-python doc-signature highlight"><pre><span></span><code><span id=__span-0-1><a id=__codelineno-0-1 name=__codelineno-0-1 href=#__codelineno-0-1></a><span class=k>match</span><span class=p>(</span>
+</span><span id=__span-0-2><a id=__codelineno-0-2 name=__codelineno-0-2 href=#__codelineno-0-2></a>    <span class=nf>text</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/stdtypes.html#str>str</a></span><span class=p>,</span>
+</span><span id=__span-0-3><a id=__codelineno-0-3 name=__codelineno-0-3 href=#__codelineno-0-3></a>    <span class=o>*</span><span class=p>,</span>
+</span><span id=__span-0-4><a id=__codelineno-0-4 name=__codelineno-0-4 href=#__codelineno-0-4></a>    <span class=n>boundaries</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" title="<code>typing.Iterable</code>" href=https://docs.python.org/3/library/typing.html#typing.Iterable>Iterable</a></span><span class=p>[</span><span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Boundary</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
-  </span> (<code>textcase.Boundary</code>)' href=#textcase.Boundary>Boundary</a></span><span class=p>]</span> <span class=o>=</span> <span class=p>(</span><span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">UNDERSCORE</span>
+  </span> (<code>textcase.Boundary</code>)' href=#textcase.Boundary>Boundary</a></span><span class=p>]</span> <span class=o>=</span> <span class=p>(</span>
+</span><span id=__span-0-5><a id=__codelineno-0-5 name=__codelineno-0-5 href=#__codelineno-0-5></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">UNDERSCORE</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.UNDERSCORE</code>)' href=#textcase.UNDERSCORE>UNDERSCORE</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">HYPHEN</span>
+  </span> (<code>textcase.UNDERSCORE</code>)' href=#textcase.UNDERSCORE>UNDERSCORE</a></span><span class=p>,</span>
+</span><span id=__span-0-6><a id=__codelineno-0-6 name=__codelineno-0-6 href=#__codelineno-0-6></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">HYPHEN</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.HYPHEN</code>)' href=#textcase.HYPHEN>HYPHEN</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">SPACE</span>
+  </span> (<code>textcase.HYPHEN</code>)' href=#textcase.HYPHEN>HYPHEN</a></span><span class=p>,</span>
+</span><span id=__span-0-7><a id=__codelineno-0-7 name=__codelineno-0-7 href=#__codelineno-0-7></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">SPACE</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.SPACE</code>)' href=#textcase.SPACE>SPACE</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">INTERPUNCT</span>
+  </span> (<code>textcase.SPACE</code>)' href=#textcase.SPACE>SPACE</a></span><span class=p>,</span>
+</span><span id=__span-0-8><a id=__codelineno-0-8 name=__codelineno-0-8 href=#__codelineno-0-8></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">INTERPUNCT</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.INTERPUNCT</code>)' href=#textcase.INTERPUNCT>INTERPUNCT</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">LOWER_UPPER</span>
+  </span> (<code>textcase.INTERPUNCT</code>)' href=#textcase.INTERPUNCT>INTERPUNCT</a></span><span class=p>,</span>
+</span><span id=__span-0-9><a id=__codelineno-0-9 name=__codelineno-0-9 href=#__codelineno-0-9></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">LOWER_UPPER</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.LOWER_UPPER</code>)' href=#textcase.LOWER_UPPER>LOWER_UPPER</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">LOWER_DIGIT</span>
+  </span> (<code>textcase.LOWER_UPPER</code>)' href=#textcase.LOWER_UPPER>LOWER_UPPER</a></span><span class=p>,</span>
+</span><span id=__span-0-10><a id=__codelineno-0-10 name=__codelineno-0-10 href=#__codelineno-0-10></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">LOWER_DIGIT</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.LOWER_DIGIT</code>)' href=#textcase.LOWER_DIGIT>LOWER_DIGIT</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">UPPER_DIGIT</span>
+  </span> (<code>textcase.LOWER_DIGIT</code>)' href=#textcase.LOWER_DIGIT>LOWER_DIGIT</a></span><span class=p>,</span>
+</span><span id=__span-0-11><a id=__codelineno-0-11 name=__codelineno-0-11 href=#__codelineno-0-11></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">UPPER_DIGIT</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.UPPER_DIGIT</code>)' href=#textcase.UPPER_DIGIT>UPPER_DIGIT</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">DIGIT_LOWER</span>
+  </span> (<code>textcase.UPPER_DIGIT</code>)' href=#textcase.UPPER_DIGIT>UPPER_DIGIT</a></span><span class=p>,</span>
+</span><span id=__span-0-12><a id=__codelineno-0-12 name=__codelineno-0-12 href=#__codelineno-0-12></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">DIGIT_LOWER</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.DIGIT_LOWER</code>)' href=#textcase.DIGIT_LOWER>DIGIT_LOWER</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">DIGIT_UPPER</span>
+  </span> (<code>textcase.DIGIT_LOWER</code>)' href=#textcase.DIGIT_LOWER>DIGIT_LOWER</a></span><span class=p>,</span>
+</span><span id=__span-0-13><a id=__codelineno-0-13 name=__codelineno-0-13 href=#__codelineno-0-13></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">DIGIT_UPPER</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.DIGIT_UPPER</code>)' href=#textcase.DIGIT_UPPER>DIGIT_UPPER</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">ACRONYM</span>
+  </span> (<code>textcase.DIGIT_UPPER</code>)' href=#textcase.DIGIT_UPPER>DIGIT_UPPER</a></span><span class=p>,</span>
+</span><span id=__span-0-14><a id=__codelineno-0-14 name=__codelineno-0-14 href=#__codelineno-0-14></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">ACRONYM</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.ACRONYM</code>)' href=#textcase.ACRONYM>ACRONYM</a></span><span class=p>),</span> <span class=n>strip_punctuation</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/functions.html#bool>bool</a></span> <span class=o>=</span> <span class=kc>True</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/functions.html#bool>bool</a></span>
+  </span> (<code>textcase.ACRONYM</code>)' href=#textcase.ACRONYM>ACRONYM</a></span><span class=p>,</span>
+</span><span id=__span-0-15><a id=__codelineno-0-15 name=__codelineno-0-15 href=#__codelineno-0-15></a>    <span class=p>),</span>
+</span><span id=__span-0-16><a id=__codelineno-0-16 name=__codelineno-0-16 href=#__codelineno-0-16></a>    <span class=n>strip_punctuation</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/functions.html#bool>bool</a></span> <span class=o>=</span> <span class=kc>True</span><span class=p>,</span>
+</span><span id=__span-0-17><a id=__codelineno-0-17 name=__codelineno-0-17 href=#__codelineno-0-17></a><span class=p>)</span> <span class=o>-&gt;</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/functions.html#bool>bool</a></span>
 </span></code></pre></div> <div class="doc doc-contents "> <p>Check if the given string matches the specified text case style.</p> <p>This method compares the input string with its converted version.</p> <table> <thead> <tr> <th><span class=doc-section-title>PARAMETER</span></th> <th><span>DESCRIPTION</span></th> </tr> </thead> <tbody> <tr class=doc-section-item> <td> <code>text</code> </td> <td class=doc-param-details> <div class=doc-md-description> <p>The input string to be checked.</p> </div> <p> <span class=doc-param-annotation> <b>TYPE:</b> <code><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/stdtypes.html#str>str</a></code> </span> </p> </td> </tr> <tr class=doc-section-item> <td> <code>boundaries</code> </td> <td class=doc-param-details> <div class=doc-md-description> <p>The boundaries that define how to split the given string.</p> </div> <p> <span class=doc-param-annotation> <b>TYPE:</b> <code><a class="autorefs autorefs-external" title="<code>typing.Iterable</code>" href=https://docs.python.org/3/library/typing.html#typing.Iterable>Iterable</a>[<a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Boundary</span>
 
 
@@ -646,62 +662,78 @@
 </span><span id=__span-0-375><a id=__codelineno-0-375 name=__codelineno-0-375></a><span class=sd>        `True` if the given string matches the specified text case style, and `False` otherwise.</span>
 </span><span id=__span-0-376><a id=__codelineno-0-376 name=__codelineno-0-376></a><span class=sd>    &quot;&quot;&quot;</span>
 </span><span id=__span-0-377><a id=__codelineno-0-377 name=__codelineno-0-377></a>    <span class=k>return</span> <span class=bp>self</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>boundaries</span><span class=o>=</span><span class=n>boundaries</span><span class=p>,</span> <span class=n>strip_punctuation</span><span class=o>=</span><span class=n>strip_punctuation</span><span class=p>)</span> <span class=o>==</span> <span class=n>text</span>
-</span></code></pre></div></td></tr></table></div> </details> </div> </div> <div class="doc doc-object doc-function"> <h4 id=textcase.Case.__call__ class="doc doc-heading"> <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code> <span class="doc doc-object-name doc-function-name">__call__</span> <a href=#textcase.Case.__call__ class=headerlink title="Permanent link">#</a></h4> <div class="language-python doc-signature highlight"><pre><span></span><code><span id=__span-0-1><a id=__codelineno-0-1 name=__codelineno-0-1 href=#__codelineno-0-1></a><span class=fm>__call__</span><span class=p>(</span><span class=nf>text</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/stdtypes.html#str>str</a></span><span class=p>,</span> <span class=o>*</span><span class=p>,</span> <span class=n>boundaries</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" title="<code>typing.Iterable</code>" href=https://docs.python.org/3/library/typing.html#typing.Iterable>Iterable</a></span><span class=p>[</span><span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Boundary</span>
+</span></code></pre></div></td></tr></table></div> </details> </div> </div> <div class="doc doc-object doc-function"> <h4 id=textcase.Case.__call__ class="doc doc-heading"> <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code> <span class="doc doc-object-name doc-function-name">__call__</span> <a href=#textcase.Case.__call__ class=headerlink title="Permanent link">#</a></h4> <div class="language-python doc-signature highlight"><pre><span></span><code><span id=__span-0-1><a id=__codelineno-0-1 name=__codelineno-0-1 href=#__codelineno-0-1></a><span class=fm>__call__</span><span class=p>(</span>
+</span><span id=__span-0-2><a id=__codelineno-0-2 name=__codelineno-0-2 href=#__codelineno-0-2></a>    <span class=nf>text</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/stdtypes.html#str>str</a></span><span class=p>,</span>
+</span><span id=__span-0-3><a id=__codelineno-0-3 name=__codelineno-0-3 href=#__codelineno-0-3></a>    <span class=o>*</span><span class=p>,</span>
+</span><span id=__span-0-4><a id=__codelineno-0-4 name=__codelineno-0-4 href=#__codelineno-0-4></a>    <span class=n>boundaries</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" title="<code>typing.Iterable</code>" href=https://docs.python.org/3/library/typing.html#typing.Iterable>Iterable</a></span><span class=p>[</span><span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Boundary</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
-  </span> (<code>textcase.Boundary</code>)' href=#textcase.Boundary>Boundary</a></span><span class=p>]</span> <span class=o>=</span> <span class=p>(</span><span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">UNDERSCORE</span>
+  </span> (<code>textcase.Boundary</code>)' href=#textcase.Boundary>Boundary</a></span><span class=p>]</span> <span class=o>=</span> <span class=p>(</span>
+</span><span id=__span-0-5><a id=__codelineno-0-5 name=__codelineno-0-5 href=#__codelineno-0-5></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">UNDERSCORE</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.UNDERSCORE</code>)' href=#textcase.UNDERSCORE>UNDERSCORE</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">HYPHEN</span>
+  </span> (<code>textcase.UNDERSCORE</code>)' href=#textcase.UNDERSCORE>UNDERSCORE</a></span><span class=p>,</span>
+</span><span id=__span-0-6><a id=__codelineno-0-6 name=__codelineno-0-6 href=#__codelineno-0-6></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">HYPHEN</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.HYPHEN</code>)' href=#textcase.HYPHEN>HYPHEN</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">SPACE</span>
+  </span> (<code>textcase.HYPHEN</code>)' href=#textcase.HYPHEN>HYPHEN</a></span><span class=p>,</span>
+</span><span id=__span-0-7><a id=__codelineno-0-7 name=__codelineno-0-7 href=#__codelineno-0-7></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">SPACE</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.SPACE</code>)' href=#textcase.SPACE>SPACE</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">INTERPUNCT</span>
+  </span> (<code>textcase.SPACE</code>)' href=#textcase.SPACE>SPACE</a></span><span class=p>,</span>
+</span><span id=__span-0-8><a id=__codelineno-0-8 name=__codelineno-0-8 href=#__codelineno-0-8></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">INTERPUNCT</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.INTERPUNCT</code>)' href=#textcase.INTERPUNCT>INTERPUNCT</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">LOWER_UPPER</span>
+  </span> (<code>textcase.INTERPUNCT</code>)' href=#textcase.INTERPUNCT>INTERPUNCT</a></span><span class=p>,</span>
+</span><span id=__span-0-9><a id=__codelineno-0-9 name=__codelineno-0-9 href=#__codelineno-0-9></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">LOWER_UPPER</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.LOWER_UPPER</code>)' href=#textcase.LOWER_UPPER>LOWER_UPPER</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">LOWER_DIGIT</span>
+  </span> (<code>textcase.LOWER_UPPER</code>)' href=#textcase.LOWER_UPPER>LOWER_UPPER</a></span><span class=p>,</span>
+</span><span id=__span-0-10><a id=__codelineno-0-10 name=__codelineno-0-10 href=#__codelineno-0-10></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">LOWER_DIGIT</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.LOWER_DIGIT</code>)' href=#textcase.LOWER_DIGIT>LOWER_DIGIT</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">UPPER_DIGIT</span>
+  </span> (<code>textcase.LOWER_DIGIT</code>)' href=#textcase.LOWER_DIGIT>LOWER_DIGIT</a></span><span class=p>,</span>
+</span><span id=__span-0-11><a id=__codelineno-0-11 name=__codelineno-0-11 href=#__codelineno-0-11></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">UPPER_DIGIT</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.UPPER_DIGIT</code>)' href=#textcase.UPPER_DIGIT>UPPER_DIGIT</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">DIGIT_LOWER</span>
+  </span> (<code>textcase.UPPER_DIGIT</code>)' href=#textcase.UPPER_DIGIT>UPPER_DIGIT</a></span><span class=p>,</span>
+</span><span id=__span-0-12><a id=__codelineno-0-12 name=__codelineno-0-12 href=#__codelineno-0-12></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">DIGIT_LOWER</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.DIGIT_LOWER</code>)' href=#textcase.DIGIT_LOWER>DIGIT_LOWER</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">DIGIT_UPPER</span>
+  </span> (<code>textcase.DIGIT_LOWER</code>)' href=#textcase.DIGIT_LOWER>DIGIT_LOWER</a></span><span class=p>,</span>
+</span><span id=__span-0-13><a id=__codelineno-0-13 name=__codelineno-0-13 href=#__codelineno-0-13></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">DIGIT_UPPER</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.DIGIT_UPPER</code>)' href=#textcase.DIGIT_UPPER>DIGIT_UPPER</a></span><span class=p>,</span> <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">ACRONYM</span>
+  </span> (<code>textcase.DIGIT_UPPER</code>)' href=#textcase.DIGIT_UPPER>DIGIT_UPPER</a></span><span class=p>,</span>
+</span><span id=__span-0-14><a id=__codelineno-0-14 name=__codelineno-0-14 href=#__codelineno-0-14></a>        <span class=n><a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">ACRONYM</span>
 
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span> (<code>textcase.ACRONYM</code>)' href=#textcase.ACRONYM>ACRONYM</a></span><span class=p>),</span> <span class=n>strip_punctuation</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/functions.html#bool>bool</a></span> <span class=o>=</span> <span class=kc>True</span><span class=p>)</span> <span class=o>-&gt;</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/stdtypes.html#str>str</a></span>
+  </span> (<code>textcase.ACRONYM</code>)' href=#textcase.ACRONYM>ACRONYM</a></span><span class=p>,</span>
+</span><span id=__span-0-15><a id=__codelineno-0-15 name=__codelineno-0-15 href=#__codelineno-0-15></a>    <span class=p>),</span>
+</span><span id=__span-0-16><a id=__codelineno-0-16 name=__codelineno-0-16 href=#__codelineno-0-16></a>    <span class=n>strip_punctuation</span><span class=p>:</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/functions.html#bool>bool</a></span> <span class=o>=</span> <span class=kc>True</span><span class=p>,</span>
+</span><span id=__span-0-17><a id=__codelineno-0-17 name=__codelineno-0-17 href=#__codelineno-0-17></a><span class=p>)</span> <span class=o>-&gt;</span> <span class=n><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/stdtypes.html#str>str</a></span>
 </span></code></pre></div> <div class="doc doc-contents "> <p>Convert the given string to the specified case format.</p> <table> <thead> <tr> <th><span class=doc-section-title>PARAMETER</span></th> <th><span>DESCRIPTION</span></th> </tr> </thead> <tbody> <tr class=doc-section-item> <td> <code>text</code> </td> <td class=doc-param-details> <div class=doc-md-description> <p>The input string to be converted.</p> </div> <p> <span class=doc-param-annotation> <b>TYPE:</b> <code><a class="autorefs autorefs-external" href=https://docs.python.org/3/library/stdtypes.html#str>str</a></code> </span> </p> </td> </tr> <tr class=doc-section-item> <td> <code>boundaries</code> </td> <td class=doc-param-details> <div class=doc-md-description> <p>The boundaries that define how to split the given string.</p> </div> <p> <span class=doc-param-annotation> <b>TYPE:</b> <code><a class="autorefs autorefs-external" title="<code>typing.Iterable</code>" href=https://docs.python.org/3/library/typing.html#typing.Iterable>Iterable</a>[<a class="autorefs autorefs-internal" title='<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Boundary</span>
 
 
