@@ -16,11 +16,11 @@
   <a href="https://coveralls.io/github/zobweyt/textcase" target="_blank">
     <img src="https://img.shields.io/coverallsCoverage/github/zobweyt/textcase?branch=main" alt="Coveralls"/>
   </a>
-  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
-    <img src="https://img.shields.io/pypi/v/textcase.svg" alt="PyPI - Version"/>
-  </a>
   <a href="https://pypistats.org/packages/textcase" target="_blank">
     <img src="https://img.shields.io/pypi/dm/textcase" alt="PyPI - Downloads"/>
+  </a>
+  <a href="https://pypi.python.org/pypi/textcase" target="_blank">
+    <img src="https://img.shields.io/pypi/v/textcase.svg" alt="PyPI - Version"/>
   </a>
   <a href="https://pypi.python.org/pypi/textcase" target="_blank">
     <img src="https://img.shields.io/pypi/pyversions/textcase.svg" alt="PyPI - Python Version"/>
@@ -35,7 +35,7 @@
 
 - **Text case conversion**: [convert](https://zobweyt.github.io/textcase/#usage) strings between various text cases (e.g., [snake_case](https://zobweyt.github.io/textcase/reference/#textcase.snake), [kebab-case](https://zobweyt.github.io/textcase/reference/#textcase.kebab), [camelCase](https://zobweyt.github.io/textcase/reference/#textcase.camel), etc.).
 - **Extensible**: extend the library with custom word [boundaries](https://zobweyt.github.io/textcase/learn/boundaries) and [cases](https://zobweyt.github.io/textcase/learn/cases).
-- **Accurate**: finds any word [boundaries](https://zobweyt.github.io/textcase/#precision) in strings including [acronyms](https://zobweyt.github.io/textcase/reference/#textcase.ACRONYM) (as in `"HTTPRequest"`).
+- **Accurate**: [handles any word boundaries](https://zobweyt.github.io/textcase/#precision) in strings including [acronyms](https://zobweyt.github.io/textcase/reference/#textcase.ACRONYM) (as in `"HTTPRequest"`).
 - **Non-ASCII Support**: handles [non-ASCII characters](https://zobweyt.github.io/textcase/#non-ascii-characters) seamlessly (no inferences on the input language itself is made).
 - **Tiny, Performant & Zero Dependencies**: a regex-free, efficient library that stays lightweight with no external dependencies.
 - **100% <abbr title="The amount of code that is automatically tested">test coverage</abbr>**: every line of code is rigorously tested for reliability.
