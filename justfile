@@ -17,8 +17,7 @@ default:
 
 [doc("Initialize development environment")]
 init:
-  @uv sync --frozen --group dev > /dev/null 2>&1
-  uv run pre-commit install
+  uv run --locked --group dev pre-commit install
 
 [doc("Run style recipes on source files")]
 [group("style")]
@@ -27,63 +26,53 @@ style: lint check format
 [doc("Run mypy on source files")]
 [group("style")]
 lint:
-  @uv sync --frozen --group style > /dev/null 2>&1
-  uv run --locked mypy
+  uv run --locked --group style mypy
 
 [doc("Run Ruff on source files")]
 [group("style")]
 check:
-  @uv sync --frozen --group style > /dev/null 2>&1
-  uv run --locked ruff check --fix
+  uv run --locked --group style ruff check --fix
 
 [doc("Run Ruff formatter on source files")]
 [group("style")]
 format:
-  @uv sync --frozen --group style > /dev/null 2>&1
-  uv run --locked ruff format
+  uv run --locked --group style ruff format
 
 [doc("Run test suite using pytest")]
 [group("tests")]
 test:
-  @uv sync --frozen --group tests > /dev/null 2>&1
-  uv run --locked pytest --doctest-modules
+  uv run --locked --group tests pytest --doctest-modules
 
 [doc("Generate test coverage report")]
 [group("tests")]
 coverage:
-  @uv sync --frozen --group tests > /dev/null 2>&1
-  uv run --locked pytest --doctest-modules --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov
+  uv run --locked --group tests pytest --doctest-modules --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov
 
 [doc("Serve documentation locally in watch mode")]
 [group("docs")]
 docs-serve:
-  @uv sync --frozen --group docs --group style > /dev/null 2>&1
-  uv run --locked mkdocs serve -f mkdocs.yaml
+  uv run --locked --group docs --group style mkdocs serve -f mkdocs.yaml
 
 [doc("Build documentation static files locally")]
 [group("docs")]
 docs-build:
-  @uv sync --frozen --group docs --group style > /dev/null 2>&1
-  uv run --locked mkdocs build -f mkdocs.yaml
+  uv run --locked --group docs --group style mkdocs build -f mkdocs.yaml
 
 [doc("Deploy documentation to GitHub Pages")]
 [group("docs")]
 [private]
 docs-gh-deploy:
-  @uv sync --frozen --group docs --group style > /dev/null 2>&1
-  uv run --locked mkdocs gh-deploy --force -f mkdocs.yaml
+  uv run --locked --group docs --group style mkdocs gh-deploy --force -f mkdocs.yaml
 
 [doc("Build package into source distributions and wheels")]
 [group("build")]
 build:
-  @uv sync --frozen > /dev/null 2>&1
   uv build
 
 [doc("Build and upload distributions to PyPI")]
 [group("publish")]
 [confirm("Do you really want to build and upload distributions to PyPI (y/N)?")]
 publish: style test build
-  @uv sync --frozen > /dev/null 2>&1
   uv publish
 
 [unix]
