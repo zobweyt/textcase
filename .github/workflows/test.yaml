@@ -1,8 +1,22 @@
 name: test
 
 on:
-  - push
-  - pull_request
+  push:
+    branches-ignore:
+      - main
+    paths:
+      - src
+      - tests
+      - justfile
+      - uv.lock
+  pull_request:
+    branches-ignore:
+      - main
+    paths:
+      - src
+      - tests
+      - justfile
+      - uv.lock
 
 jobs:
   test:

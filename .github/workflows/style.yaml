@@ -1,8 +1,24 @@
 name: style
 
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - "*"
+    paths:
+      - docs/.snippets
+      - src
+      - tests
+      - justfile
+      - uv.lock
+  pull_request:
+    branches:
+      - "*"
+    paths:
+      - docs/.snippets
+      - src
+      - tests
+      - justfile
+      - uv.lock
 
 jobs:
   style:

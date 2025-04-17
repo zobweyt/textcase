@@ -10,6 +10,7 @@ on:
       - CHANGELOG.md
       - justfile
       - mkdocs.yaml
+      - uv.lock
 
 permissions:
   contents: write
