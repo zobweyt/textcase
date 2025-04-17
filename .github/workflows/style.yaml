@@ -1,8 +1,8 @@
+name: style
+
 on:
   - push
   - pull_request
-
-name: style
 
 jobs:
   style:

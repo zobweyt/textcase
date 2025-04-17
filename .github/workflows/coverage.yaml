@@ -1,3 +1,5 @@
+name: coverage
+
 on:
   push:
     branches:
@@ -6,8 +8,6 @@ on:
       - src
       - tests
       - justfile
-
-name: coverage
 
 jobs:
   coverage:
