@@ -1183,11 +1183,7 @@ source = { editable = "." }
 
 [package.dev-dependencies]
 dev = [
-    { name = "mypy" },
     { name = "pre-commit" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "ruff" },
 ]
 docs = [
     { name = "cairosvg" },
@@ -1201,17 +1197,19 @@ docs = [
     { name = "pillow" },
     { name = "termynal" },
 ]
+style = [
+    { name = "mypy" },
+    { name = "ruff" },
+]
+tests = [
+    { name = "pytest" },
+    { name = "pytest-cov" },
+]
 
 [package.metadata]
 
 [package.metadata.requires-dev]
-dev = [
-    { name = "mypy", specifier = ">=1.15.0" },
-    { name = "pre-commit", specifier = ">=4.2.0" },
-    { name = "pytest", specifier = ">=8.3.5" },
-    { name = "pytest-cov", specifier = ">=6.0.0" },
-    { name = "ruff", specifier = ">=0.11.2" },
-]
+dev = [{ name = "pre-commit", specifier = ">=4.2.0" }]
 docs = [
     { name = "cairosvg", specifier = ">=2.7.1" },
     { name = "griffe-typingdoc", specifier = ">=0.2.8" },
@@ -1223,6 +1221,14 @@ docs = [
     { name = "mkdocstrings", extras = ["python"], specifier = ">=0.29.1" },
     { name = "pillow", specifier = ">=11.1.0" },
     { name = "termynal", specifier = ">=0.13.0" },
+]
+style = [
+    { name = "mypy", specifier = ">=1.15.0" },
+    { name = "ruff", specifier = ">=0.11.2" },
+]
+tests = [
+    { name = "pytest", specifier = ">=8.3.5" },
+    { name = "pytest-cov", specifier = ">=6.0.0" },
 ]
 
 [[package]]

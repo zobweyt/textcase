@@ -63,11 +63,7 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "mypy>=1.15.0",
     "pre-commit>=4.2.0",
-    "pytest>=8.3.5",
-    "pytest-cov>=6.0.0",
-    "ruff>=0.11.2",
 ]
 docs = [
     "cairosvg>=2.7.1",
@@ -81,9 +77,17 @@ docs = [
     "pillow>=11.1.0",
     "termynal>=0.13.0",
 ]
+tests = [
+    "pytest>=8.3.5",
+    "pytest-cov>=6.0.0",
+]
+style = [
+    "mypy>=1.15.0",
+    "ruff>=0.11.2",
+]
 
 [tool.uv]
-default-groups = ["dev", "docs"]
+default-groups = []
 
 [tool.mypy]
 files = [

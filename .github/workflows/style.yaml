@@ -5,19 +5,23 @@ on:
     branches:
       - "*"
     paths:
+      - .github/workflows/style.yaml
       - docs/.snippets/**
       - src/**
       - tests/**
       - justfile
+      - pyproject.toml
       - uv.lock
   pull_request:
     branches:
       - "*"
     paths:
+      - .github/workflows/style.yaml
       - docs/.snippets/**
       - src/**
       - tests/**
       - justfile
+      - pyproject.toml
       - uv.lock
 
 jobs:
@@ -36,8 +40,5 @@ jobs:
         with:
           version: 0.6.4
 
-      - name: Run lint and check
-        run: |
-          uv sync
-          just lint
-          just check
+      - name: Run style
+        run: just style

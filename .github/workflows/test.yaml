@@ -5,17 +5,21 @@ on:
     branches-ignore:
       - main
     paths:
+      - .github/workflows/test.yaml
       - src/**
       - tests/**
       - justfile
+      - pyproject.toml
       - uv.lock
   pull_request:
     branches-ignore:
       - main
     paths:
+      - .github/workflows/test.yaml
       - src/**
       - tests/**
       - justfile
+      - pyproject.toml
       - uv.lock
 
 jobs:
@@ -35,6 +39,4 @@ jobs:
           version: 0.6.4
 
       - name: Run test
-        run: |
-          uv sync
-          just test
+        run: just test
