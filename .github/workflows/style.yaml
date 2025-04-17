@@ -5,18 +5,18 @@ on:
     branches:
       - "*"
     paths:
-      - docs/.snippets
-      - src
-      - tests
+      - docs/.snippets/**
+      - src/**
+      - tests/**
       - justfile
       - uv.lock
   pull_request:
     branches:
       - "*"
     paths:
-      - docs/.snippets
-      - src
-      - tests
+      - docs/.snippets/**
+      - src/**
+      - tests/**
       - justfile
       - uv.lock
 

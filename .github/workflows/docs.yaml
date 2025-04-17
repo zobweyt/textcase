@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - docs
-      - src
+      - docs/**
+      - src/**
       - CHANGELOG.md
       - justfile
       - mkdocs.yaml
