@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: textcase
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Nikita
+    family-names: Gaziev
+    email: zobweyt@gmail.com
+repository-code: "https://github.com/zobweyt/textcase"
+url: "https://zobweyt.github.io/textcase/"
+abstract: Python library for text case conversions
+keywords:
+  - camel case
+  - case
+  - constant case
+  - conversion
+  - foss
+  - just
+  - kebab case
+  - lower case
+  - middot case
+  - mypy
+  - nix
+  - pascal case
+  - pypi
+  - pytest
+  - python
+  - ruff
+  - sentence case
+  - snake case
+  - text
+  - title case
+  - upper case
+  - uv
+license: MIT
+commit: 34c3e608b425f9599a1b005e7db459e20b8f8836
+version: 0.4.1
+date-released: "2025-04-15"
