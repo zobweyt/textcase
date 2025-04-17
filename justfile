@@ -43,13 +43,13 @@ format:
   uv run ruff format
 
 [doc("Run test suite using pytest")]
-[group("test")]
+[group("tests")]
 test:
   @uv sync --group tests > /dev/null 2>&1
   uv run pytest --doctest-modules
 
 [doc("Generate test coverage report")]
-[group("test")]
+[group("tests")]
 coverage:
   @uv sync --group tests > /dev/null 2>&1
   uv run pytest --doctest-modules --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov
@@ -57,20 +57,20 @@ coverage:
 [doc("Serve documentation locally in watch mode")]
 [group("docs")]
 docs-serve:
-  @uv sync --group docs > /dev/null 2>&1
+  @uv sync --group docs --group style > /dev/null 2>&1
   uv run mkdocs serve -f mkdocs.yaml
 
 [doc("Build documentation static files locally")]
 [group("docs")]
 docs-build:
-  @uv sync --group docs > /dev/null 2>&1
+  @uv sync --group docs --group style > /dev/null 2>&1
   uv run mkdocs build -f mkdocs.yaml
 
 [doc("Deploy documentation to GitHub Pages")]
 [group("docs")]
 [private]
 docs-gh-deploy:
-  @uv sync --group docs > /dev/null 2>&1
+  @uv sync --group docs --group style > /dev/null 2>&1
   uv run mkdocs gh-deploy --force -f mkdocs.yaml
 
 [doc("Build package into source distributions and wheels")]
