@@ -1,5 +1,5 @@
 site_name: textcase
-site_description: A feature-rich Python text case conversion library
+site_description: Python library for text case conversions.
 site_author: Nikita Gaziev
 site_url: https://zobweyt.github.io/textcase/
 repo_name: zobweyt/textcase
@@ -85,7 +85,7 @@ plugins:
           build: true
           copyright: Авторские права &copy; 2025 Никита Газиев
           site_author: Никита Газиев
-          site_description: Многофункциональная библиотека преобразования регистра текста в Python
+          site_description: Python библиотека для преобразования регистра текста.
           nav_translations:
             Home: Главная
             Learn: Обучение

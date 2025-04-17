@@ -9,7 +9,7 @@
 </h1>
 
 <p align="center">
-  A feature-rich Python text case conversion library.
+  Python library for text case conversions.
 </p>
 
 <p align="center">

@@ -1,7 +1,7 @@
 [project]
 name = "textcase"
 version = "0.4.1"
-description = "A feature-rich Python text case conversion library."
+description = "Python library for text case conversions."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.9"
