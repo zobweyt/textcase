@@ -6,10 +6,6 @@ def test_boundary_from_delimiter() -> None:
 
 
 def test_boundary_init() -> None:
-    AT_LETTER = Boundary(
-        match=lambda text: (len(text) > 1 and text[0] == "@") and (text[1] == text[1].lower()),
-        start=1,
-        length=0,
-    )
+    AT_LETTER = Boundary(match=lambda s: s[:1] == "@" and s[:2] == s[:2].lower(), start=1)
 
     assert title("name@domain", boundaries=[AT_LETTER], strip_punctuation=False) == "Name@ Domain"
