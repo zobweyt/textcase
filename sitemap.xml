@@ -36,6 +36,13 @@
         <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/learn/cases/"/>
     </url>
     <url>
+        <loc>https://zobweyt.github.io/textcase/learn/recipes/</loc>
+        <lastmod>2025-04-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/learn/recipes/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/learn/recipes/"/>
+    </url>
+    <url>
         <loc>https://zobweyt.github.io/textcase/ru/</loc>
         <lastmod>2025-04-18</lastmod>
         <changefreq>daily</changefreq>
@@ -69,5 +76,12 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/learn/cases/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/learn/cases/"/>
+    </url>
+    <url>
+        <loc>https://zobweyt.github.io/textcase/ru/learn/recipes/</loc>
+        <lastmod>2025-04-18</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://zobweyt.github.io/textcase/ru/learn/recipes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://zobweyt.github.io/textcase/learn/recipes/"/>
     </url>
 </urlset>
