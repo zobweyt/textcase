@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.3](https://github.com/zobweyt/textcase/compare/0.4.2...0.4.3) (2025-04-18)
+
+Update `Boundary.from_delimiter` to use full delimiter length.
+
+### <!-- 0 -->Bug Fixes <!-- omit in toc -->
+
+- update `Boundary.from_delimiter` to use full delimiter length ([`6b95985`](https://github.com/zobweyt/textcase/commit/6b95985c579415be65158195d4adedb82b9d0389))
+
 ## [0.4.2](https://github.com/zobweyt/textcase/compare/0.4.1...0.4.2) (2025-04-18)
 
 Text case conversion strip punctuation fixes and improved edge case handling in tests.
