@@ -1,0 +1,5 @@
+- `#!py "TODO #3 (Draft).md"`
+- `#!py "BigQuery.csv"`
+- `#!py "Résumé2025.docx"`
+- `#!py "LLMCache: Кеширование LLM запросов.pptx"`
+- `#!py "The Python 3 Standard Library by Example.pdf"`

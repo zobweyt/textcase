@@ -65,6 +65,7 @@ nav:
   - Learn:
       - learn/boundaries.md
       - learn/cases.md
+      - learn/recipes.md
   - Reference: reference.md
   - Changelog: changelog.md
 
