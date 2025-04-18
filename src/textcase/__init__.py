@@ -423,6 +423,8 @@ class Case:
         text = self.delimiter.join(self.transform(words))
 
         if strip_punctuation:
+            text = text.lstrip(punctuation)
+            text = text.rstrip(punctuation)
             text = text.translate(str.maketrans(dict.fromkeys(set(punctuation) - {self.delimiter})))
 
         return text
