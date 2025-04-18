@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.2](https://github.com/zobweyt/textcase/compare/0.4.1...0.4.2) (2025-04-18)
+
+Text case conversion strip punctuation fixes and improved edge case handling in tests.
+
+### <!-- 0 -->Bug Fixes <!-- omit in toc -->
+
+- correctly strip leading and trailing punctuation ([`1db6a93`](https://github.com/zobweyt/textcase/commit/1db6a938a03783f368a85c0085ffccb41545ec36))
+
+### <!-- 3 -->Refactoring <!-- omit in toc -->
+
+- simplify boundary creation in custom boundary tests ([`fb85ca7`](https://github.com/zobweyt/textcase/commit/fb85ca7ba0dac0fd280eafb3faf36b6a9be085df))
+
+### <!-- 4 -->Testing <!-- omit in toc -->
+
+- update precision tests ([`b8f1e79`](https://github.com/zobweyt/textcase/commit/b8f1e79124be26af95a009112f7191d5f255c5af))
+- handle more edge cases ([`aab332d`](https://github.com/zobweyt/textcase/commit/aab332dbcb17d836ec7ac81f05e57051fd679e0f))
+
 ## [0.4.1](https://github.com/zobweyt/textcase/compare/0.4.0...0.4.1) (2025-04-15)
 
 Performance and documentation enhancements.

@@ -35,6 +35,6 @@ keywords:
   - upper case
   - uv
 license: MIT
-commit: 34c3e608b425f9599a1b005e7db459e20b8f8836
-version: 0.4.1
-date-released: "2025-04-15"
+commit: aab332dbcb17d836ec7ac81f05e57051fd679e0f
+version: 0.4.2
+date-released: "2025-04-18"
