@@ -92,7 +92,7 @@ class Boundary:
             >>> DOT.length
             1
         """
-        return Boundary(match=lambda text: text[:1] == delimiter, length=len(delimiter))
+        return Boundary(match=lambda s: s.startswith(delimiter), length=len(delimiter))
 
 
 UNDERSCORE = Boundary.from_delimiter("_")
