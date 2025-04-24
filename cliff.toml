@@ -28,7 +28,7 @@ body = """
 {% endif -%}
 
 {% for group, commits in commits | group_by(attribute="group") %}
-    ### {{ group | upper_first }} <!-- omit in toc -->
+    ### {{ group | striptags | trim | upper_first }} <!-- omit in toc -->
     {% for commit in commits %}
         - {{ commit.message | split(pat="\n") | first | trim }} ([`{{ commit.id | truncate(length=7, end="") }}`]({{ remote_url }}/commit/{{ commit.id }}))\
     {% endfor %}
