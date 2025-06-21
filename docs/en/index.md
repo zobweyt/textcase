@@ -116,9 +116,9 @@ This means that the library can handle various characters:
 
 ### Punctuation
 
-By default, characters followed by digits and vice-versa are considered word boundaries.
-In addition, [punctuation][string.punctuation] characters are stripped
-(excluding current case [`delimiter`][textcase.Case.delimiter]) and other special characters are ignored.
+By default [punctuation][string.punctuation] characters are stripped
+(excluding the [`delimiter`][textcase.Case.delimiter] of the current text case)
+and other special characters are ignored.
 You can control this behavior using the `strip_punctuation` argument:
 
 ```py title="punctuation.py" linenums="1" hl_lines="7-8"
