@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 Update `Boundary.from_delimiter` to use full delimiter length.
 
-### <!-- 0 -->Bug Fixes <!-- omit in toc -->
+### Bug Fixes <!-- omit in toc -->
 
 - update `Boundary.from_delimiter` to use full delimiter length ([`6b95985`](https://github.com/zobweyt/textcase/commit/6b95985c579415be65158195d4adedb82b9d0389))
 
@@ -14,15 +14,15 @@ Update `Boundary.from_delimiter` to use full delimiter length.
 
 Text case conversion strip punctuation fixes and improved edge case handling in tests.
 
-### <!-- 0 -->Bug Fixes <!-- omit in toc -->
+### Bug Fixes <!-- omit in toc -->
 
 - correctly strip leading and trailing punctuation ([`1db6a93`](https://github.com/zobweyt/textcase/commit/1db6a938a03783f368a85c0085ffccb41545ec36))
 
-### <!-- 3 -->Refactoring <!-- omit in toc -->
+### Refactoring <!-- omit in toc -->
 
 - simplify boundary creation in custom boundary tests ([`fb85ca7`](https://github.com/zobweyt/textcase/commit/fb85ca7ba0dac0fd280eafb3faf36b6a9be085df))
 
-### <!-- 4 -->Testing <!-- omit in toc -->
+### Testing <!-- omit in toc -->
 
 - update precision tests ([`b8f1e79`](https://github.com/zobweyt/textcase/commit/b8f1e79124be26af95a009112f7191d5f255c5af))
 - handle more edge cases ([`aab332d`](https://github.com/zobweyt/textcase/commit/aab332dbcb17d836ec7ac81f05e57051fd679e0f))
@@ -31,7 +31,7 @@ Text case conversion strip punctuation fixes and improved edge case handling in 
 
 Performance and documentation enhancements.
 
-### <!-- 2 -->Performance <!-- omit in toc -->
+### Performance <!-- omit in toc -->
 
 - optimize build ([`a79cb84`](https://github.com/zobweyt/textcase/commit/a79cb84082d1b3d7ba717fe7059c7ca3fa713f4b))
 
@@ -39,11 +39,11 @@ Performance and documentation enhancements.
 
 Rewrite.
 
-### <!-- 1 -->Features <!-- omit in toc -->
+### Features <!-- omit in toc -->
 
 - rewrite ([`4816c0e`](https://github.com/zobweyt/textcase/commit/4816c0e4edfef6f7255439fed1dec15eb5763d99))
 
-### <!-- 2 -->Performance <!-- omit in toc -->
+### Performance <!-- omit in toc -->
 
 - optimize `pattern.camel` and `pattern.sentence` ([`a5d1731`](https://github.com/zobweyt/textcase/commit/a5d17310fd749a5dac943be51a4dc385506d2c31))
 
@@ -51,7 +51,7 @@ Rewrite.
 
 Adds `py.typed` file.
 
-### <!-- 0 -->Bug Fixes <!-- omit in toc -->
+### Bug Fixes <!-- omit in toc -->
 
 - add `py.typed` file ([`a2611af`](https://github.com/zobweyt/textcase/commit/a2611af1300d3f0aa22a0e41f31ede261e55d2bd))
 
@@ -59,7 +59,7 @@ Adds `py.typed` file.
 
 Simplification of custom `Boundary` creation from a delimiter, and addition of the new `MIDDOT` case.
 
-### <!-- 1 -->Features <!-- omit in toc -->
+### Features <!-- omit in toc -->
 
 - add `Boundary.from_delimiter` (#10) ([`ff46f04`](https://github.com/zobweyt/textcase/commit/ff46f04051347fca94d3f2dde191c881d8b024bf))
 - add `INTERPUNCT` boundary and `MIDDOT` case (#11) ([`8cf450b`](https://github.com/zobweyt/textcase/commit/8cf450b140a032684d36069710404c76809ab052))
@@ -68,7 +68,7 @@ Simplification of custom `Boundary` creation from a delimiter, and addition of t
 
 Acronym identification fixes.
 
-### <!-- 0 -->Bug Fixes <!-- omit in toc -->
+### Bug Fixes <!-- omit in toc -->
 
 - update ACRONYM to correctly identify acronym boundaries ([`dd604b0`](https://github.com/zobweyt/textcase/commit/dd604b0725329ae71be2212e694087216d57d388))
 
@@ -76,7 +76,7 @@ Acronym identification fixes.
 
 Performance and documentation enhancements.
 
-### <!-- 2 -->Performance <!-- omit in toc -->
+### Performance <!-- omit in toc -->
 
 - optimize boundary conditions ([`27cbbb2`](https://github.com/zobweyt/textcase/commit/27cbbb2643ba957f4318f150a109e728610dee73))
 
@@ -84,7 +84,7 @@ Performance and documentation enhancements.
 
 Expands test coverage with new tests for edge cases and conversions.
 
-### <!-- 4 -->Testing <!-- omit in toc -->
+### Testing <!-- omit in toc -->
 
 - add boundary custom tests ([`5602ed0`](https://github.com/zobweyt/textcase/commit/5602ed019ebfae8ea5df6fe17f2593bac4e99e9e))
 - add case custom tests ([`b26a3c1`](https://github.com/zobweyt/textcase/commit/b26a3c1020f046b0c57399ddb03b1b3953d44dcc))
@@ -101,12 +101,12 @@ Expands test coverage with new tests for edge cases and conversions.
 
 Adds initial functionality for text case conversion, with extensibility possible.
 
-### <!-- 0 -->Bug Fixes <!-- omit in toc -->
+### Bug Fixes <!-- omit in toc -->
 
 - use final for case constants ([`5228e8d`](https://github.com/zobweyt/textcase/commit/5228e8dda4bb4a503791b1206adc54c2664d39c2))
 - use lower instead of upper for LOWER case ([`cce6ed7`](https://github.com/zobweyt/textcase/commit/cce6ed7371976e762ddf3adfe7d176635910df7f))
 
-### <!-- 1 -->Features <!-- omit in toc -->
+### Features <!-- omit in toc -->
 
 - add text case transformation patterns ([`b003fac`](https://github.com/zobweyt/textcase/commit/b003fac291a21dae0ca19688cb0fa2ea23aceb7b))
 - add conditions for splitting an identifier into words ([`fb76228`](https://github.com/zobweyt/textcase/commit/fb762289d34080cf9bd380c66330598a428dcc9d))
@@ -116,7 +116,7 @@ Adds initial functionality for text case conversion, with extensibility possible
 - add boundaries to convert function ([`0b9ea8a`](https://github.com/zobweyt/textcase/commit/0b9ea8ab20fe2f4419a13f18d68d8a9464e53da3))
 - add initial functionality (#1) ([`3073ae6`](https://github.com/zobweyt/textcase/commit/3073ae63db2b50f0e673af851f2bb2b6b5f34942))
 
-### <!-- 4 -->Testing <!-- omit in toc -->
+### Testing <!-- omit in toc -->
 
 - include doctests in pytest ([`699c5a6`](https://github.com/zobweyt/textcase/commit/699c5a6e21fcab62a22cff50c6790458727039a1))
 - ignore testmod ([`04f6862`](https://github.com/zobweyt/textcase/commit/04f68629afaecc402347a70f92edb4e82f1ffa4d))
@@ -130,7 +130,7 @@ Adds initial functionality for text case conversion, with extensibility possible
 
 Initial release.
 
-### <!-- 1 -->Features <!-- omit in toc -->
+### Features <!-- omit in toc -->
 
 - init ([`22ec6ca`](https://github.com/zobweyt/textcase/commit/22ec6ca462445c19b8de9a3e378905d4be7ca94a))
 
