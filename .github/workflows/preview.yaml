@@ -1,0 +1,54 @@
+name: preview
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+    paths:
+      - .github/workflows/preview.yaml
+      - docs/**
+      - src/**
+      - CHANGELOG.md
+      - justfile
+      - mkdocs.yaml
+      - pyproject.toml
+      - uv.lock
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup just
+        uses: extractions/setup-just@v3
+        with:
+          just-version: 1.38.0
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: 0.6.4
+
+      - name: Replace site_url for PR preview
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          NEW_URL="https://zobweyt.github.io/textcase/pr-preview/pr-${PR_NUMBER}/"
+          sed -i "s|site_url: .*|site_url: $NEW_URL|" mkdocs.yaml
+          echo "Updated site_url to: $NEW_URL"
+
+      - name: Build docs
+        run: just docs-build
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./site
