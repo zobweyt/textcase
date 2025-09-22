@@ -23,7 +23,6 @@ updates:
     open-pull-requests-limit: 1
     groups:
       deps:
-        applies-to: "version-updates"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -47,4 +46,3 @@ updates:
     open-pull-requests-limit: 5
     groups:
       deps:
-        applies-to: "version-updates"
