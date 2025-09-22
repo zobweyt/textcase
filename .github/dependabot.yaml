@@ -20,7 +20,7 @@ updates:
       - "status: review needed"
       - "priority: medium"
       - "dependencies: uv"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 10
 
   - package-ecosystem: "github-actions"
     directory: "/"
