@@ -24,6 +24,7 @@ concurrency: preview-${{ github.ref }}
 
 permissions:
   issues: write
+  pull-requests: write
   contents: write
 
 jobs:
