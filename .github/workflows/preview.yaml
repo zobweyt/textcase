@@ -23,6 +23,7 @@ on:
 concurrency: preview-${{ github.ref }}
 
 permissions:
+  issues: write
   contents: write
 
 jobs:
