@@ -1,0 +1,46 @@
+version: 2
+
+updates:
+  - package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      timezone: "Europe/Moscow"
+      day: "saturday"
+      time: "06:00"
+    target-branch: "dev"
+    assignees:
+      - "zobweyt"
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+    labels:
+      - "type: chore"
+      - "status: review needed"
+      - "priority: medium"
+      - "dependencies: uv"
+    versioning-strategy: "increase"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      timezone: "Europe/Moscow"
+      day: "saturday"
+      time: "06:00"
+    target-branch: "dev"
+    assignees:
+      - "zobweyt"
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+    labels:
+      - "type: chore"
+      - "status: review needed"
+      - "priority: medium"
+      - "dependencies: github-actions"
+    versioning-strategy: "increase"
+    open-pull-requests-limit: 5
