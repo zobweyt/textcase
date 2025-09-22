@@ -6,7 +6,7 @@ on:
       - main
       - dev
     paths:
-      - .github/workflows/docs.yaml
+      - .github/workflows/preview.yaml
       - docs/**
       - src/**
       - CHANGELOG.md
@@ -22,16 +22,21 @@ on:
 
 concurrency: preview-${{ github.ref }}
 
+permissions:
+  issues: write
+  pull-requests: write
+  contents: write
+
 jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          sparse-checkout: |
-            docs
-            src
+      - uses: actions/checkout@v5
+
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
       - name: Setup just
         uses: extractions/setup-just@v3
@@ -39,9 +44,16 @@ jobs:
           just-version: 1.38.0
 
       - name: Setup uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v6
         with:
           version: 0.6.4
+
+      - name: Replace site_url for PR preview
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          NEW_URL="https://zobweyt.github.io/textcase/pr-preview/pr-${PR_NUMBER}/"
+          sed -i "s|site_url: .*|site_url: $NEW_URL|" mkdocs.yaml
+          echo "Updated site_url to: $NEW_URL"
 
       - name: Build docs
         run: just docs-build
@@ -49,4 +61,4 @@ jobs:
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./site/
+          source-dir: ./site
