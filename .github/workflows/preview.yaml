@@ -38,6 +38,13 @@ jobs:
         with:
           version: 0.6.4
 
+      - name: Replace site_url for PR preview
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          NEW_URL="https://zobweyt.github.io/textcase/pr-preview/pr-${PR_NUMBER}/"
+          sed -i "s|site_url: .*|site_url: $NEW_URL|" mkdocs.yaml
+          echo "Updated site_url to: $NEW_URL"
+
       - name: Build docs
         run: just docs-build
 
