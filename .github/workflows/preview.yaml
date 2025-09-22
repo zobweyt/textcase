@@ -27,13 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
       - name: Setup just
         uses: extractions/setup-just@v3
@@ -52,3 +45,4 @@ jobs:
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: ./site/
+          git-config-args: --global core.sparseCheckout false
