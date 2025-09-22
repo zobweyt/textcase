@@ -1,20 +1,10 @@
 name: style
 
 on:
-  push:
-    branches:
-      - "*"
-    paths:
-      - .github/workflows/style.yaml
-      - docs/.snippets/**
-      - src/**
-      - tests/**
-      - justfile
-      - pyproject.toml
-      - uv.lock
   pull_request:
     branches:
-      - "*"
+      - main
+      - dev
     paths:
       - .github/workflows/style.yaml
       - docs/.snippets/**
