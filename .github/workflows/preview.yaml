@@ -27,6 +27,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+          # Note: it is import that we **do not** clone the pr-preview directory here since
+          # we don't need to include this sub-directory when releasing or previewing docs.  This
+          # speeds up the checkout time significantly, and stops the pr-preview directory from
+          # bloating up (otherwise we'll keep a recursive copy).
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/pr-preview/
 
       - name: Setup just
         uses: extractions/setup-just@v3
