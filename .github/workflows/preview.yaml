@@ -6,7 +6,7 @@ on:
       - main
       - dev
     paths:
-      - .github/workflows/docs.yaml
+      - .github/workflows/preview.yaml
       - docs/**
       - src/**
       - CHANGELOG.md
@@ -27,17 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          fetch-depth: 1
-          # Note: it is import that we **do not** clone the pr-preview directory here since
-          # we don't need to include this sub-directory when releasing or previewing docs.  This
-          # speeds up the checkout time significantly, and stops the pr-preview directory from
-          # bloating up (otherwise we'll keep a recursive copy).
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            /*
-            !/pr-preview/
 
       - name: Setup just
         uses: extractions/setup-just@v3
@@ -48,6 +37,13 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           version: 0.6.4
+
+      - name: Replace site_url for PR preview
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          NEW_URL="https://zobweyt.github.io/textcase/pr-preview/pr-${PR_NUMBER}/"
+          sed -i "s|site_url: .*|site_url: $NEW_URL|" mkdocs.yaml
+          echo "Updated site_url to: $NEW_URL"
 
       - name: Build docs
         run: just docs-build
