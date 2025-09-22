@@ -1,9 +1,10 @@
-name: docs
+name: preview
 
 on:
-  push:
+  pull_request:
     branches:
       - main
+      - dev
     paths:
       - .github/workflows/docs.yaml
       - docs/**
@@ -13,25 +14,24 @@ on:
       - mkdocs.yaml
       - pyproject.toml
       - uv.lock
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
 
-permissions:
-  contents: write
+concurrency: preview-${{ github.ref }}
 
 jobs:
-  docs:
+  preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           sparse-checkout: |
             docs
             src
-
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
       - name: Setup just
         uses: extractions/setup-just@v3
@@ -39,9 +39,14 @@ jobs:
           just-version: 1.38.0
 
       - name: Setup uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v5
         with:
           version: 0.6.4
 
-      - name: Deploy docs
-        run: just docs-gh-deploy
+      - name: Build docs
+        run: just docs-build
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./site/
