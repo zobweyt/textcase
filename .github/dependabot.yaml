@@ -23,7 +23,8 @@ updates:
     open-pull-requests-limit: 1
     groups:
       deps:
-        patterns: "*"
+        patterns:
+          - "*"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -47,4 +48,5 @@ updates:
     open-pull-requests-limit: 5
     groups:
       deps:
-        patterns: "*"
+        patterns:
+          - "*"
