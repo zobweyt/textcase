@@ -20,7 +20,6 @@ updates:
       - "status: review needed"
       - "priority: medium"
       - "dependencies: uv"
-    versioning-strategy: "increase"
     open-pull-requests-limit: 5
 
   - package-ecosystem: "github-actions"
@@ -42,5 +41,4 @@ updates:
       - "status: review needed"
       - "priority: medium"
       - "dependencies: github-actions"
-    versioning-strategy: "increase"
     open-pull-requests-limit: 5
