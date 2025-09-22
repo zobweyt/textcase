@@ -16,7 +16,7 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
       - name: Setup just
         uses: extractions/setup-just@v3
@@ -24,7 +24,7 @@ jobs:
           just-version: 1.38.0
 
       - name: Setup uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v6
         with:
           version: 0.6.4
 
