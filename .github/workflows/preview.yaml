@@ -22,6 +22,9 @@ on:
 
 concurrency: preview-${{ github.ref }}
 
+permissions:
+  contents: write
+
 jobs:
   preview:
     runs-on: ubuntu-latest
