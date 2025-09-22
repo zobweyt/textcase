@@ -44,5 +44,4 @@ jobs:
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./site/
-          git-config-args: --global core.sparseCheckout false
+          source-dir: ./site
