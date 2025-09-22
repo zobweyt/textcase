@@ -6,7 +6,7 @@ on:
       - main
       - dev
     paths:
-      - .github/workflows/docs.yaml
+      - .github/workflows/preview.yaml
       - docs/**
       - src/**
       - CHANGELOG.md
@@ -27,11 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          sparse-checkout: |
-            docs
-            src
 
       - name: Setup just
         uses: extractions/setup-just@v3
@@ -49,4 +44,4 @@ jobs:
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./site/
+          source-dir: ./site
