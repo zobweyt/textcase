@@ -1,19 +1,10 @@
 name: test
 
 on:
-  push:
-    branches-ignore:
-      - main
-    paths:
-      - .github/workflows/test.yaml
-      - src/**
-      - tests/**
-      - justfile
-      - pyproject.toml
-      - uv.lock
   pull_request:
-    branches-ignore:
+    branches:
       - main
+      - dev
     paths:
       - .github/workflows/test.yaml
       - src/**
