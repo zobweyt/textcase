@@ -8,7 +8,7 @@ updates:
       timezone: "Europe/Moscow"
       day: "saturday"
       time: "06:00"
-    target-branch: "dev"
+    target-branch: "main"
     assignees:
       - "zobweyt"
     commit-message:
@@ -33,7 +33,7 @@ updates:
       timezone: "Europe/Moscow"
       day: "saturday"
       time: "06:00"
-    target-branch: "dev"
+    target-branch: "main"
     assignees:
       - "zobweyt"
     commit-message:
