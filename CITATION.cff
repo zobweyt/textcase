@@ -16,13 +16,13 @@ keywords:
   - case
   - constant case
   - conversion
+  - devcontainers
   - foss
   - just
   - kebab case
   - lower case
   - middot case
   - mypy
-  - nix
   - pascal case
   - pypi
   - pytest

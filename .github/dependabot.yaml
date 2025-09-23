@@ -9,8 +9,6 @@ updates:
       day: "saturday"
       time: "06:00"
     target-branch: "main"
-    assignees:
-      - "zobweyt"
     commit-message:
       prefix: "chore"
       prefix-development: "chore"
@@ -34,8 +32,6 @@ updates:
       day: "saturday"
       time: "06:00"
     target-branch: "main"
-    assignees:
-      - "zobweyt"
     commit-message:
       prefix: "chore"
       prefix-development: "chore"
@@ -45,7 +41,30 @@ updates:
       - "status: review needed"
       - "priority: medium"
       - "dependencies: github-actions"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 1
+    groups:
+      deps:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "devcontainers"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      timezone: "Europe/Moscow"
+      day: "saturday"
+      time: "06:00"
+    target-branch: "main"
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+    labels:
+      - "type: chore"
+      - "status: review needed"
+      - "priority: medium"
+      - "dependencies: devcontainers"
+    open-pull-requests-limit: 1
     groups:
       deps:
         patterns:

@@ -55,14 +55,19 @@ docs-serve:
 
 [doc("Build documentation static files locally")]
 [group("docs")]
-docs-build:
+docs-build: docs-changelog
   uv run --locked --group docs --group style mkdocs build -f mkdocs.yaml
 
 [doc("Deploy documentation to GitHub Pages")]
 [group("docs")]
 [private]
-docs-gh-deploy:
+docs-gh-deploy: docs-changelog
   uv run --locked --group docs --group style mkdocs gh-deploy --force -f mkdocs.yaml
+
+[doc("Build documentation static files locally")]
+[group("changelog")]
+docs-changelog:
+  uv run --locked --group docs git cliff -o CHANGELOG.md
 
 [doc("Build package into source distributions and wheels")]
 [group("build")]

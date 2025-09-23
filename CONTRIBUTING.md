@@ -97,17 +97,36 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/zobwey
 
 ### Your First Code Contribution
 
-To get started with contributing to this project, you'll need to set up your development environment. We recommend using [Nix](https://nixos.org/download/) for package management and environment setup, as it provides a reproducible build environment that ensures consistency across different systems.
+To get started with contributing to this project, you'll need to set up your development environment.
 
-Once you have [Nix](https://nixos.org/download/) installed, you can set up the project by running the following commands:
+#### Quick Start with GitHub Codespaces
+
+The easiest way to get started is using [GitHub Codespaces](https://github.com/features/codespaces), which provides a pre-configured development environment in your browser:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/zobweyt/textcase) 
+
+Click the button above to launch a fully configured codespace with all dependencies installed.
+
+After entering the codespace, verify that everything is working correctly by running:
+
+```sh
+just test
+```
+
+This will execute the test suite and confirm that your environment is set up properly.
+
+#### Local Development Setup
+
+If you prefer to work locally, you'll need to have [`just`](https://github.com/casey/just) (command runner) and [`uv`](https://github.com/astral-sh/uv) (package and project manager) installed in your environment.
+
+First, clone the repository:
 
 ```sh
 git clone https://github.com/zobweyt/textcase
 cd textcase
-nix-shell
 ```
 
-After entering the Nix shell, verify that everything is working correctly by running:
+Then verify that everything is working correctly by running:
 
 ```sh
 just test

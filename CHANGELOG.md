@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+### Performance <!-- omit in toc -->
+
+- optimize strip punctuation ([`39a1f6f`](https://github.com/zobweyt/textcase/commit/39a1f6f6bc0129cc0cf71d50487c902688ea0dd6))
+
 ## [0.4.3](https://github.com/zobweyt/textcase/compare/0.4.2...0.4.3) (2025-04-18)
 
 Update `Boundary.from_delimiter` to use full delimiter length.
