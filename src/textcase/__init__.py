@@ -19,7 +19,6 @@ __all__ = [
     "sentence",
     "snake",
     "SPACE",
-    "TBoundary",
     "title",
     "UNDERSCORE",
     "UPPER_DIGIT",
@@ -31,7 +30,7 @@ from dataclasses import dataclass
 from string import punctuation
 from typing import Callable, Iterable, TypeVar
 
-TBoundary = TypeVar("TBoundary", bound="Boundary")
+_TBoundary = TypeVar("_TBoundary", bound="Boundary")
 
 
 @dataclass(frozen=True)
@@ -68,7 +67,7 @@ class Boundary:
     """The length of the boundary. This is the number of graphemes that are removed when splitting."""
 
     @classmethod
-    def from_delimiter(cls: type[TBoundary], delimiter: str) -> TBoundary:
+    def from_delimiter(cls: type[_TBoundary], delimiter: str) -> _TBoundary:
         """Create a new boundary instance from a delimiter string.
 
         This method makes it easier to create basic boundaries like `UNDERSCORE`, `HYPHEN`, `SPACE`, and `INTERPUNCT`.
