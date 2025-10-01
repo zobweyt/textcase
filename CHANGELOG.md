@@ -2,11 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## [0.4.4](https://github.com/zobweyt/textcase/compare/0.4.3...0.4.4) (2025-10-01)
+
+### Bug Fixes <!-- omit in toc -->
+
+- use `@classmethod` instead of `@staticmethod` and `TypeVar` in `Boundary.from_delimiter` for proper inheritance typing (#33) ([`3cfc56b`](https://github.com/zobweyt/textcase/commit/3cfc56bccf586a489e0571716275b97b851b3ef1))
 
 ### Performance <!-- omit in toc -->
 
 - optimize strip punctuation ([`39a1f6f`](https://github.com/zobweyt/textcase/commit/39a1f6f6bc0129cc0cf71d50487c902688ea0dd6))
+
+### New Contributors <!-- omit in toc -->
+
+- [@dependabot[bot]](https://github.com/dependabot[bot]) made their first contribution in [#32](https://github.com/zobweyt/textcase/pull/32)
 
 ## [0.4.3](https://github.com/zobweyt/textcase/compare/0.4.2...0.4.3) (2025-04-18)
 
