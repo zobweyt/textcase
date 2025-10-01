@@ -106,6 +106,7 @@ plugins:
             extensions:
               - griffe_typingdoc
             filters:
+              - "!^_[^_]"
               - "!^__all__"
             annotations_path: source
             docstring_section_style: spacy
