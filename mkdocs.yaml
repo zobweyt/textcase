@@ -71,7 +71,8 @@ nav:
 
 plugins:
   - search
-  - social
+  - social:
+      enabled: !ENV [CI, false]
   - autorefs:
       resolve_closest: true
   - i18n:
