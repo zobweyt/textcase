@@ -50,3 +50,12 @@ def test_dot_start() -> None:
 def test_dot_length() -> None:
     """Has a length value of 1."""
     assert DOT.length == 1
+
+
+def test_return_type_of_custom_subclass() -> None:
+    "Verify that method returns an instance of the custom subclass."
+
+    class CustomBoundary(Boundary):
+        pass
+
+    assert type(CustomBoundary.from_delimiter(".")).__name__ == CustomBoundary.__name__
