@@ -119,7 +119,7 @@ This means that the library can handle various characters:
 By default [punctuation][string.punctuation] characters are stripped
 (excluding the [`delimiter`][textcase.Case.delimiter] of the current text case)
 and other special characters are ignored.
-You can control this behavior using the `strip_punctuation` argument:
+You can control this opinionated behavior using the `strip_punctuation` argument:
 
 ```py title="punctuation.py" linenums="1" hl_lines="7-8"
 --8<-- "docs/.snippets/punctuation.py"
