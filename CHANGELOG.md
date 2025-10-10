@@ -2,7 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.5](https://github.com/zobweyt/textcase/compare/0.4.4...0.4.5) (2025-10-10)
+
+Ensure Python 3.14 support.
+
+### Testing <!-- omit in toc -->
+
+- add support for python 3.14 (#36) ([`5c40ae9`](https://github.com/zobweyt/textcase/commit/5c40ae94b09b6ddd9ff0c85ebb298e166b4bafd3))
+
 ## [0.4.4](https://github.com/zobweyt/textcase/compare/0.4.3...0.4.4) (2025-10-01)
+
+Fix `Boundary.from_delimiter` return type and optimize punctuation stripping.
 
 ### Bug Fixes <!-- omit in toc -->
 
