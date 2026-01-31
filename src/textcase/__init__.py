@@ -584,7 +584,7 @@ Examples:
 
     >>> title("Hello, world!")
     'Hello World'
-    
+
     >>> title.match("Hello World")
     True
 

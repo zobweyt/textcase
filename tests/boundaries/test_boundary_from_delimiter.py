@@ -53,7 +53,7 @@ def test_dot_length() -> None:
 
 
 def test_return_type_of_custom_subclass() -> None:
-    "Verify that method returns an instance of the custom subclass."
+    """Verify that method returns an instance of the custom subclass."""
 
     class CustomBoundary(Boundary):
         pass

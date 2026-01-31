@@ -80,8 +80,8 @@ docs = [
     "termynal>=0.13.0",
 ]
 style = [
-    "mypy>=1.15.0",
     "ruff>=0.11.2",
+    "ty>=0.0.14",
 ]
 tests = [
     "pytest>=8.3.5",
@@ -91,13 +91,12 @@ tests = [
 [tool.uv]
 default-groups = []
 
-[tool.mypy]
-files = [
+[tool.ty.src]
+include = [
     "docs/.snippets",
     "src",
     "tests",
 ]
-strict = true
 
 [tool.ruff]
 indent-width = 4
@@ -105,9 +104,13 @@ line-length = 120
 
 [tool.ruff.lint]
 select = [
-    "E",
-    "F",
+    "ANN",
+    "PT",
+    "Q",
     "I",
+    "E",
+    "W",
+    "F",
 ]
 
 [tool.ruff.format]

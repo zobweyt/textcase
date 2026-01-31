@@ -162,7 +162,7 @@ Check using [ruff](https://pypi.org/project/ruff/):
 just check
 ```
 
-Lint using [mypy](https://pypi.org/project/mypy/):
+Lint using [ty](https://pypi.org/project/ty/):
 
 ```sh
 just lint

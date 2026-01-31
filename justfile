@@ -23,10 +23,10 @@ init:
 [group("style")]
 style: lint check format
 
-[doc("Run mypy on source files")]
+[doc("Run ty on source files")]
 [group("style")]
 lint:
-  uv run --locked --group style mypy
+  uv run --locked --group style ty check
 
 [doc("Run Ruff on source files")]
 [group("style")]

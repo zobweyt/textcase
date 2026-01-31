@@ -22,7 +22,6 @@ keywords:
   - kebab case
   - lower case
   - middot case
-  - mypy
   - pascal case
   - pypi
   - pytest
@@ -32,6 +31,7 @@ keywords:
   - snake case
   - text
   - title case
+  - ty
   - upper case
   - uv
 license: MIT
