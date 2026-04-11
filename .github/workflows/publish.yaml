@@ -17,7 +17,7 @@ jobs:
         persist-credentials: false
 
     - name: Setup just
-      uses: extractions/setup-just@v3
+      uses: extractions/setup-just@v4
       with:
         just-version: 1.38.0
 
