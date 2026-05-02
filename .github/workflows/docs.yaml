@@ -24,9 +24,6 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-          sparse-checkout: |
-            docs
-            src
 
       - name: Configure Git Credentials
         run: |
