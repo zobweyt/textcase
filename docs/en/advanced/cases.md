@@ -37,7 +37,7 @@ Simular to [`Boundary`][textcase.Boundary], there is the [`Case`][textcase.Case]
 that allows you to define a custom case that behaves like a built-in one:
 
 ```py title="cases/custom_case.py" linenums="1" hl_lines="5 7-8"
---8<-- "docs/.snippets/cases/custom_case.py"
+--8<-- "docs/.snippets/advanced/cases/custom_case.py"
 ```
 
 1. :smile: Since `dot` is an instance of [`Case`][textcase.Case], it already converts text to the dot case—just

@@ -23,7 +23,7 @@ but sometimes the predefined boundaries are not enough to meet a specific use ca
 which ones to use by providing instances of the [`Boundary`][textcase.Boundary] class.
 
 ```py title="boundaries/specificity.py" linenums="1" hl_lines="5-6"
---8<-- "docs/.snippets/boundaries/specificity.py"
+--8<-- "docs/.snippets/advanced/boundaries/specificity.py"
 ```
 
 You can see a complete list of all built-in boundaries in the [API Reference][textcase].
@@ -35,7 +35,7 @@ But if you need to handle more specific cases, you can easily create custom boun
 them as well as built-in ones:
 
 ```py title="boundaries/custom_boundary.py" linenums="1" hl_lines="5-6"
---8<-- "docs/.snippets/boundaries/custom_boundary.py"
+--8<-- "docs/.snippets/advanced/boundaries/custom_boundary.py"
 ```
 
 1. :cry: That is quite **not** what we want.

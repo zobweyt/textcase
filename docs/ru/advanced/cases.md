@@ -37,7 +37,7 @@
 который позволяет вам определить пользовательский регистр, который ведёт себя как встроенный:
 
 ```py title="cases/custom_case.py" linenums="1" hl_lines="5 7-8"
---8<-- "docs/.snippets/cases/custom_case.py"
+--8<-- "docs/.snippets/advanced/cases/custom_case.py"
 ```
 
 1. :smile: Поскольку `dot` является экземпляром [`Case`][textcase.Case], он уже преобразует текст в регистр `dot` — просто

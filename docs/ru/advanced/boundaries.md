@@ -23,7 +23,7 @@
 какие из них использовать, предоставив экземпляры класса [`Boundary`][textcase.Boundary].
 
 ```py title="boundaries/specificity.py" linenums="1" hl_lines="5-6"
---8<-- "docs/.snippets/boundaries/specificity.py"
+--8<-- "docs/.snippets/advanced/boundaries/specificity.py"
 ```
 
 Вы можете увидеть полный список всех встроенных границ в [Спецификации API][textcase].
@@ -35,7 +35,7 @@
 вы можете легко создать пользовательские границы и использовать их, а также встроенные:
 
 ```py title="boundaries/custom_boundary.py" linenums="1" hl_lines="5-6"
---8<-- "docs/.snippets/boundaries/custom_boundary.py"
+--8<-- "docs/.snippets/advanced/boundaries/custom_boundary.py"
 ```
 
 1. :cry: Это совсем **не** то, что нам нужно.
