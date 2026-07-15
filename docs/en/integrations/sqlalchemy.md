@@ -12,7 +12,7 @@ Typically, table names are specified manually:
 
 To avoid duplicating `__tablename__` in every model, you can create a base class:
 
-```python title="textcase.py" linenums="1" hl_lines="1 3 5 9-12"
+```python title="textcase.py" linenums="1" hl_lines="1 3 6 9-12"
 --8<-- "docs/.snippets/integrations/sqlalchemy/textcase.py"
 ```
 
