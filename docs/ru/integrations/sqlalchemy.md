@@ -12,13 +12,13 @@
 
 Чтобы не дублировать `__tablename__` в каждой модели, можно создать базовый класс:
 
-```python title="textcase.py" linenums="1" hl_lines="1 3 6 10-13"
+```python title="textcase.py" linenums="1" hl_lines="1 3 6 9-13"
 --8<-- "docs/.snippets/integrations/sqlalchemy/textcase.py"
 ```
 
 Если вы имеете в проекте [`Pydantic`](https://pydantic.dev), то можно обойтись без этой библиотеки и применить [`pydantic.alias_generators.to_snake`](https://pydantic.dev/docs/validation/latest/api/pydantic/config#pydantic.alias_generators.to_snake). Эта функция работает похожим образом и также обрабатывает [сокращения][textcase.ACRONYM], но весит больше.
 
-```python title="pydantic.py" linenums="1" hl_lines="1 3-4 9-12"
+```python title="pydantic.py" linenums="1" hl_lines="1 3-4 8-12"
 --8<-- "docs/.snippets/integrations/sqlalchemy/pydantic.py"
 ```
 
