@@ -12,7 +12,7 @@
 
 Чтобы не дублировать `__tablename__` в каждой модели, можно создать базовый класс:
 
-```python title="textcase.py" linenums="1" hl_lines="1 3 6 9-13"
+```python title="textcase.py" linenums="1" hl_lines="1 3 6 10-13"
 --8<-- "docs/.snippets/integrations/sqlalchemy/textcase.py"
 ```
 
