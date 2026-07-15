@@ -1,3 +1,13 @@
+@media screen and (min-width: 76.2344em) {
+  .md-sidebar--primary .md-nav__title {
+    display: none;
+  }
+
+  .md-sidebar--primary .md-nav__list .md-nav__item--section:first-child {
+    margin-top: -0.5rem;
+  }
+}
+
 .md-typeset__table {
   min-width: 100%;
 }

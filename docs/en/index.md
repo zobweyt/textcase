@@ -40,7 +40,7 @@ hide:
 <div class="md-emoji-list" markdown>
 
 - :fire: <span>**Text case conversion**: [convert](#usage) strings between various text cases (e.g., [snake_case][textcase.snake], [kebab-case][textcase.kebab], [camelCase][textcase.camel], etc.).</span>
-- :fire: <span>**Extensible**: extend the library with custom word [boundaries](./learn/boundaries.md) and [cases](./learn/cases.md).</span>
+- :fire: <span>**Extensible**: extend the library with custom word [boundaries](./advanced/boundaries.md) and [cases](./advanced/cases.md).</span>
 - :fire: <span>**Accurate**: [handles any word boundaries](#precision) in strings including [acronyms][textcase.ACRONYM] (as in `#!py "HTTPRequest"`).</span>
 - :fire: <span>**Non-ASCII Support**: handles [non-ASCII characters](#non-ascii-characters) seamlessly (no inferences on the input language itself is made).</span>
 - :fire: <span>**Tiny, Performant & Zero Dependencies**: a regex-free, efficient library that stays lightweight with no external dependencies.</span>
@@ -85,7 +85,7 @@ By default, the library will words split along a set of default word boundaries,
 - Adjacent digits and letters: `#!py "a1"`, `#!py "1a"`, `#!py "A1"`, `#!py "1A"`,
 - Acronyms: `#!py "AAa"` (as in `#!py "HTTPRequest"`).
 
-You can learn more about boundaries [here](./learn/boundaries.md).
+You can learn more about boundaries [here](./advanced/boundaries.md).
 
 ### Precision
 
