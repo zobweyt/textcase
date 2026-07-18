@@ -26,17 +26,17 @@ style: lint check format
 [doc("Run ty on source files")]
 [group("style")]
 lint:
-  uv run --locked --group style ty check
+  uv run --locked --group dev --group style ty check
 
 [doc("Run Ruff on source files")]
 [group("style")]
 check:
-  uv run --locked --group style ruff check --fix
+  uv run --locked --group dev --group style ruff check --fix
 
 [doc("Run Ruff formatter on source files")]
 [group("style")]
 format:
-  uv run --locked --group style ruff format
+  uv run --locked --group dev --group style ruff format
 
 [doc("Run test suite using pytest")]
 [group("tests")]
