@@ -16,18 +16,13 @@ jobs:
       with:
         persist-credentials: false
 
-    - name: Setup just
-      uses: extractions/setup-just@v4
-      with:
-        just-version: 1.38.0
-
     - name: Setup uv
       uses: astral-sh/setup-uv@v7
       with:
         version: 0.6.4
 
     - name: Build a binary wheel and a source tarball
-      run: just build
+      run: uv run task build
 
     - name: Store the distribution packages
       uses: actions/upload-artifact@v7

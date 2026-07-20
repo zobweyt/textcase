@@ -64,9 +64,7 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "pre-commit>=4.2.0",
-    "pydantic>=2.13.4",
-    "sqlalchemy>=2.0.51",
+    "taskipy>=1.14.1",
 ]
 docs = [
     "cairosvg>=2.7.1",
@@ -76,9 +74,12 @@ docs = [
     "mkdocs-git-revision-date-localized-plugin>=1.4.5",
     "mkdocs-material>=9.6.11",
     "mkdocs-minify-plugin>=0.8.0",
+    "mkdocs-same-dir>=0.1.4",
     "mkdocs-static-i18n>=1.3.0",
     "mkdocstrings[python]>=0.29.1",
     "pillow>=11.1.0",
+    "pydantic>=2.13.4",
+    "sqlalchemy>=2.0.51",
     "termynal>=0.13.0",
 ]
 style = [
@@ -91,7 +92,7 @@ tests = [
 ]
 
 [tool.uv]
-default-groups = []
+default-groups = ["dev"]
 
 [tool.ty.src]
 include = [
@@ -134,3 +135,82 @@ exclude = [
 packages = [
     "src/textcase",
 ]
+
+[tool.taskipy.tasks]
+prepare = "git config core.hooksPath scripts/git/hooks"
+style = "uv run task lint && uv run task check && uv run task format"
+lint = "uv run --locked --group dev --group style ty check"
+check = "uv run --locked --group dev --group style ruff check --fix"
+format = "uv run --locked --group dev --group style ruff format"
+test = "uv run --locked --group tests pytest --doctest-modules"
+coverage = "uv run --locked --group tests pytest --doctest-modules --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov"
+serve = "uv run --locked --group docs --group style mkdocs serve -f docs/config.yaml"
+bundle = "uv run task changelog && uv run --locked --group docs --group style mkdocs build -f docs/config.yaml"
+deploy = "uv run task changelog && uv run --locked --group docs --group style mkdocs gh-deploy --force -f docs/config.yaml"
+changelog = "uv run --locked --group docs git-cliff -o docs/en/changelog.md"
+build = "uv build"
+publish = "uv run task style && uv run task test && uv run task build && uv publish"
+clean = "find . -type d -name __pycache__ -exec rm -rf {} + && rm -rf .cache .mypy_cache .pytest_cache .ruff_cache .venv *.egg-info .coverage build dist site coverage.lcov"
+
+[tool.git-cliff.remote.github]
+owner = "zobweyt"
+repo = "textcase"
+
+[tool.git-cliff.changelog]
+header = """
+---
+toc_depth: 1
+---
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+"""
+
+body = """
+{%- set remote_url = "https://github.com/" ~ remote.github.owner ~ "/" ~ remote.github.repo -%}
+{%- set new_contributors = github.contributors | filter(attribute="is_first_time", value=true) -%}
+
+{% if version %}
+    {% if previous.version -%}
+        ## [{{ version }}]({{ remote_url }}/compare/{{ previous.version }}...{{ version }}) ({{ timestamp | date(format="%Y-%m-%d") }})
+    {% else -%}
+        ## [{{ version }}]({{ remote_url }}/commits/{{ version }}) ({{ timestamp | date(format="%Y-%m-%d") }})
+    {% endif -%}
+{% else %}
+    ## Unreleased
+{% endif -%}
+
+{% if message %}
+    {{ message }}
+{% endif -%}
+
+{% for group, commits in commits | group_by(attribute="group") %}
+    ### {{ group | striptags | trim | upper_first }} <!-- omit in toc -->
+    {% for commit in commits %}
+        - {{ commit.message | split(pat="\n") | first | trim }} ([`{{ commit.id | truncate(length=7, end="") }}`]({{ remote_url }}/commit/{{ commit.id }}))\
+    {% endfor %}
+{% endfor -%}
+
+{% if new_contributors %}
+    ### New Contributors <!-- omit in toc -->
+    {% for contributor in new_contributors %}
+        - [@{{ contributor.username }}](https://github.com/{{ contributor.username }}) made their first contribution{% if contributor.pr_number %} in [#{{ contributor.pr_number }}]({{ remote_url }}/pull/{{ contributor.pr_number }}){% endif %}\
+    {% endfor %}
+{% endif -%}
+"""
+
+[tool.git-cliff.git]
+commit_parsers = [
+    { message = "^doc|^style|^chore|^ci", skip = true },
+    { message = "^fix", group = "<!-- 0 -->Bug Fixes" },
+    { message = "^feat", group = "<!-- 1 -->Features" },
+    { message = "^perf", group = "<!-- 2 -->Performance" },
+    { message = "^refactor", group = "<!-- 3 -->Refactoring" },
+    { message = "^test", group = "<!-- 4 -->Testing" },
+]
+conventional_commits = true
+filter_commits = false
+filter_unconventional = false
+sort_commits = "oldest"
+topo_order = false

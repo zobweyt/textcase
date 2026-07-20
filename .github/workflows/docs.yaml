@@ -8,9 +8,6 @@ on:
       - .github/workflows/docs.yaml
       - docs/**
       - src/**
-      - CHANGELOG.md
-      - justfile
-      - mkdocs.yaml
       - pyproject.toml
       - uv.lock
 
@@ -30,15 +27,10 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
-      - name: Setup just
-        uses: extractions/setup-just@v4
-        with:
-          just-version: 1.38.0
-
       - name: Setup uv
         uses: astral-sh/setup-uv@v7
         with:
           version: 0.6.4
 
       - name: Deploy docs
-        run: just docs-gh-deploy
+        run: uv run task deploy

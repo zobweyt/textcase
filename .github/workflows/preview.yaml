@@ -8,9 +8,6 @@ on:
       - .github/workflows/preview.yaml
       - docs/**
       - src/**
-      - CHANGELOG.md
-      - justfile
-      - mkdocs.yaml
       - pyproject.toml
       - uv.lock
     types:
@@ -37,11 +34,6 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
-      - name: Setup just
-        uses: extractions/setup-just@v4
-        with:
-          just-version: 1.38.0
-
       - name: Setup uv
         uses: astral-sh/setup-uv@v7
         with:
@@ -55,7 +47,7 @@ jobs:
           echo "Updated site_url to: $NEW_URL"
 
       - name: Build docs
-        run: just docs-build
+        run: uv run task bundle
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
