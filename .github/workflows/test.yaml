@@ -29,7 +29,6 @@ jobs:
       - name: Setup uv
         uses: astral-sh/setup-uv@v7
         with:
-          version: 0.6.4
           python-version: ${{ matrix.python-version }}
 
       - name: Run test with Python version ${{ matrix.python-version }}

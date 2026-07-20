@@ -18,8 +18,6 @@ jobs:
 
     - name: Setup uv
       uses: astral-sh/setup-uv@v7
-      with:
-        version: 0.6.4
 
     - name: Build a binary wheel and a source tarball
       run: uv run task build

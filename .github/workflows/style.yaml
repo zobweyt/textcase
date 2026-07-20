@@ -20,8 +20,6 @@ jobs:
 
       - name: Setup uv
         uses: astral-sh/setup-uv@v7
-        with:
-          version: 0.6.4
 
       - name: Run style
         run: uv run task style
