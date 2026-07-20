@@ -139,9 +139,9 @@ packages = [
 [tool.taskipy.tasks]
 prepare = "git config core.hooksPath scripts/git/hooks"
 style = "uv run task lint && uv run task check && uv run task format"
-lint = "uv run --locked --group dev --group style ty check"
-check = "uv run --locked --group dev --group style ruff check --fix"
-format = "uv run --locked --group dev --group style ruff format"
+lint = "uv run --locked --group dev --group docs --group style ty check"
+check = "uv run --locked --group dev --group docs --group style ruff check --fix"
+format = "uv run --locked --group dev --group docs --group style ruff format"
 test = "uv run --locked --group tests pytest --doctest-modules"
 coverage = "uv run --locked --group tests pytest --doctest-modules --cov=textcase --cov-report=term-missing --cov-report=lcov:coverage.lcov"
 serve = "uv run --locked --group docs --group style mkdocs serve -f docs/config.yaml"
