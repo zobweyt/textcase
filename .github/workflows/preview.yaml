@@ -41,7 +41,7 @@ jobs:
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
           NEW_URL="https://zobweyt.github.io/textcase/pr-preview/pr-${PR_NUMBER}/"
-          sed -i "s|site_url: .*|site_url: $NEW_URL|" mkdocs.yaml
+          sed -i "s|site_url: .*|site_url: $NEW_URL|" docs/config.yaml
           echo "Updated site_url to: $NEW_URL"
 
       - name: Build docs
