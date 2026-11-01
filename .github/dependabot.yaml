@@ -4,7 +4,7 @@ updates:
   - package-ecosystem: "uv"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       timezone: "Europe/Moscow"
       day: "saturday"
       time: "06:00"
@@ -27,7 +27,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       timezone: "Europe/Moscow"
       day: "saturday"
       time: "06:00"
@@ -41,29 +41,6 @@ updates:
       - "status: review needed"
       - "priority: medium"
       - "dependencies: github-actions"
-    open-pull-requests-limit: 1
-    groups:
-      deps:
-        patterns:
-          - "*"
-
-  - package-ecosystem: "devcontainers"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      timezone: "Europe/Moscow"
-      day: "saturday"
-      time: "06:00"
-    target-branch: "main"
-    commit-message:
-      prefix: "chore"
-      prefix-development: "chore"
-      include: "scope"
-    labels:
-      - "type: chore"
-      - "status: review needed"
-      - "priority: medium"
-      - "dependencies: devcontainers"
     open-pull-requests-limit: 1
     groups:
       deps:
